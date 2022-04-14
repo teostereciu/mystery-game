@@ -6,7 +6,7 @@ At the moment, the following assignments have been published:
 
 1. Hello World
     - Branch `helloworld`
-	- Deadline (optional): 26 April, 23:59
+	- Deadline (optional): 29 April, 23:59
 2. Crazy Eights
 	- Branch `crazyeights`
-	- Deadline: 29 April, 23:59
+	- Deadline: 6 May, 23:59
