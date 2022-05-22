@@ -10,3 +10,9 @@ At the moment, the following assignments have been published:
 2. Crazy Eights
 	- Branch `crazyeights`
 	- Deadline: 6 May, 23:59
+3. Crazy Eights - GUI
+	- Branch `crazyeights-gui`
+	- Deadline: 20 May, 23:59
+4. RPG
+	- Branch `rpg`
+	- Deadline: 17 June, 23:59
