@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Room {
     public final int roomNumber;
-    private ArrayList<Item> roomItems
+    private ArrayList<Item> roomItems = new ArrayList<>();
 
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
@@ -13,5 +13,6 @@ public class Room {
     public void setRoomItems(ArrayList<Item> roomItems) {
         this.roomItems = roomItems;
     }
+
 
 }

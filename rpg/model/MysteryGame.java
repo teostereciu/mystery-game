@@ -5,21 +5,24 @@ public class MysteryGame {
     public final int NUMBER_OF_ROOMS = 5;
 
     private Detective detective;
-    private ArrayList<Room> rooms;
+    private ArrayList<Room> rooms = new ArrayList<>();
 
-    public MysteryGame(Detective detective) {
+    public MysteryGame() {
+    }
+
+    public void setDetective (Detective detective) {
         this.detective = detective;
     }
 
     public void playGame() {
         for (int i = 0; i < NUMBER_OF_ROOMS; i++) {
-
+            Room room = new Room(i);
+            this.rooms.add(room);
         }
     }
 
     public static void main(String[] args) {
-        Detective detective = new detective();
-        MysteryGame mysteryGame = new MysteryGame(detective);
+        MysteryGame mysteryGame = new MysteryGame();
         mysteryGame.playGame();
     }
 }
