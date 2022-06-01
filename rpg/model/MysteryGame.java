@@ -3,23 +3,29 @@ import java.util.*;
 
 public class MysteryGame {
     public final int NUMBER_OF_ROOMS = 5;
+    private int currentRoom;
 
     private Detective detective;
-    private ArrayList<Room> rooms = new ArrayList<>();
+    private List<Room> rooms = new ArrayList<>();
 
     public MysteryGame() {
+        this.init();
     }
 
     public void setDetective (Detective detective) {
         this.detective = detective;
     }
 
-    public void playGame() {
+    public void init() {
         for (int i = 0; i < NUMBER_OF_ROOMS; i++) {
             Room room = new Room(i);
+            //rooms need connections to each other
             this.rooms.add(room);
         }
+
     }
+
+    public void playGame(){}
 
     public static void main(String[] args) {
         MysteryGame mysteryGame = new MysteryGame();
