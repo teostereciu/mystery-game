@@ -1,4 +1,4 @@
-package nl.rug.ai.rpg.model;
+package nl.ai.rug.oop.rpg.model;
 
 import java.util.*;
 
