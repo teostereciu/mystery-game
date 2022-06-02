@@ -1,6 +1,9 @@
 package nl.ai.rug.oop.rpg.model;
 import java.util.*;
 
+/**
+ * @Author Daniël
+ */
 public class MysteryGame {
     public final int NUMBER_OF_ROOMS = 6;
     private int currentRoom;
@@ -23,6 +26,11 @@ public class MysteryGame {
             this.rooms.add(room);
         }
 
+    }
+
+    public void setDetective(String detectiveName) {
+        Detective detective = new Detective(detectiveName);
+        this.detective = detective;
     }
 
     public void playGame(){}

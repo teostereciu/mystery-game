@@ -2,6 +2,9 @@ package nl.ai.rug.oop.rpg.model;
 
 import java.util.*;
 
+/**
+ * @Author Daniël
+ */
 public class Room {
     public final int roomNumber;
     private List<Item> roomItems = new ArrayList<>();

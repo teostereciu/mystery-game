@@ -7,6 +7,7 @@
     <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/2022_Project_023.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/modules.xml" beforeDir="false" />
@@ -28,6 +29,10 @@
       <change beforePath="$PROJECT_DIR$/rpg/model/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpg/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpg/model/model.iml" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/rpg/model/Detective.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpg/model/Detective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpg/model/MysteryGame.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
