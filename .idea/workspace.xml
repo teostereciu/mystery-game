@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpg/model/MysteryGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpg/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022_Project_023.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/2022_Project_023.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Detective.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Inventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/MysteryGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/NPC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/model.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/Detective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Detective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg/model/model.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +40,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="29vxaKS2x7EEa2ZzzrMsOYaM4PU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,7 +58,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/nl/rug/ai/oop/rpg" />
+      <recent name="$PROJECT_DIR$/" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.nl.ai.rug.oop.rpg.model.MysteryGame">
     <configuration name="MysteryGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="nl.rug.ai.rpg.model.MysteryGame" />
       <module name="2022_Project_023" />
@@ -42,8 +78,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="nl.ai.rug.oop.rpg.model.MysteryGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nl.ai.rug.oop.rpg.model.MysteryGame" />
+      <module name="rpg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.ai.rug.oop.rpg.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.nl.ai.rug.oop.rpg.model.MysteryGame" />
         <item itemvalue="Application.MysteryGame" />
       </list>
     </recent_temporary>
@@ -58,5 +108,16 @@
       <updated>1654007425194</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
