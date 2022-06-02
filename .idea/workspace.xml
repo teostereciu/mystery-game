@@ -5,34 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2022_Project_023.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/2022_Project_023.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Detective.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Inventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/MysteryGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/NPC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/rug/ai/rpg/model/model.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/Detective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Detective.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpg/model/model.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpg.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpg.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,19 +46,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "OverrideImplement.generate.javadoc": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/nl/rug/ai/oop/rpg" />
       <recent name="$PROJECT_DIR$/" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.nl.ai.rug.oop.rpg.model.MysteryGame">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nl.ai.rug.oop.rpg.Main" />
+      <module name="rpg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.ai.rug.oop.rpg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MysteryGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="nl.rug.ai.rpg.model.MysteryGame" />
       <module name="2022_Project_023" />
@@ -93,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.nl.ai.rug.oop.rpg.model.MysteryGame" />
         <item itemvalue="Application.MysteryGame" />
       </list>
