@@ -2,7 +2,7 @@ package nl.ai.rug.oop.rpg.model;
 import java.util.*;
 
 public class MysteryGame {
-    public final int NUMBER_OF_ROOMS = 5;
+    public final int NUMBER_OF_ROOMS = 6;
     private int currentRoom;
 
     private Detective detective;
