@@ -6,13 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="2022_Project_023" />
-        <module name="rpg" />
+        <module name="src" />
+        <module name="main" />
+        <module name="java" />
+        <module name="nl.ai.rug.oop.rpg" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="2022_Project_023" target="16" />
-      <module name="rpg" target="16" />
+      <module name="src" target="16" />
+      <module name="main" target="16" />
+      <module name="java" target="16" />
+      <module name="nl.ai.rug.oop.rpg" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
