@@ -6,8 +6,9 @@ import java.awt.*;
 public class LocationPanel extends JPanel {
     private JLabel roomLbl = new JLabel("Main Room");
     public LocationPanel() {
-        this.setOpaque(true);
-        this.setBackground(Color.white);
+        setOpaque(true);
+        setBackground(Color.black);
+        roomLbl.setForeground(Color.white);
         add(roomLbl);
     }
     public void update(int roomIdx) { // note: if NPC's change, update this

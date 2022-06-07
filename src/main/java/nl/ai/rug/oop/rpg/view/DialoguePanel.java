@@ -6,8 +6,8 @@ import java.awt.*;
 public class DialoguePanel extends JPanel { // note: as a possible future feature this could show the npc talking
     private JLabel jlbl = new JLabel("Text text text");
     public DialoguePanel() {
-        this.setOpaque(true);
-        this.setBackground(new Color(109, 172, 209));
+        setOpaque(true);
+        setBackground(Color.black);
         jlbl.setForeground(Color.white);
         add(jlbl);
     }
