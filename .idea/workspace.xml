@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/CluesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/room0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/room0.png" afterDir="false" />
-    </list>
+    <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
