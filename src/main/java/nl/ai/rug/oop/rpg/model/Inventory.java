@@ -1,7 +1,7 @@
 package nl.ai.rug.oop.rpg.model;
 
 public class Inventory {
-    //This class has a low priority, first work on the others
+    //Make sure the items stay in the same positions so that that item position in the inventory clears up
 
     public Inventory(){}
 }
