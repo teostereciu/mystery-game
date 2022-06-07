@@ -14,7 +14,7 @@ public class NavigationPanel extends JPanel {
         btn.setEnabled(false);
         add(btn, BorderLayout.CENTER);
     }
-    public void enableBtn(Boolean bool) { // todo: 4csanad - btn should be disabled when current room is room0; otherwise it should be enabled
+    public void enableBtn(Boolean bool) {
         btn.setEnabled(bool);
     }
 }

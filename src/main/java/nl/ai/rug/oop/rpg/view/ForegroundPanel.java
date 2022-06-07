@@ -12,10 +12,10 @@ public class ForegroundPanel extends JPanel {
         setLayout(null);
         setBounds(0,0,1067,600);
         setOpaque(false);
-        //JButton eurBtn = new JButton(new ImageIcon(ImageIO.read(new File("src/main/resources/euro.png"))));
         Image eurImg = ImageIO.read(new File("src/main/resources/euro.png"));
         eurImg = eurImg.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         JButton eurBtn = new JButton(new ImageIcon(eurImg));
+        addNPCs(roomIdx);
         switch(roomIdx) {
             case 0:
                 addDoorBtns();
@@ -27,6 +27,45 @@ public class ForegroundPanel extends JPanel {
                 break;
             case 1:
                 break;
+            case 2:
+                break;
+        }
+    }
+    private void addNPCs(int roomIdx) throws IOException {
+        switch (roomIdx) {
+            case 0:
+                Image staceyImg = ImageIO.read(new File("src/main/resources/stacey.png"));
+                staceyImg = staceyImg.getScaledInstance((int) (staceyImg.getWidth(null)*1.3),(int) (staceyImg.getHeight(null)*1.3),Image.SCALE_SMOOTH);
+                JButton staceyBtn = new JButton(new ImageIcon(staceyImg)); // todo: 4csanad - this button should start a dialogue (like all npc buttons)
+                staceyBtn.setBounds(800, 280, staceyImg.getWidth(null), staceyImg.getHeight(null));
+                staceyBtn.setOpaque(false);
+                staceyBtn.setContentAreaFilled(false);
+                staceyBtn.setBorderPainted(false);
+                add(staceyBtn);
+                break;
+            case 1:
+                Image daveyImg = ImageIO.read(new File("src/main/resources/davey.png"));
+                daveyImg = daveyImg.getScaledInstance((int) (daveyImg.getWidth(null)*1.3),(int) (daveyImg.getHeight(null)*1.3),Image.SCALE_SMOOTH);
+                JButton daveyBtn = new JButton(new ImageIcon(daveyImg)); // todo: 4csanad - this button should start a dialogue (like all npc buttons)
+                daveyBtn.setBounds(800, 280, daveyImg.getWidth(null), daveyImg.getHeight(null));
+                daveyBtn.setOpaque(false);
+                daveyBtn.setContentAreaFilled(false);
+                daveyBtn.setBorderPainted(false);
+                add(daveyBtn);
+                break;
+            case 2:
+                Image samImg = ImageIO.read(new File("src/main/resources/sam.png"));
+                samImg = samImg.getScaledInstance((int) (samImg.getWidth(null)*1.3),(int) (samImg.getHeight(null)*1.3),Image.SCALE_SMOOTH);
+                JButton samBtn = new JButton(new ImageIcon(samImg)); // todo: 4csanad - this button should start a dialogue (like all npc buttons)
+                samBtn.setBounds(800, 280, samImg.getWidth(null), samImg.getHeight(null));
+                samBtn.setOpaque(false);
+                samBtn.setContentAreaFilled(false);
+                samBtn.setBorderPainted(false);
+                add(samBtn);
+                break;
+            case 3:
+            case 4:
+            case 5:
         }
     }
     private void addDoorBtns() { // todo: 4csanad - functionality for these buttons

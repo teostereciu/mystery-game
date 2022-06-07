@@ -23,6 +23,7 @@ public class BackgroundPanel extends JLayeredPane {
     }
 
     public void setImage(Image background, int roomIdx) { // todo: 4csanad - use this to update background
+        foregroundPanel.removeAll();
         removeAll();
         lbl.setIcon(new ImageIcon(background));
         add(lbl, (Integer)0);

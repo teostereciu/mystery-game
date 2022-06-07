@@ -54,10 +54,12 @@ public class GameView extends JFrame implements PropertyChangeListener {
         add(locationPanel, BorderLayout.NORTH);
         add(navigationPanel, BorderLayout.WEST);
         //updateRoom(1);
+        //updateRoom(2);
     }
 
     private void updateRoom(int roomIdx) {
         backgroundPanel.setImage(readImage((new File("src/main/resources/room" + roomIdx + ".png"))), roomIdx);
+        navigationPanel.enableBtn(roomIdx != 0);
         locationPanel.update(roomIdx);
     }
 
