@@ -13,7 +13,7 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
     }
     public void update(String txt) {
         jlbl.setText(txt);
-    }
+    } // todo: 4csanad this business
     public void clear() {
         jlbl.setText("");
     }

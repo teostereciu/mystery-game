@@ -4,22 +4,23 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LocationPanel extends JPanel {
-    private JLabel roomLbl = new JLabel("Main Room");
+    private JLabel roomLbl = new JLabel("Hallway");
     public LocationPanel() {
         setOpaque(true);
         setBackground(Color.black);
         roomLbl.setForeground(Color.white);
         add(roomLbl);
     }
-    public void update(int roomIdx) { // note: if NPC's change, update this
+    public void update(int roomIdx) { // todo: 4csanad - use this to update the label
         String txt;
         switch (roomIdx) {
-            case 1 -> txt = "Stacey's Room";
-            case 2 -> txt = "Samantha's Room";
-            case 3 -> txt = "Davey's Room";
+            case 1 -> txt = "Common Area";
+            case 2 -> txt = "Stacey's and Samantha's Room";
+            case 3 -> txt = "Davey's and Kyle's Room";
             case 4 -> txt = "Marvin's Room";
             case 5 -> txt = "Alex's Room";
-            default -> txt = "Main Room";
+            case 6 -> txt = "Storage Room";
+            default -> txt = "Hallway";
         }
         roomLbl.setText(txt);
     }

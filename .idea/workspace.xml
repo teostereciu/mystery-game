@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="" />
+    <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/CluesPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/BackgroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/BackgroundPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/CluesPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/InventoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/InventoryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/LocationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/LocationPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/NavigationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/NavigationPanel.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

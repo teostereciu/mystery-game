@@ -34,11 +34,11 @@ public class GameView extends JFrame implements PropertyChangeListener {
         revalidate();
         setVisible(true);
     }
-    //private BackgroundPanel backgroundPanel = new BackgroundPanel();
     private InventoryPanel inventoryPanel = new InventoryPanel();
     private DialoguePanel dialoguePanel = new DialoguePanel();
     private LocationPanel locationPanel = new LocationPanel();
     private NavigationPanel navigationPanel = new NavigationPanel();
+    private BackgroundPanel backgroundPanel;
     private BufferedImage readImage(File file) {
         try {
             return ImageIO.read(file);
@@ -47,16 +47,17 @@ public class GameView extends JFrame implements PropertyChangeListener {
         }
     }
     private void setPanels(MysteryGame game) {
-        BackgroundPanel backgroundPanel = new BackgroundPanel(readImage(new File("src/main/resources/room0.png")));
+        backgroundPanel = new BackgroundPanel(readImage(new File("src/main/resources/room0.png")));
         add(backgroundPanel, BorderLayout.CENTER);
         add(inventoryPanel, BorderLayout.EAST);
         add(dialoguePanel, BorderLayout.SOUTH);
         add(locationPanel, BorderLayout.NORTH);
         add(navigationPanel, BorderLayout.WEST);
+        //updateRoom(1);
     }
 
     private void updateRoom(int roomIdx) {
-        //backgroundPanel.setImage(readImage((new File("src/main/resources/room/" + roomIdx + ".png"))));
+        backgroundPanel.setImage(readImage((new File("src/main/resources/room" + roomIdx + ".png"))), roomIdx);
         locationPanel.update(roomIdx);
     }
 
