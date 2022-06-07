@@ -9,9 +9,15 @@ public class Room {
     public final int roomNumber;
     private List<Item> roomItems = new ArrayList<>();
     private List<NPC> NPCs = new ArrayList<>();
+    private int isOpen;
 
+    /**
+     * Creates a new instance of the object Room
+     * @param roomNumber shows which room it is
+     */
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
+        isOpen = 0;
     }
 
     public void setRoomItems(ArrayList<Item> roomItems) {
@@ -30,5 +36,13 @@ public class Room {
 
     public void addNPC(NPC npc) {
         NPCs.add(npc);
+    }
+
+    public int getIsOpen() {
+        return isOpen;
+    }
+
+    public void setIsOpen(int isOpen) {
+        this.isOpen = isOpen;
     }
 }
