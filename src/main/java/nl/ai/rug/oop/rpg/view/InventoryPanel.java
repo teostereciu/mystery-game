@@ -24,7 +24,7 @@ public class InventoryPanel extends JPanel {
         JButton jButton = new JButton();
         jButton.setOpaque(true);
         jButton.setBorderPainted(true);
-        jButton.setBackground(Color.ORANGE);
+        jButton.setBackground(new Color(235,190,130));
         add(jButton);
         return jButton;
     }

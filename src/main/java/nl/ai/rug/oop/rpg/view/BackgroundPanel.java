@@ -16,7 +16,7 @@ public class BackgroundPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D graphics2D = (Graphics2D) g;
-        graphics2D.scale(1.3, 1.3); // todo: change as needed
+        graphics2D.scale(0.5, 0.5); // todo: change as needed
         g.drawImage(background, 0, 0, null);
         graphics2D.dispose();
     }

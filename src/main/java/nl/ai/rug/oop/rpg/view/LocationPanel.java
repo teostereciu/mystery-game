@@ -1,10 +1,13 @@
 package nl.ai.rug.oop.rpg.view;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class LocationPanel extends JPanel {
     private JLabel roomLbl = new JLabel("Main Room");
     public LocationPanel() {
+        this.setOpaque(true);
+        this.setBackground(Color.white);
         add(roomLbl);
     }
     public void update(int roomIdx) { // note: if NPC's change, update this

@@ -1,5 +1,6 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.model.Inventory;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 
 import javax.imageio.ImageIO;
@@ -25,7 +26,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private void init() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Mystery Game"); // todo: find a different title for the game?
-        setSize(800, 600); // todo: change(?)
+        setSize(1100, 600); // todo: change(?)
         //this.getContentPane().setBackground(new Color(0, 102, 51)); // todo: remove
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(0, 0));
@@ -39,10 +40,12 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private InventoryPanel inventoryPanel = new InventoryPanel();
     private DialoguePanel dialoguePanel = new DialoguePanel();
     private LocationPanel locationPanel = new LocationPanel();
-    private NavigationPanel navigationPanel = new NavigationPanel();
+    private NavigationPanel navigationPanelLeft = new NavigationPanel();
+    private NavigationPanel navigationPanelRight = new NavigationPanel();
+    private JPanel rightSidePanel = new JPanel();
     private BufferedImage readImage(File file) {
         try {
-            return (BufferedImage) ImageIO.read(file);
+            return ImageIO.read(file);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -50,10 +53,15 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private void setPanels(MysteryGame game) {
         backgroundPanel.setImage(readImage(new File("src/main/resources/room0.png")));
         add(backgroundPanel, BorderLayout.CENTER);
-        add(inventoryPanel, BorderLayout.EAST);
+        rightSidePanel.setLayout(new GridLayout(1,2));
+        rightSidePanel.setPreferredSize(new Dimension(150,60));
+        rightSidePanel.add(inventoryPanel);
+        rightSidePanel.add(navigationPanelRight);
+        add(rightSidePanel, BorderLayout.EAST);
         add(dialoguePanel, BorderLayout.SOUTH);
         add(locationPanel, BorderLayout.NORTH);
-        add(navigationPanel, BorderLayout.WEST);
+        navigationPanelLeft.changeText();
+        add(navigationPanelLeft, BorderLayout.WEST);
     }
 
     private void updateRoom(int roomIdx) {

@@ -2,19 +2,17 @@ package nl.ai.rug.oop.rpg.model;
 
 import java.util.*;
 
+/**
+ * @Author Daniël
+ */
 public class Room {
     public final int roomNumber;
     private List<Item> roomItems = new ArrayList<>();
     private List<NPC> NPCs = new ArrayList<>();
-    private int[] roomConnections;
 
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
     }
-
-    public void setRoomConnections() {}
-
-    public int[] getRoomConnections() {return roomConnections; }
 
     public void setRoomItems(ArrayList<Item> roomItems) {
         this.roomItems = roomItems;
