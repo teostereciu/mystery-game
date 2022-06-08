@@ -4,38 +4,113 @@ package nl.ai.rug.oop.rpg.model;
  */
 public class Item {
     private String itemName;
-    private final int itemNumber; //is also NPC coupling number
+    private final int itemNumber; //is also NPC coupling number (??)
+    private int hasMultiples;
     private int isCarryAble;
-    private int canPickUp;
     private int roomNumber;
 
 
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
+        hasMultiples = 0;
+        isCarryAble = 1;
         switch (itemNumber) {
             case(0):
-                break;
+                itemName = "Hat";
+                roomNumber = 2;
             case(1):
+                itemName = "Money";
+                hasMultiples = 1;
                 break;
             case(2):
+                itemName = "Phone";
+                roomNumber = 3;
+                isCarryAble = 0;
                 break;
             case(3):
+                itemName = "Coffee";
+                roomNumber = 1;
                 break;
             case(4):
+                itemName = "Cleaning Supplies";
+                roomNumber = 0;
                 break;
             case(5):
+                itemName = "Flashlight";
+                roomNumber = 3;
                 break;
             case(6):
+                itemName = "Video Tape";
+                roomNumber = 5;
                 break;
             case(7):
+                itemName = "Computer";
+                roomNumber = 4;
+                isCarryAble = 0;
                 break;
+            case(8):
+                itemName = "Hammer";
+                roomNumber = 1;
+                break;
+            case(9):
+                itemName = "Locked desk";
+                roomNumber = 4;
+                isCarryAble = 0;
+                break;
+            case(10):
+                itemName = "Screwdriver";
+                roomNumber = 2;
+                break;
+            case(11):
+                itemName = "Scissors";
+                roomNumber = 4;
+                break;
+            case(12):
+                itemName = "Computer Mouse";
+                roomNumber = 4;
+                break;
+            case(13):
+                itemName = "Electrical Panel";
+                roomNumber = 1;
+                isCarryAble = 0;
+                break;
+            case(14):
+                itemName = "Safe";
+                roomNumber = 3;
+                isCarryAble = 0;
+                break;
+            case(15):
+                itemName = "Key";
+                roomNumber = 3;
+                break;
+            case(16):
+                itemName = "Beer Crate";
+                roomNumber = 6;
+                isCarryAble = 0;
+                break;
+            default:
         }
     }
 
-    public int getItemNumber() {return itemNumber; }
+    public int getItemNumber() { return itemNumber; }
+
+    public int getIsCarryAble() {
+        return isCarryAble;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
 
     public int getRoomNumber() {
         return roomNumber;
     }
 
+    public int getHasMultiples() {
+        return hasMultiples;
+    }
+
+    public void itemUsage() {
+
+    }
 }

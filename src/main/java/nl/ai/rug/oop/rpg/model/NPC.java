@@ -1,49 +1,57 @@
 package nl.ai.rug.oop.rpg.model;
-
+/**
+ * @Author Daniël
+ */
 public class NPC {
     private int NPCNumber;
+    private String NPCname;
+    private int roomNumber;
 
-    public NPC(String name){
-        switch (name) {
-            case("Stacey"):
-                this.Stacey();
-                break;
-            case("Samantha"):
-                this.Samantha();
-                break;
-            case("Davey"):
-                this.Davey();
-                break;
-            case("Melvin"):
-                this.Melvin();
-                break;
-            case("Alex"):
-                this.Alex();
-                break;
-            case("Kyle"):
-                this.Kyle();
-                break;
-            default:
-
+    public NPC(int number){
+        switch (number) {
+            case (0) -> this.Stacey();
+            case (1) -> this.Samantha();
+            case (2) -> this.Davey();
+            case (3) -> this.Melvin();
+            case (4) -> this.Alex();
+            case (5) -> this.Kyle();
+            default -> {
+            }
         }
 
     }
     private void Stacey() {
-        this.NPCNumber = 0;
+        NPCNumber = 0;
+        NPCname = "Stacey";
+        roomNumber = 0;
     }
     private void Samantha() {
-        this.NPCNumber = 1;
+        NPCNumber = 1;
+        NPCname = "Samantha";
+        roomNumber = 2;
     }
     private void Davey() {
-        this.NPCNumber = 2;
+        NPCNumber = 2;
+        NPCname = "Davey";
+        roomNumber = 1;
     }
     private void Melvin() {
-        this.NPCNumber = 3;
+        NPCNumber = 3;
+        NPCname = "Melvin";
+        roomNumber = 5;
     }
     private void Alex() {
         this.NPCNumber = 4;
+        this.NPCname = "Alex";
+        roomNumber = 4;
     }
     private void Kyle() {
         this.NPCNumber = 5;
+        this.NPCname = "Kyle";
+        roomNumber = 3;
+    }
+
+    public int getRoomNumber() {
+        return roomNumber;
     }
 }

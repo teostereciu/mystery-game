@@ -7,13 +7,16 @@ import java.util.*;
  */
 public class MysteryGame {
     public final int NUMBER_OF_ROOMS = 7;
-    public final int NUMBER_OF_ITEMS = 12;
-    private int currentRoom; //cycles between 0 and (NUMBER_OF_ROOMS - 1)
+    public final int NUMBER_OF_ITEMS = 17;
+    public final int NUMBER_OF_NPCS = 6;
+    public final int TOTAL_INVENTORY_SLOTS = 4;
+    private int currentRoom;
 
     private Detective detective;
     private final List<Room> rooms = new ArrayList<>();
-    private Inventory inventory = new Inventory();
+    private Inventory inventory = new Inventory(TOTAL_INVENTORY_SLOTS);
     private int inventorySize;
+    private int pickedUpItems = 0;
 
     /* everything with regard to initializing game */
 
@@ -33,7 +36,17 @@ public class MysteryGame {
 
         for (int i = 0; i < NUMBER_OF_ITEMS; i++) {
             Item item = new Item(i);
-            this.rooms.get(item.getRoomNumber()).addRoomItem(item);
+            if (item.getHasMultiples() == 1) {
+                this.rooms.get(0).addRoomItem(item);
+                this.rooms.get(1).addRoomItem(item);
+            } else {
+                this.rooms.get(item.getRoomNumber()).addRoomItem(item);
+            }
+        }
+
+        for (int i = 0; i < NUMBER_OF_NPCS; i++) {
+            NPC npc = new NPC(i);
+            this.rooms.get(npc.getRoomNumber()).addNPC(npc);
         }
     }
 
@@ -66,9 +79,11 @@ public class MysteryGame {
 
     /**
      * Changes the current room
-     * @param number = 1 if going to right, = -1 if going to left
+     * @param number the number of the new room
      */
     public void setCurrentRoom(int number) {
+        currentRoom = number;
+        /* The old version of the setCurrentRoom (with only left/right)
         if (number == 1) {
             currentRoom = (currentRoom+number)%NUMBER_OF_ROOMS;
         } else {
@@ -78,7 +93,7 @@ public class MysteryGame {
                 currentRoom = currentRoom+number;
             }
         }
-        //should notify the controller (or view?) that the room has changed
+        //should notify the controller (or view?) that the room has changed*/
     }
 
     /**
@@ -89,7 +104,33 @@ public class MysteryGame {
         return rooms.get(currentRoom).getIsOpen();
     }
 
+    /* everything with regard to items */
 
+    /**
+     * Picks up or interacts with an item if the player has progressed enough through the story
+     * @param itemNumber is the number of the item that is picked up/interacted with
+     */
+    public void itemInteraction(int itemNumber) {
+        if (itemNumber > pickedUpItems + TOTAL_INVENTORY_SLOTS) {
+            //print statement that this object is not of interest to the detective as of yet
+            return;
+        }
+
+        Item item = rooms.get(currentRoom).getRoomItem(itemNumber);
+        if (item == null) {
+            //print an error statement
+            return;
+        } else if (item.getIsCarryAble() == 1) {
+            inventory.addToInventory(item);
+        } else {
+            //print interaction statement
+        }
+        pickedUpItems++;
+    }
+
+    public void useItem (int itemNumber) {
+        Item item = inventory.removeFromInventory(itemNumber);
+    }
 
     /* everything with regard to gameState */
 
