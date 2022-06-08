@@ -39,26 +39,45 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private LocationPanel locationPanel = new LocationPanel();
     private NavigationPanel navigationPanel = new NavigationPanel();
     private BackgroundPanel backgroundPanel;
-    private BufferedImage readImage(File file) {
+    /*private BufferedImage readImage(File file) {
         try {
             return ImageIO.read(file);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
     private void setPanels(MysteryGame game) {
-        backgroundPanel = new BackgroundPanel(readImage(new File("src/main/resources/room0.png")));
+        try {
+            backgroundPanel = new BackgroundPanel(ImageIO.read(new File("src/main/resources/room0.png")));
+        } catch (IOException e) {
+            System.out.println("File not found.");
+            throw new RuntimeException();
+        }
         add(backgroundPanel, BorderLayout.CENTER);
         add(inventoryPanel, BorderLayout.EAST);
         add(dialoguePanel, BorderLayout.SOUTH);
         add(locationPanel, BorderLayout.NORTH);
         add(navigationPanel, BorderLayout.WEST);
+        /*try {
+            inventoryPanel.addItem("euro",0.1,0);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }*/
+        //backgroundPanel.removeBtnFromFG(0);
         //updateRoom(1);
         //updateRoom(2);
+        /*try {
+            Image eurImg = ImageIO.read(new File("src/main/resources/euro.png"));
+            eurImg = eurImg.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+            inventoryPanel.addItem(eurImg, 1);
+            inventoryPanel.removeItem(1);
+        } catch(IOException ignored) {
+
+        }*/
     }
 
-    private void updateRoom(int roomIdx) {
-        backgroundPanel.setImage(readImage((new File("src/main/resources/room" + roomIdx + ".png"))), roomIdx);
+    private void updateRoom(int roomIdx) throws IOException { // todo learn/decide what to do with IOExceptions
+        backgroundPanel.setImage(ImageIO.read(new File("src/main/resources/room" + roomIdx + ".png")), roomIdx);
         navigationPanel.enableBtn(roomIdx != 0);
         locationPanel.update(roomIdx);
     }

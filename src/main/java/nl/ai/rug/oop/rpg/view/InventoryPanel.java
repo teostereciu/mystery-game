@@ -2,25 +2,27 @@ package nl.ai.rug.oop.rpg.view;
 
 import nl.ai.rug.oop.rpg.model.Item;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class InventoryPanel extends JPanel {
     private ArrayList<JButton> btnList = new ArrayList<>();
+    final int SIZE = 5;
     public InventoryPanel() {
-        GridLayout gridLayout = new GridLayout(5, 1);
-        //setBackground(new Color(0, 102, 51)); // todo: remove
+        GridLayout gridLayout = new GridLayout(SIZE + 1, 1);
         setLayout(gridLayout);
         setOpaque(false);
         JButton btn = newEmptyButton();
-        btn.setText("Inventory"); // todo: 4csanad idk
-        btnList.add(newEmptyButton()); // todo: 4csanad - discard item
-        btnList.add(newEmptyButton());
-        btnList.add(newEmptyButton());
-        btnList.add(newEmptyButton());
+        btn.setText("Inventory"); // todo: 4csanad idk - could hide/reveal the item list. or some instructions
+        for (int i = 0; i < SIZE; i ++) {
+            btnList.add(newEmptyButton()); // todo: 4csanad - discard item
+        }
     }
-    private JButton newEmptyButton() { // todo: ehh design
+    private JButton newEmptyButton() {
         JButton jButton = new JButton();
         jButton.setOpaque(true);
         jButton.setBorderPainted(true);
@@ -28,10 +30,12 @@ public class InventoryPanel extends JPanel {
         add(jButton);
         return jButton;
     }
-    public void addItem(Item item, int slot) { // todo: make sure empty slot is being kept track of in model
-        //btnList.get(slot).setIcon(new ImageIcon(item.getImage())); // todo: this image icon business. 4daniel - implement getImage() or sth like this. If you give me a setImage I can help with reading it from file. 4csanad - use this when adding an item to the inventory
-    }
+    public void addItem(String name, double scale, int slot) throws IOException { // todo: make sure empty slot is being kept track of in model
+        Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
+        img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
+        btnList.get(slot).setIcon(new ImageIcon(img)); //todo: 4csanad - use this when adding an item to the inventory
+    } // note: idea, itm.getImage() and itm.setImage() in model? also with npcs todo: 4daniel
     public void removeItem(int slot) {
         btnList.get(slot).setIcon(new ImageIcon());
-    }
+    } // todo: 4csanad - discard item with this
 }

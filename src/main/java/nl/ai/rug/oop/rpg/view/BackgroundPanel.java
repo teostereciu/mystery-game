@@ -21,7 +21,9 @@ public class BackgroundPanel extends JLayeredPane {
         }
         add(foregroundPanel, (Integer)1);
     }
-
+    public void removeBtnFromFG(int id) {
+        foregroundPanel.removeBtn(id);
+    }
     public void setImage(Image background, int roomIdx) { // todo: 4csanad - use this to update background
         foregroundPanel.removeAll();
         removeAll();
