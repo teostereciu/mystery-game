@@ -20,19 +20,18 @@ public class Room {
         isOpen = 0;
     }
 
-    public void setRoomItems(ArrayList<Item> roomItems) {
-        this.roomItems = roomItems;
-    }
-
     public void addRoomItem(Item item) {
         roomItems.add(item);
     }
 
-    public Item getRoomItem(int index) {
-        return roomItems.remove(index);
+    public Item getRoomItem(int itemNumber) {
+        for (int i = 0; i < roomItems.size(); i++) {
+            if (roomItems.get(i).getItemNumber() == itemNumber) {
+                return roomItems.remove(i);
+            }
+        }
+        return null;
     }
-
-    public void setNPCs(ArrayList<NPC> NPCs) {this.NPCs = NPCs; }
 
     public void addNPC(NPC npc) {
         NPCs.add(npc);
