@@ -1,7 +1,9 @@
 package nl.ai.rug.oop.rpg.view;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -9,31 +11,22 @@ public class BackgroundPanel extends JLayeredPane {
     //private Image background;
     private JLabel lbl = new JLabel("");
     private ForegroundPanel foregroundPanel = new ForegroundPanel();
-    public BackgroundPanel(Image background) {
+    public BackgroundPanel() throws IOException {
         setPreferredSize(new Dimension(1067, 600));
         lbl.setBounds(0,0,1067,600);
-        lbl.setIcon(new ImageIcon(background));
-        add(lbl, (Integer)0);
-        try {
-            foregroundPanel.set(0);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        add(foregroundPanel, (Integer)1);
+        set(0);
     }
     public void removeBtnFromFG(int id) {
         foregroundPanel.removeBtn(id);
     }
-    public void setImage(Image background, int roomIdx) { // todo: 4csanad - use this to update background
+    public void set(int roomIdx) throws IOException { // todo: 4csanad - use this to update background
         foregroundPanel.removeAll();
         removeAll();
-        lbl.setIcon(new ImageIcon(background));
+        Image roomImg = ImageIO.read(new File("src/main/resources/" + roomIdx + "room.png"));
+        roomImg = roomImg.getScaledInstance(1067, 600, Image.SCALE_SMOOTH);
+        lbl.setIcon(new ImageIcon(roomImg));
         add(lbl, (Integer)0);
-        try {
-            foregroundPanel.set(roomIdx);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        foregroundPanel.set(roomIdx);
         add(foregroundPanel, (Integer)1);
     }
 

@@ -18,11 +18,12 @@ public class ForegroundPanel extends JPanel {
             case 0:
                 addDoorBtns();
                 btns.add(newBtn("euro", 0.05, 520,150));
-                btns.add(newBtn("stacey", 1.3, 800, 280));
-                btns.add(newBtn("cleaning-supplies", 0.2, 130, 400));
+                btns.add(newBtn("shadow-sam", 0.5, 470, 260));
+                btns.add(newBtn("cleaning-supplies", 0.15, 845, 345));
                 break;
             case 1:
-                btns.add(newBtn("davey", 1.4, 800, 280));
+                btns.add(newBtn("davey", 1.5, 130, 210));
+                btns.add(newBtn("electric-panel", 0.58, 705, 165));
                 break;
             case 2:
                 btns.add(newBtn("sam", 1.3, 800, 280));
@@ -62,10 +63,10 @@ public class ForegroundPanel extends JPanel {
             btns.get(i).setBorderPainted(false);
             switch (i) {
                 case 0 -> btns.get(i).setBounds(40, 270, 110, 210); // note: this leads to room1 (living room)
-                case 1 -> btns.get(i).setBounds(210, 250, 100, 200);
-                case 2 -> btns.get(i).setBounds(380, 250, 100, 200);
-                case 3 -> btns.get(i).setBounds(570, 250, 100, 200);
-                case 4 -> btns.get(i).setBounds(760, 250, 100, 200);
+                case 1 -> btns.get(i).setBounds(220, 250, 100, 200);
+                case 2 -> btns.get(i).setBounds(390, 250, 100, 200);
+                case 3 -> btns.get(i).setBounds(560, 250, 100, 200);
+                case 4 -> btns.get(i).setBounds(750, 250, 100, 200);
                 case 5 -> btns.get(i).setBounds(920, 270, 110, 210);
             }
             add(btns.get(i));

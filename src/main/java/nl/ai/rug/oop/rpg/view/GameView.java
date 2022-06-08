@@ -30,7 +30,11 @@ public class GameView extends JFrame implements PropertyChangeListener {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(0, 0));
         setResizable(false);
-        setPanels(game);
+        try {
+            setPanels(game);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         revalidate();
         setVisible(true);
     }
@@ -46,9 +50,9 @@ public class GameView extends JFrame implements PropertyChangeListener {
             throw new RuntimeException(e);
         }
     }*/
-    private void setPanels(MysteryGame game) {
+    private void setPanels(MysteryGame game) throws IOException {
         try {
-            backgroundPanel = new BackgroundPanel(ImageIO.read(new File("src/main/resources/room0.png")));
+            backgroundPanel = new BackgroundPanel();
         } catch (IOException e) {
             System.out.println("File not found.");
             throw new RuntimeException();
@@ -77,7 +81,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     }
 
     private void updateRoom(int roomIdx) throws IOException { // todo learn/decide what to do with IOExceptions
-        backgroundPanel.setImage(ImageIO.read(new File("src/main/resources/room" + roomIdx + ".png")), roomIdx);
+        backgroundPanel.set(roomIdx);
         navigationPanel.enableBtn(roomIdx != 0);
         locationPanel.update(roomIdx);
     }
