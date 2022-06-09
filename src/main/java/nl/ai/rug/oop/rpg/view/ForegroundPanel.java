@@ -1,5 +1,6 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.controller.RoomChooser;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 
@@ -81,6 +82,7 @@ public class ForegroundPanel extends JPanel {
             btns.get(i).setOpaque(false);
             btns.get(i).setContentAreaFilled(false);
             btns.get(i).setBorderPainted(false);
+            btns.get(i).addActionListener(new RoomChooser(game, i+1)); // todo: import game
             switch (i) {
                 case 0 -> btns.get(i).setBounds(40, 270, 110, 210); // note: this leads to room1 (common area)
                 case 1 -> btns.get(i).setBounds(220, 250, 100, 200);

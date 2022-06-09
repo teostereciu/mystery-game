@@ -1,5 +1,7 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.controller.RoomChooser;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,6 +14,7 @@ public class NavigationPanel extends JPanel {
         btn.setBackground(Color.black);
         btn.setPreferredSize((new Dimension(70,10)));
         btn.setEnabled(false);
+        btn.addActionListener(RoomChooser(game, 0)); // todo: import game
         add(btn, BorderLayout.CENTER);
     }
     public void enableBtn(Boolean bool) {

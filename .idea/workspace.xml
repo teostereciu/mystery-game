@@ -4,31 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
+    <list default="true" id="107f601a-416e-4960-b358-4b8c52f85967" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/2022_Project_023.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/MysteryGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/MysteryGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/NPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/NPC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/BackgroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/BackgroundPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/ForegroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/ForegroundPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,83 +32,40 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="29vxaKS2x7EEa2ZzzrMsOYaM4PU" />
+  <component name="ProjectId" id="2AL3R7IJEFFB85yKL40xZ5z1vfJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/items" />
-      <recent name="$PROJECT_DIR$/src/main/resources/rooms" />
-      <recent name="$PROJECT_DIR$/src/main/resources/npcs" />
-      <recent name="$PROJECT_DIR$/src/main/java/nl/rug/ai/oop/rpg" />
-      <recent name="$PROJECT_DIR$/" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-18.0.1.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="nl.ai.rug.oop.rpg.Main" />
-      <module name="rpg" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.ai.rug.oop.rpg.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MysteryGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="nl.rug.ai.rpg.model.MysteryGame" />
       <module name="2022_Project_023" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.rug.ai.rpg.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="nl.ai.rug.oop.rpg.model.MysteryGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="nl.ai.rug.oop.rpg.model.MysteryGame" />
-      <module name="rpg" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.ai.rug.oop.rpg.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.nl.ai.rug.oop.rpg.model.MysteryGame" />
-        <item itemvalue="Application.MysteryGame" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="" />
-      <created>1654007425194</created>
+      <changelist id="107f601a-416e-4960-b358-4b8c52f85967" name="Changes" comment="" />
+      <created>1654775027713</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1654007425194</updated>
+      <updated>1654775027713</updated>
     </task>
     <servers />
   </component>
