@@ -61,4 +61,11 @@ public class Room {
     public Image getImg() {
         return img;
     }
+
+    public List<Item> getRoomItems() {
+        return roomItems;
+    }
+    public NPC getNPC() {
+        return NPCs.get(0); // note from teo: we have at most one npc in each room
+    }
 }

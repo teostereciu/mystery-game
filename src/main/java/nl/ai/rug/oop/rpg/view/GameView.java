@@ -77,10 +77,10 @@ public class GameView extends JFrame implements PropertyChangeListener {
         }*/
     }
 
-    private void updateRoom(int roomIdx) throws IOException { // todo learn/decide what to do with IOExceptions
-        backgroundPanel.set(roomIdx);
-        navigationPanel.enableBtn(roomIdx != 0);
-        locationPanel.update(roomIdx);
+    private void updateRoom(int prevIdx, int destIdx) throws IOException { // todo learn/decide what to do with IOExceptions
+        backgroundPanel.set(prevIdx, destIdx);
+        navigationPanel.enableBtn(destIdx != 0);
+        locationPanel.update(destIdx);
         SwingUtilities.updateComponentTreeUI(this);
         SwingUtilities.updateComponentTreeUI(backgroundPanel);
         SwingUtilities.updateComponentTreeUI(navigationPanel);
@@ -96,7 +96,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         try {
-            updateRoom(game.getCurrentRoom());
+            updateRoom(game.getPreviousRoomIdx(), game.getCurrentRoom());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

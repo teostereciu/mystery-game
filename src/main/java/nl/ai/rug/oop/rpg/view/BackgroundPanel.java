@@ -3,32 +3,49 @@ package nl.ai.rug.oop.rpg.view;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 
 import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class BackgroundPanel extends JLayeredPane {
-    //private Image background;
     private JLabel lbl = new JLabel("");
-    private ForegroundPanel foregroundPanel;
+    private final ArrayList<ImageIcon> bgImageIcons = new ArrayList<>();
+    private final ArrayList<ForegroundPanel> foregroundPanelArrayList = new ArrayList<>();
+    //private ForegroundPanel foregroundPanel;
     private MysteryGame game;
-
-    public ForegroundPanel getForegroundPanel() {
-        return foregroundPanel;
-    }
 
     public BackgroundPanel(MysteryGame game) throws IOException {
         this.game = game;
-        foregroundPanel = new ForegroundPanel(game);
         setPreferredSize(new Dimension(800, 500));
         lbl.setBounds(0,0,800,500);
-        set(0);
+        add(lbl, (Integer) 0);
+        for (int roomIdx = 0; roomIdx < 2; roomIdx ++) { //game.getNumberOfRooms()
+            foregroundPanelArrayList.add(new ForegroundPanel(game, roomIdx));
+            foregroundPanelArrayList.get(roomIdx).setVisible(false);
+            add(foregroundPanelArrayList.get(roomIdx), (Integer) (roomIdx + 1));
+            bgImageIcons.add(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/room" + roomIdx + ".png"))));
+        }
+        set(0,0);
     }
+    public void set(int prevIdx, int destIdx) {
+        lbl.setIcon(bgImageIcons.get(destIdx));
+        foregroundPanelArrayList.get(prevIdx).setVisible(false);
+        foregroundPanelArrayList.get(prevIdx).setEnabled(false);
+        foregroundPanelArrayList.get(destIdx).setVisible(true);
+        SwingUtilities.updateComponentTreeUI(this);
+    }
+    public ForegroundPanel getForegroundPanel() {
+        return foregroundPanelArrayList.get(game.getCurrentRoom());
+    }
+
+
     public void removeBtnFromFG(int id) {
-        foregroundPanel.removeBtn(id);
+        //foregroundPanel.removeBtn(id);
     }
-    public void set(int roomIdx) throws IOException { // todo: 4csanad - use this to update background
+    /*public void set(int roomIdx) throws IOException { // todo: 4csanad - use this to update background
         foregroundPanel.removeAll();
         removeAll();
         Image roomImg = ImageIO.read(new File("src/main/resources/rooms/pxroom"+ roomIdx + ".png"));
@@ -38,19 +55,7 @@ public class BackgroundPanel extends JLayeredPane {
         foregroundPanel.set(roomIdx);
         add(foregroundPanel, (Integer)1);
         SwingUtilities.updateComponentTreeUI(this);
-    }
-
-    /*@Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D graphics2D = (Graphics2D) g;
-        graphics2D.scale(0.5, 0.5); // todo: change as needed
-        g.drawImage(background, 0, 0, null);
-        graphics2D.dispose();
-    }
-
-    @Override
-    public Dimension getPreferredSize() {
-        return new Dimension(background.getWidth(this), background.getHeight(this));
     }*/
+
+
 }

@@ -89,6 +89,7 @@ public class MysteryGame {
      * @param number the number of the new room
      */
     public void setCurrentRoom(int number) {
+        prevIdx = currentRoom;
         currentRoom = number;
         notifyListeners();
     }
@@ -193,6 +194,14 @@ public class MysteryGame {
         for (PropertyChangeListener listener : listeners) {
             listener.propertyChange(payload);
         }
+    }
+
+    public Room getRoom(int roomIdx) { // note from teo: needed this
+        return rooms.get(roomIdx);
+    }
+    private int prevIdx = 0;
+    public int getPreviousRoomIdx() { // teo
+        return prevIdx;
     }
 }
 

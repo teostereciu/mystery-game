@@ -15,6 +15,5 @@ public class RoomChooser implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         modelGame.setCurrentRoom(destIdx);
-        //System.out.println(destIdx + "pressed"); todo: remove
     }
 }

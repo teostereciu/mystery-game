@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * @Author Daniël
@@ -40,6 +41,8 @@ public class NPC {
         NPCNumber = 0;
         NPCname = "stacey";
         roomNumber = 0;
+        coords.put("x", 450);
+        coords.put("y", 200);
     }
     private void Samantha() {
         NPCNumber = 1;
@@ -50,6 +53,8 @@ public class NPC {
         NPCNumber = 2;
         NPCname = "davey";
         roomNumber = 1;
+        coords.put("x", 70);
+        coords.put("y", 100);
     }
     private void Melvin() {
         NPCNumber = 3;
@@ -73,5 +78,13 @@ public class NPC {
 
     public Image getImg() {
         return img;
+    }
+
+    public String getName() { // teo
+        return NPCname;
+    }
+    private final HashMap<String, Integer> coords = new HashMap<>();
+    public HashMap<String, Integer> getCoords() { // teo
+        return coords;
     }
 }

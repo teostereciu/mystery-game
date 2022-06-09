@@ -4,6 +4,8 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * @Author Daniël
@@ -26,7 +28,9 @@ public class Item {
                 itemName = "Hat";
                 roomNumber = 2;
             case(1):
-                itemName = "Money";
+                itemName = "euro";
+                coords.put("x", 380);
+                coords.put("y", 50);
                 break;
             case(2):
                 itemName = "Phone";
@@ -38,8 +42,10 @@ public class Item {
                 roomNumber = 1;
                 break;
             case(4):
-                itemName = "Cleaning Supplies";
+                itemName = "cleaning-supplies";
                 roomNumber = 0;
+                coords.put("x", 70);
+                coords.put("y", 270);
                 break;
             case(5):
                 itemName = "Flashlight";
@@ -76,7 +82,7 @@ public class Item {
                 roomNumber = 4;
                 break;
             case(13):
-                itemName = "Electrical Panel";
+                itemName = "electrical-panel";
                 roomNumber = 1;
                 isCarryAble = 0;
                 break;
@@ -96,13 +102,13 @@ public class Item {
                 break;
             default:
         }
-        try {
+        /*try {
             img = ImageIO.read(new File("src/main/resources/items/" + itemName + ".png"));
             img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
         } catch (IOException e) {
             //e.printStackTrace();
             //throw new RuntimeException(e);
-        }
+        }*/
     }
 
     public Image getImg() {
@@ -125,5 +131,9 @@ public class Item {
 
     public void itemUsage() {
 
+    }
+    private final HashMap<String, Integer> coords = new HashMap<>(); // note from teo: i needed this, but you still need to set them in the constructor (and in game). try coords.put("x", value);
+    public HashMap<String, Integer> getCoords() {
+        return coords;
     }
 }
