@@ -1,18 +1,25 @@
 package nl.ai.rug.oop.rpg.model;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+
 /**
  * @Author Daniël
  */
 public class Item {
     private String itemName;
-    private final int itemNumber; //is also NPC coupling number (??)
-    private int hasMultiples;
+    private final int itemNumber;
     private int isCarryAble;
     private int roomNumber;
+    private double scale;
+    private Image img;
 
 
+    //change names of items to the file names
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
-        hasMultiples = 0;
         isCarryAble = 1;
         switch (itemNumber) {
             case(0):
@@ -20,7 +27,6 @@ public class Item {
                 roomNumber = 2;
             case(1):
                 itemName = "Money";
-                hasMultiples = 1;
                 break;
             case(2):
                 itemName = "Phone";
@@ -90,6 +96,16 @@ public class Item {
                 break;
             default:
         }
+        try {
+            img = ImageIO.read(new File("src/main/resources/items/" + itemName + ".png"));
+            img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Image getImg() {
+        return img;
     }
 
     public int getItemNumber() { return itemNumber; }
@@ -104,10 +120,6 @@ public class Item {
 
     public int getRoomNumber() {
         return roomNumber;
-    }
-
-    public int getHasMultiples() {
-        return hasMultiples;
     }
 
     public void itemUsage() {

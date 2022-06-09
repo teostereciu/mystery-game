@@ -36,16 +36,11 @@ public class MysteryGame {
 
         for (int i = 0; i < NUMBER_OF_ITEMS; i++) {
             Item item = new Item(i);
-            if (item.getHasMultiples() == 1) {
-                this.rooms.get(0).addRoomItem(item);
-                this.rooms.get(1).addRoomItem(item);
-            } else {
-                this.rooms.get(item.getRoomNumber()).addRoomItem(item);
-            }
+            this.rooms.get(item.getRoomNumber()).addRoomItem(item);
         }
 
         for (int i = 0; i < NUMBER_OF_NPCS; i++) {
-            NPC npc = new NPC(i);
+            NPC npc = new NPC(i, detective.getDetectiveKind());
             this.rooms.get(npc.getRoomNumber()).addNPC(npc);
         }
     }
@@ -83,17 +78,7 @@ public class MysteryGame {
      */
     public void setCurrentRoom(int number) {
         currentRoom = number;
-        /* The old version of the setCurrentRoom (with only left/right)
-        if (number == 1) {
-            currentRoom = (currentRoom+number)%NUMBER_OF_ROOMS;
-        } else {
-            if (currentRoom <= 1) {
-                currentRoom = NUMBER_OF_ROOMS-1;
-            } else {
-                currentRoom = currentRoom+number;
-            }
-        }
-        //should notify the controller (or view?) that the room has changed*/
+        //should notify the controller (or view?) that the room has changed
     }
 
     /**
@@ -110,18 +95,20 @@ public class MysteryGame {
      * Picks up or interacts with an item if the player has progressed enough through the story
      * @param itemNumber is the number of the item that is picked up/interacted with
      */
+
+    // Make it an int function with return 0 if failed and 1 if picked up/interacted
     public void itemInteraction(int itemNumber) {
         if (itemNumber > pickedUpItems + TOTAL_INVENTORY_SLOTS) {
             //print statement that this object is not of interest to the detective as of yet
             return;
         }
-
+        int slotnumber;
         Item item = rooms.get(currentRoom).getRoomItem(itemNumber);
         if (item == null) {
             //print an error statement
             return;
         } else if (item.getIsCarryAble() == 1) {
-            inventory.addToInventory(item);
+            slotnumber = inventory.addToInventory(item);
         } else {
             //print interaction statement
         }

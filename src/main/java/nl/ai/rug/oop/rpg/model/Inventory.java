@@ -19,15 +19,16 @@ public class Inventory {
         }
     }
 
-    public void addToInventory (Item item) {
+
+    public int addToInventory (Item item) {
         for (int i = 0; i < totalInventorySlots; i++) {
             if (inventorySlotsFull[i] == 0) {
                 inventoryItems.set(i, item);
                 inventorySlotsFull[i] = 1;
-            } else {
-                //Give inventory is full message
+                return i;
             }
         }
+        return -1;
     }
 
     public Item removeFromInventory(int itemNumber) {

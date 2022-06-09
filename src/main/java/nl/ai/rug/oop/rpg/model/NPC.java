@@ -1,4 +1,10 @@
 package nl.ai.rug.oop.rpg.model;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+
 /**
  * @Author Daniël
  */
@@ -6,8 +12,12 @@ public class NPC {
     private int NPCNumber;
     private String NPCname;
     private int roomNumber;
+    private Image img;
+    private final double scale = 1.3;
+    private final int dialogueType;
 
-    public NPC(int number){
+    public NPC(int number, int dialogueType){
+        this.dialogueType = dialogueType;
         switch (number) {
             case (0) -> this.Stacey();
             case (1) -> this.Samantha();
@@ -17,6 +27,13 @@ public class NPC {
             case (5) -> this.Kyle();
             default -> {
             }
+        }
+        try {
+            img = ImageIO.read(new File("src/main/resources/npcs/" + NPCname + ".png"));
+            img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
     }
@@ -53,5 +70,9 @@ public class NPC {
 
     public int getRoomNumber() {
         return roomNumber;
+    }
+
+    public Image getImg() {
+        return img;
     }
 }

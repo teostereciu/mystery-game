@@ -1,6 +1,11 @@
 package nl.ai.rug.oop.rpg.model;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
+import java.util.List;
 
 /**
  * @Author Daniël
@@ -10,6 +15,7 @@ public class Room {
     private List<Item> roomItems = new ArrayList<>();
     private List<NPC> NPCs = new ArrayList<>();
     private int isOpen;
+    private Image img;
 
     /**
      * Creates a new instance of the object Room
@@ -18,6 +24,12 @@ public class Room {
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
         isOpen = 0;
+        try {
+            img = ImageIO.read(new File("src/main/resources/rooms/room" + roomNumber + ".png"));
+            img = img.getScaledInstance(1067, 600, Image.SCALE_SMOOTH);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void addRoomItem(Item item) {
@@ -43,5 +55,9 @@ public class Room {
 
     public void setIsOpen(int isOpen) {
         this.isOpen = isOpen;
+    }
+
+    public Image getImg() {
+        return img;
     }
 }
