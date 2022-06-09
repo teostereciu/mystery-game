@@ -32,39 +32,39 @@ public class NPC {
             img = ImageIO.read(new File("src/main/resources/npcs/" + NPCname + ".png"));
             img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
         } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            //e.printStackTrace();
+            //throw new RuntimeException(e);
         }
 
     }
     private void Stacey() {
         NPCNumber = 0;
-        NPCname = "Stacey";
+        NPCname = "stacey";
         roomNumber = 0;
     }
     private void Samantha() {
         NPCNumber = 1;
-        NPCname = "Samantha";
+        NPCname = "sam";
         roomNumber = 2;
     }
     private void Davey() {
         NPCNumber = 2;
-        NPCname = "Davey";
+        NPCname = "davey";
         roomNumber = 1;
     }
     private void Melvin() {
         NPCNumber = 3;
-        NPCname = "Melvin";
+        NPCname = "melvin";
         roomNumber = 5;
     }
     private void Alex() {
         this.NPCNumber = 4;
-        this.NPCname = "Alex";
+        this.NPCname = "alex";
         roomNumber = 4;
     }
     private void Kyle() {
         this.NPCNumber = 5;
-        this.NPCname = "Kyle";
+        this.NPCname = "kyle";
         roomNumber = 3;
     }
 

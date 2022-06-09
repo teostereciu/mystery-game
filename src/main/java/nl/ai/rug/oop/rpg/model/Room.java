@@ -28,7 +28,8 @@ public class Room {
             img = ImageIO.read(new File("src/main/resources/rooms/room" + roomNumber + ".png"));
             img = img.getScaledInstance(1067, 600, Image.SCALE_SMOOTH);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //e.printStackTrace();
+            //throw new RuntimeException(e);
         }
     }
 

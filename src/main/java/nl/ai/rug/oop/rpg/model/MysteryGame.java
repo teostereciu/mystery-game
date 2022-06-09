@@ -18,6 +18,10 @@ public class MysteryGame {
     private int inventorySize;
     private int pickedUpItems = 0;
 
+
+    //TODO: Rewrite the catch parts in NPC, ROOM and Item
+
+
     /* everything with regard to initializing game */
 
     public MysteryGame() {

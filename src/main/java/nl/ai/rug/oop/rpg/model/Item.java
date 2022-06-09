@@ -100,7 +100,8 @@ public class Item {
             img = ImageIO.read(new File("src/main/resources/items/" + itemName + ".png"));
             img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //e.printStackTrace();
+            //throw new RuntimeException(e);
         }
     }
 
