@@ -34,7 +34,7 @@ public class InventoryPanel extends JPanel {
         Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
         img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
         btnList.get(slot).setIcon(new ImageIcon(img)); //todo: 4csanad - use this when adding an item to the inventory
-    } // note: idea, itm.getImage() and itm.setImage() in model? also with npcs todo: 4daniel
+    }
     public void removeItem(int slot) {
         btnList.get(slot).setIcon(new ImageIcon());
     } // todo: 4csanad - discard item with this

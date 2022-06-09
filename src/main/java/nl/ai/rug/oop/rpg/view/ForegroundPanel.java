@@ -50,7 +50,7 @@ public class ForegroundPanel extends JPanel {
         return btn;
     }
 
-    protected void removeBtn(int id) { // todo: find a way to id the buttons in the model 4daniel
+    protected void removeBtn(int id) { // todo: !!!find a way to id the buttons
         remove(btns.get(id));
     }
 
@@ -62,7 +62,7 @@ public class ForegroundPanel extends JPanel {
             btns.get(i).setContentAreaFilled(false);
             btns.get(i).setBorderPainted(false);
             switch (i) {
-                case 0 -> btns.get(i).setBounds(40, 270, 110, 210); // note: this leads to room1 (living room)
+                case 0 -> btns.get(i).setBounds(40, 270, 110, 210); // note: this leads to room1 (common area)
                 case 1 -> btns.get(i).setBounds(220, 250, 100, 200);
                 case 2 -> btns.get(i).setBounds(390, 250, 100, 200);
                 case 3 -> btns.get(i).setBounds(560, 250, 100, 200);
