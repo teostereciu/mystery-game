@@ -1,5 +1,7 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.model.MysteryGame;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -9,8 +11,11 @@ import java.io.IOException;
 public class BackgroundPanel extends JLayeredPane {
     //private Image background;
     private JLabel lbl = new JLabel("");
-    private ForegroundPanel foregroundPanel = new ForegroundPanel();
-    public BackgroundPanel() throws IOException {
+    private ForegroundPanel foregroundPanel;
+    private MysteryGame game;
+    public BackgroundPanel(MysteryGame game) throws IOException {
+        this.game = game;
+        foregroundPanel = new ForegroundPanel(game);
         setPreferredSize(new Dimension(1067, 600));
         lbl.setBounds(0,0,1067,600);
         set(0);

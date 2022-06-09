@@ -37,7 +37,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private InventoryPanel inventoryPanel = new InventoryPanel();
     private DialoguePanel dialoguePanel = new DialoguePanel();
     private LocationPanel locationPanel = new LocationPanel();
-    private NavigationPanel navigationPanel = new NavigationPanel();
+    private NavigationPanel navigationPanel = new NavigationPanel(game);
     private BackgroundPanel backgroundPanel;
     /*private BufferedImage readImage(File file) {
         try {
@@ -48,7 +48,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     }*/
     private void setPanels() throws IOException {
         try {
-            backgroundPanel = new BackgroundPanel();
+            backgroundPanel = new BackgroundPanel(game);
         } catch (IOException e) {
             System.out.println("File not found.");
             throw new RuntimeException();
