@@ -27,7 +27,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         setLayout(new BorderLayout(0, 0));
         setResizable(false);
         try {
-            setPanels(game);
+            setPanels();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -46,7 +46,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
             throw new RuntimeException(e);
         }
     }*/
-    private void setPanels(MysteryGame game) throws IOException {
+    private void setPanels() throws IOException {
         try {
             backgroundPanel = new BackgroundPanel();
         } catch (IOException e) {

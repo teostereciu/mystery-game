@@ -1,39 +1,59 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.model.Item;
+import nl.ai.rug.oop.rpg.model.MysteryGame;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class ForegroundPanel extends JPanel {
+
+    Hashtable<Integer, JButton> btnsDict = new Hashtable<>();
+    //ArrayList<Item> gameItems = new ArrayList<>(); // todo: have this in the model
+    /*public ForegroundPanel(ArrayList<Item> gameItems) throws IOException {
+        setLayout(null);
+        setBounds(0,0,1067,600);
+        setOpaque(false);
+        addDoorBtns();
+        btnsDict.put((Integer)1, newBtn(gameItems.get(1))); // also game.getItems.get(1).getXCoord() and .getYCoord()
+
+    }*/
+
+    //public void set(int roomIdx) {
+
+    //}
+
     private ArrayList<JButton> btns = new ArrayList<>();
     public void set(int roomIdx) throws IOException {
         setLayout(null);
         setBounds(0,0,1067,600);
         setOpaque(false);
-        btns.clear();
+        btnsDict.clear();
         switch(roomIdx) {
             case 0:
                 addDoorBtns();
-                btns.add(newBtn("euro", 0.05, 520,150));
-                btns.add(newBtn("shadow-sam", 0.5, 470, 260));
-                btns.add(newBtn("cleaning-supplies", 0.15, 845, 345));
+                btns.add(newBtn("items/euro", 0.2, 500, 100));
+                btns.add(newBtn("npcs/sam", 0.5, 470, 260));
+                btns.add(newBtn("items/cleaning-supplies", 0.15, 845, 345));
                 break;
             case 1:
-                btns.add(newBtn("davey", 1.5, 130, 210));
-                btns.add(newBtn("electric-panel", 0.58, 705, 165));
+                btns.add(newBtn("npcs/davey", 1.5, 130, 210));
+                btns.add(newBtn("items/electric-panel", 0.58, 705, 165));
                 break;
             case 2:
-                btns.add(newBtn("sam", 1.3, 800, 280));
+                btns.add(newBtn("npcs/sam", 1.3, 800, 280));
                 break;
             case 3:
-                btns.add(newBtn("kyle", 1.3, 800, 280));
+                btns.add(newBtn("npcs/kyle", 1.3, 800, 280));
             case 4:
-                btns.add(newBtn("alex", 1.3, 800, 280));
+                btns.add(newBtn("npcs/alex", 1.3, 800, 280));
             case 5:
-                btns.add(newBtn("melvin", 1.3, 800, 280));
+                btns.add(newBtn("npcs/melvin", 1.3, 800, 280));
             case 6:
 
         }

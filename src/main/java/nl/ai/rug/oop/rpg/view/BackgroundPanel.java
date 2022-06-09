@@ -21,7 +21,7 @@ public class BackgroundPanel extends JLayeredPane {
     public void set(int roomIdx) throws IOException { // todo: 4csanad - use this to update background
         foregroundPanel.removeAll();
         removeAll();
-        Image roomImg = ImageIO.read(new File("src/main/resources/" + roomIdx + "room.png"));
+        Image roomImg = ImageIO.read(new File("src/main/resources/rooms/room"+ roomIdx + ".png"));
         roomImg = roomImg.getScaledInstance(1067, 600, Image.SCALE_SMOOTH);
         lbl.setIcon(new ImageIcon(roomImg));
         add(lbl, (Integer)0);

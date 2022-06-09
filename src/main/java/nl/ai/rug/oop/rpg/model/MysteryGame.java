@@ -44,7 +44,7 @@ public class MysteryGame {
         }
 
         for (int i = 0; i < NUMBER_OF_NPCS; i++) {
-            NPC npc = new NPC(i, detective.getDetectiveKind());
+            NPC npc = new NPC(i, 0/*, detective.getDetectiveKind()*/); //commented this bc view won't run bc detective is null
             this.rooms.get(npc.getRoomNumber()).addNPC(npc);
         }
     }
