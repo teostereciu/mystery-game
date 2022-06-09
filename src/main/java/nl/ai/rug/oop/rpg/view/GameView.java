@@ -31,6 +31,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        game.addListener(this);
         revalidate();
         setVisible(true);
     }
@@ -80,6 +81,10 @@ public class GameView extends JFrame implements PropertyChangeListener {
         backgroundPanel.set(roomIdx);
         navigationPanel.enableBtn(roomIdx != 0);
         locationPanel.update(roomIdx);
+        SwingUtilities.updateComponentTreeUI(this);
+        SwingUtilities.updateComponentTreeUI(backgroundPanel);
+        SwingUtilities.updateComponentTreeUI(navigationPanel);
+        SwingUtilities.updateComponentTreeUI(locationPanel);
     }
 
     /**

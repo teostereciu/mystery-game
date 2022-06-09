@@ -13,6 +13,11 @@ public class BackgroundPanel extends JLayeredPane {
     private JLabel lbl = new JLabel("");
     private ForegroundPanel foregroundPanel;
     private MysteryGame game;
+
+    public ForegroundPanel getForegroundPanel() {
+        return foregroundPanel;
+    }
+
     public BackgroundPanel(MysteryGame game) throws IOException {
         this.game = game;
         foregroundPanel = new ForegroundPanel(game);
@@ -32,6 +37,7 @@ public class BackgroundPanel extends JLayeredPane {
         add(lbl, (Integer)0);
         foregroundPanel.set(roomIdx);
         add(foregroundPanel, (Integer)1);
+        SwingUtilities.updateComponentTreeUI(this);
     }
 
     /*@Override

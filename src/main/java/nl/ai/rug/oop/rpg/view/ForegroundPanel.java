@@ -39,7 +39,11 @@ public class ForegroundPanel extends JPanel {
         setBounds(0,0,1067,600);
         setOpaque(false);
         btnsDict.clear();
-        switch(roomIdx) {
+        if (roomIdx == 0) {
+            addDoorBtns();
+        }
+        SwingUtilities.updateComponentTreeUI(this);
+        /*switch(roomIdx) {
             case 0:
                 addDoorBtns();
                 btns.add(newBtn("items/euro", 0.2, 500, 100));
@@ -61,7 +65,7 @@ public class ForegroundPanel extends JPanel {
                 btns.add(newBtn("npcs/melvin", 1.3, 800, 280));
             case 6:
 
-        }
+        }*/
     }
     private JButton newBtn(String name, double scale, int x, int y) throws IOException { // todo: 4csanad stuff here
         Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
@@ -83,9 +87,10 @@ public class ForegroundPanel extends JPanel {
         ArrayList<JButton> btns = new ArrayList<>();
         for(int i = 0; i < 6; i ++) {
             btns.add(new JButton());
-            btns.get(i).setOpaque(false);
-            btns.get(i).setContentAreaFilled(false);
-            btns.get(i).setBorderPainted(false);
+            //btns.get(i).setOpaque(false);
+            //btns.get(i).setContentAreaFilled(false);
+            //btns.get(i).setBorderPainted(false);
+            //btns.get(i).setEnabled(true);
             btns.get(i).addActionListener(new RoomChooser(game, i + 1)); // todo: import game
             switch (i) {
                 case 0 -> btns.get(i).setBounds(40, 270, 110, 210); // note: this leads to room1 (common area)
