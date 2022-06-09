@@ -13,7 +13,6 @@ public class NPC {
     private String NPCname;
     private int roomNumber;
     private Image img;
-    private final double scale = 1.3;
     private final int dialogueType;
 
     public NPC(int number, int dialogueType){
@@ -30,7 +29,7 @@ public class NPC {
         }
         try {
             img = ImageIO.read(new File("src/main/resources/npcs/" + NPCname + ".png"));
-            img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
+            img = img.getScaledInstance((int) (img.getWidth(null) * 1.3), (int) (img.getHeight(null) * 1.3), Image.SCALE_SMOOTH);
         } catch (IOException e) {
             //e.printStackTrace();
             //throw new RuntimeException(e);
