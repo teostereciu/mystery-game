@@ -44,7 +44,12 @@ public class MysteryGame {
         }
 
         for (int i = 0; i < NUMBER_OF_NPCS; i++) {
+//<<<<<<< HEAD
             NPC npc = new NPC(i, 0/*, detective.getDetectiveKind()*/); //commented this bc view won't run bc detective is null
+//=======
+            //TODO  NPC npc = new NPC(i, detective.getDetectiveKind());
+            //NPC npc = new NPC(i, 0); //teo commented this
+//>>>>>>> ef9265a43598cc7766b7ed7bbe69570a906138b6
             this.rooms.get(npc.getRoomNumber()).addNPC(npc);
         }
     }
@@ -82,7 +87,7 @@ public class MysteryGame {
      */
     public void setCurrentRoom(int number) {
         currentRoom = number;
-        //should notify the controller (or view?) that the room has changed
+        //TODO should notify the controller (or view?) that the room has changed
     }
 
     /**
@@ -100,21 +105,21 @@ public class MysteryGame {
      * @param itemNumber is the number of the item that is picked up/interacted with
      */
 
-    // Make it an int function with return 0 if failed and 1 if picked up/interacted
+    //TODO  Make it an int function with return 0 if failed and 1 if picked up/interacted
     public void itemInteraction(int itemNumber) {
         if (itemNumber > pickedUpItems + TOTAL_INVENTORY_SLOTS) {
-            //print statement that this object is not of interest to the detective as of yet
+            //TODO print statement that this object is not of interest to the detective as of yet
             return;
         }
         int slotnumber;
         Item item = rooms.get(currentRoom).getRoomItem(itemNumber);
         if (item == null) {
-            //print an error statement
+            //TODO print an error statement
             return;
         } else if (item.getIsCarryAble() == 1) {
             slotnumber = inventory.addToInventory(item);
         } else {
-            //print interaction statement
+            //TODO print interaction statement
         }
         pickedUpItems++;
     }
