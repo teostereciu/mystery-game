@@ -5,7 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bg-shadow-npcs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items/cleaning-supplies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items/electric-panel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items/euro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/bg-shadow-npcs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/items/cleaning-supplies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/items/electric-panel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/items/euro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs-no-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs/alex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs/davey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs/kyle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs/melvin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs/sam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/npcs/stacey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/rooms/room0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/rooms/room1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/shadow-npcs copy 7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/shadow-npcs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs-no-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs/alex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs/davey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs/kyle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs/melvin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs/sam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/npcs/stacey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/rooms/room0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/rooms/room1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/shadow-npcs copy 7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/shadow-npcs.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

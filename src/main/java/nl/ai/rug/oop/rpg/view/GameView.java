@@ -90,6 +90,10 @@ public class GameView extends JFrame implements PropertyChangeListener {
      */
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-
+        try {
+            updateRoom(game.getCurrentRoom());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -92,6 +92,9 @@ public class MysteryGame {
         currentRoom = number;
         notifyListeners();
     }
+    public int getCurrentRoom() {
+        return currentRoom;
+    }
 
     /**
      * checks if room is open
