@@ -1,4 +1,6 @@
 package nl.ai.rug.oop.rpg.model;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.util.*;
 
@@ -6,6 +8,7 @@ import java.util.*;
  * @Author Daniël
  */
 public class MysteryGame {
+    Collection<PropertyChangeListener> listeners = new ArrayList<>();
     public final int NUMBER_OF_ROOMS = 7;
     public final int NUMBER_OF_ITEMS = 17;
     public final int NUMBER_OF_NPCS = 6;
@@ -87,7 +90,7 @@ public class MysteryGame {
      */
     public void setCurrentRoom(int number) {
         currentRoom = number;
-        //TODO should notify the controller (or view?) that the room has changed
+        notifyListeners();
     }
 
     /**
@@ -168,4 +171,25 @@ public class MysteryGame {
         MysteryGame mysteryGame = new MysteryGame();
         mysteryGame.playGame();
     }
+
+    /**
+     * Used to add listeners.
+     * @param listener
+     * @author Csanád Végh
+     */
+    public void addListener(PropertyChangeListener listener) {
+        listeners.add(listener);
+    }
+
+    /**
+     * Notifies listeners.
+     * @author Csanád Végh
+     */
+    private void notifyListeners() {
+        PropertyChangeEvent payload = new PropertyChangeEvent(this, "game", null, null);
+        for (PropertyChangeListener listener : listeners) {
+            listener.propertyChange(payload);
+        }
+    }
+}
 }
