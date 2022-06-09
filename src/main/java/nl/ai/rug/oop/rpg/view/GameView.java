@@ -22,7 +22,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private void init() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Mystery Game");
-        setSize(1230, 680);
+        setSize(960, 580);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(0, 0));
         setResizable(false);

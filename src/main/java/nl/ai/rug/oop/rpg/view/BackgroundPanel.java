@@ -21,8 +21,8 @@ public class BackgroundPanel extends JLayeredPane {
     public BackgroundPanel(MysteryGame game) throws IOException {
         this.game = game;
         foregroundPanel = new ForegroundPanel(game);
-        setPreferredSize(new Dimension(1067, 600));
-        lbl.setBounds(0,0,1067,600);
+        setPreferredSize(new Dimension(800, 500));
+        lbl.setBounds(0,0,800,500);
         set(0);
     }
     public void removeBtnFromFG(int id) {
@@ -31,8 +31,8 @@ public class BackgroundPanel extends JLayeredPane {
     public void set(int roomIdx) throws IOException { // todo: 4csanad - use this to update background
         foregroundPanel.removeAll();
         removeAll();
-        Image roomImg = ImageIO.read(new File("src/main/resources/rooms/room"+ roomIdx + ".png"));
-        roomImg = roomImg.getScaledInstance(1067, 600, Image.SCALE_SMOOTH);
+        Image roomImg = ImageIO.read(new File("src/main/resources/rooms/pxroom"+ roomIdx + ".png"));
+        //roomImg = roomImg.getScaledInstance(1067, 600, Image.SCALE_SMOOTH);
         lbl.setIcon(new ImageIcon(roomImg));
         add(lbl, (Integer)0);
         foregroundPanel.set(roomIdx);
