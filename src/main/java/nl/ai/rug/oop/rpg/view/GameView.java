@@ -1,15 +1,11 @@
 package nl.ai.rug.oop.rpg.view;
 
-import nl.ai.rug.oop.rpg.model.Inventory;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -25,7 +21,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
 
     private void init() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Mystery Game"); // todo: find a different title for the game?
+        setTitle("Mystery Game");
         setSize(1230, 680);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(0, 0));
