@@ -12,7 +12,7 @@ public class MysteryGame {
     public final int NUMBER_OF_ROOMS = 7;
     public final int NUMBER_OF_ITEMS = 17;
     public final int NUMBER_OF_NPCS = 6;
-    public final int TOTAL_INVENTORY_SLOTS = 4;
+    public final int TOTAL_INVENTORY_SLOTS = 5;
     private int currentRoom;
 
     private Detective detective;
@@ -53,7 +53,7 @@ public class MysteryGame {
             //TODO  NPC npc = new NPC(i, detective.getDetectiveKind());
             //NPC npc = new NPC(i, 0); //teo commented this
 //>>>>>>> ef9265a43598cc7766b7ed7bbe69570a906138b6
-            this.rooms.get(npc.getRoomNumber()).addNPC(npc);
+            this.rooms.get(npc.getRoomNumber()).setNPC(npc);
         }
     }
 
@@ -135,6 +135,18 @@ public class MysteryGame {
         Item item = inventory.removeFromInventory(itemNumber);
     }
 
+    /* everything with regard to NPCs */
+
+    public void getDialogue() {
+        int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*10 + 1;
+        String dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
+        while (dialogue != null) {
+            //TODO print dialogue to view
+            dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
+        }
+
+    }
+
     /* everything with regard to gameState */
 
     /**
@@ -196,6 +208,12 @@ public class MysteryGame {
         }
     }
 
+
+    /**
+     * @Author Teo
+     * @param roomIdx
+     * @return
+     */
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
     }

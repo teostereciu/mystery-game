@@ -13,7 +13,7 @@ import java.util.List;
 public class Room {
     public final int roomNumber;
     private List<Item> roomItems = new ArrayList<>();
-    private List<NPC> NPCs = new ArrayList<>();
+    private NPC npc;
     private int isOpen;
     private Image img;
 
@@ -46,8 +46,12 @@ public class Room {
         return null;
     }
 
-    public void addNPC(NPC npc) {
-        NPCs.add(npc);
+    public void setNPC(NPC npc) {
+        this.npc = npc;
+    }
+
+    public NPC getNPC() {
+        return npc;
     }
 
     public int getIsOpen() {
@@ -64,8 +68,5 @@ public class Room {
 
     public List<Item> getRoomItems() {
         return roomItems;
-    }
-    public NPC getNPC() {
-        return NPCs.get(0); // note from teo: we have at most one npc in each room
     }
 }

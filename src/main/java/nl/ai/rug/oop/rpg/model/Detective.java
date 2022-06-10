@@ -12,26 +12,26 @@ public class Detective {
      * @param detectiveName which detective is chosen
      */
     public Detective(String detectiveName){
-        if (detectiveName.equals("Sarah Salwitt")) {
+        if (detectiveName.equals("Good Cop")) {
             this.detectiveName = detectiveName;
-            SarahSalwitt();
-        } else { /* detectiveName == "Doctor Dormitory" */
+            GoodCop();
+        } else { /* detectiveName == "Bad Cop" */
             this.detectiveName = detectiveName;
-            DoctorDormitory();
+            BadCop();
         }
     }
 
     /**
      * Creates detective 0
      */
-    private void SarahSalwitt() {
+    private void GoodCop() {
         this.detectiveKind = 0;
     }
 
     /**
      * Creates detective 1
      */
-    private void DoctorDormitory() {
+    private void BadCop() {
         this.detectiveKind = 1;
     }
 

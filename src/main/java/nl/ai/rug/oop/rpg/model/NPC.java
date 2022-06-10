@@ -15,9 +15,14 @@ public class NPC {
     private int roomNumber;
     private Image img;
     private final int dialogueType;
+    private NPCDialogue dialogue;
+    private int dialogueCounter;
 
     public NPC(int number, int dialogueType){
         this.dialogueType = dialogueType;
+        this.dialogue = new NPCDialogue(number, dialogueType);
+        NPCNumber = number;
+        dialogueCounter = 0;
         switch (number) {
             case (0) -> this.Stacey();
             case (1) -> this.Samantha();
@@ -27,6 +32,8 @@ public class NPC {
             case (5) -> this.Kyle();
             default -> {
             }
+
+
         }
         try {
             img = ImageIO.read(new File("src/main/resources/npcs/" + NPCname + ".png"));
@@ -78,13 +85,29 @@ public class NPC {
         return roomNumber;
     }
 
+    public String getName() {
+        return NPCname;
+    }
+
     public Image getImg() {
         return img;
     }
 
-    public String getName() { // teo
-        return NPCname;
+    public int getNPCNumber() {
+        return NPCNumber;
     }
+
+    public int getDialogueCounter() {
+        return dialogueCounter;
+    }
+
+    public NPCDialogue getDialogue() {
+        return dialogue;
+    }
+
+    /**
+     * @Author Teo
+     */
     private final HashMap<String, Integer> coords = new HashMap<>();
     public HashMap<String, Integer> getCoords() { // teo
         return coords;
