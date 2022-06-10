@@ -2,10 +2,12 @@ package nl.ai.rug.oop.rpg.view;
 
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -16,49 +18,70 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private final MysteryGame game = new MysteryGame(); // note: update this if constructor changes
     public GameView() {
         init();
-        revalidate();
+        /*JLayeredPane welcomePanel = new JLayeredPane();
+        JLabel bgLabel = new JLabel();
+        bgLabel.setBounds(0, 0, 800, 500);
+        welcomePanel.setBounds(0, 0, 800, 500);
+        try {
+            Image bgImage = ImageIO.read(new File("src/main/resources/detective-choice.png"));
+            bgLabel.setIcon(new ImageIcon(bgImage));
+        } catch (IOException e) {
+            throw new RuntimeException();
+        }
+        welcomePanel.add(bgLabel, 0);
+        JPanel choicePanel = new JPanel(null);
+        choicePanel.setBounds(0, 0, 800, 500);
+        JButton goodCopButton = new JButton();
+        JButton badCopButton = new JButton();
+        goodCopButton.setBounds(190, 60, 180, 160);
+        badCopButton.setBounds(400, 60, 180, 160);
+
+        choicePanel.add(goodCopButton);
+        choicePanel.add(badCopButton);
+        welcomePanel.add(choicePanel, 1);
+        add(welcomePanel, BorderLayout.CENTER);
+        setVisible(true);*/
+        /**/
+        //pack();
+        game.addListener(this);
     }
 
     private void init() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Mystery Game");
-        setSize(960, 580);
-        setLocationRelativeTo(null);
+        //setSize(800, 500);
+
         setLayout(new BorderLayout(0, 0));
         setResizable(false);
-        try {
-            setPanels();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        game.addListener(this);
-        revalidate();
+        add(roomPanel, BorderLayout.CENTER);
+        pack();
+        setLocationRelativeTo(null);
         setVisible(true);
+        setPanels();
     }
     private InventoryPanel inventoryPanel = new InventoryPanel();
     private DialoguePanel dialoguePanel = new DialoguePanel();
     private LocationPanel locationPanel = new LocationPanel();
     private NavigationPanel navigationPanel = new NavigationPanel(game);
-    private BackgroundPanel backgroundPanel;
-    /*private BufferedImage readImage(File file) {
-        try {
-            return ImageIO.read(file);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-    private void setPanels() throws IOException {
-        try {
-            backgroundPanel = new BackgroundPanel(game);
-        } catch (IOException e) {
-            System.out.println("File not found.");
-            throw new RuntimeException();
-        }
-        add(backgroundPanel, BorderLayout.CENTER);
+    private RoomPanel roomPanel = new RoomPanel();
+    private void setPanels() {
+        //setSize(960, 580);
+        //try {
+
+        //} catch (IOException e) {
+        //    System.out.println("File not found.");
+        //    throw new RuntimeException();
+        //}
+
         add(inventoryPanel, BorderLayout.EAST);
         add(dialoguePanel, BorderLayout.SOUTH);
         add(locationPanel, BorderLayout.NORTH);
         add(navigationPanel, BorderLayout.WEST);
+        roomPanel.init(game);
+        add(roomPanel, BorderLayout.CENTER);
+        pack();
+        setLocationRelativeTo(null);
+
         /*try {
             inventoryPanel.addItem("euro",0.1,0);
         } catch (IOException e) {
@@ -77,12 +100,12 @@ public class GameView extends JFrame implements PropertyChangeListener {
         }*/
     }
 
-    private void updateRoom(int prevIdx, int destIdx) throws IOException { // todo learn/decide what to do with IOExceptions
-        backgroundPanel.set(prevIdx, destIdx);
-        navigationPanel.enableBtn(destIdx != 0);
-        locationPanel.update(destIdx);
+    private void updateRoom() throws IOException { // todo learn/decide what to do with IOExceptions
+        roomPanel.set();
+        navigationPanel.enableBtn(game.getCurrentRoom() != 0);
+        locationPanel.update(game.getCurrentRoom());
         SwingUtilities.updateComponentTreeUI(this);
-        SwingUtilities.updateComponentTreeUI(backgroundPanel);
+        SwingUtilities.updateComponentTreeUI(roomPanel);
         SwingUtilities.updateComponentTreeUI(navigationPanel);
         SwingUtilities.updateComponentTreeUI(locationPanel);
     }
@@ -96,7 +119,8 @@ public class GameView extends JFrame implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         try {
-            updateRoom(game.getPreviousRoomIdx(), game.getCurrentRoom());
+            System.out.println("Update room from " + game.getPreviousRoomIdx() + " to " + game.getCurrentRoom());
+            updateRoom();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

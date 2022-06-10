@@ -25,12 +25,15 @@ public class Item {
         isCarryAble = 1;
         switch (itemNumber) {
             case(0):
-                itemName = "Hat";
+                itemName = "hat";
                 roomNumber = 2;
+                coords.put("x", 360);
+                coords.put("y", 150);
             case(1):
                 itemName = "euro";
                 coords.put("x", 380);
                 coords.put("y", 50);
+                roomNumber = 0;
                 break;
             case(2):
                 itemName = "Phone";
@@ -38,8 +41,10 @@ public class Item {
                 isCarryAble = 0;
                 break;
             case(3):
-                itemName = "Coffee";
+                itemName = "coffee";
                 roomNumber = 1;
+                coords.put("x", 230);
+                coords.put("y", 210);
                 break;
             case(4):
                 itemName = "cleaning-supplies";
@@ -61,8 +66,10 @@ public class Item {
                 isCarryAble = 0;
                 break;
             case(8):
-                itemName = "Hammer";
+                itemName = "hammer";
                 roomNumber = 1;
+                coords.put("x", 710);
+                coords.put("y", 280);
                 break;
             case(9):
                 itemName = "Locked desk";
@@ -70,8 +77,10 @@ public class Item {
                 isCarryAble = 0;
                 break;
             case(10):
-                itemName = "Screwdriver";
+                itemName = "screwdriver";
                 roomNumber = 2;
+                coords.put("x", 450);
+                coords.put("y", 400);
                 break;
             case(11):
                 itemName = "Scissors";
@@ -85,6 +94,8 @@ public class Item {
                 itemName = "electrical-panel";
                 roomNumber = 1;
                 isCarryAble = 0;
+                coords.put("x", 360);
+                coords.put("y", 150);
                 break;
             case(14):
                 itemName = "Safe";

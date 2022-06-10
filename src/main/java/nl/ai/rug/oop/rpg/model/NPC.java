@@ -48,6 +48,8 @@ public class NPC {
         NPCNumber = 1;
         NPCname = "sam";
         roomNumber = 2;
+        coords.put("x", 70);
+        coords.put("y", 100);
     }
     private void Davey() {
         NPCNumber = 2;

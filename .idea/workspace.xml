@@ -5,44 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/items/electrical-panel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/RoomPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/detective-choice.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/2022_Project_023.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2022_Project_023.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/BackgroundPanel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items/cleaning-supplies.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/items/cleaning-supplies.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items/electric-panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items/euro.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/items/euro.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items/pxcleaning-supplies.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items/pxelectric-panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items/pxeuro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/alex.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/npcs/alex.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/davey.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/npcs/davey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/kyle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/npcs/kyle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/melvin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/npcs/melvin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/pxalex.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/pxdavey.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/pxkyle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/pxmelvin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/pxsam.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/pxstacey.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/sam.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/npcs/sam.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/npcs/stacey.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/npcs/stacey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/rooms/pxroom0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/rooms/pxroom1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/rooms/room0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rooms/room0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/rooms/room1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rooms/room1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/MysteryGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/MysteryGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/NPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/NPC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/BackgroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/BackgroundPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/BackgroundPanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/ForegroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/ForegroundPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/LocationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/LocationPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +51,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -81,6 +63,11 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-18.0.1.1" />

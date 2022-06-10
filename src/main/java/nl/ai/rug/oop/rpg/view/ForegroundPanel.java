@@ -4,6 +4,7 @@ import nl.ai.rug.oop.rpg.controller.RoomChooser;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 import nl.ai.rug.oop.rpg.model.Room;
+import org.jetbrains.annotations.NotNull;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -12,13 +13,40 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 
 public class ForegroundPanel extends JPanel {
 
     private ArrayList<JButton> itemBtns = new ArrayList<>();
     private MysteryGame game;
-    public ForegroundPanel(MysteryGame game, int roomIdx) {
+    public ForegroundPanel(int width, int height) {
+        setLayout(null);
+        setBounds(0, 0, width, height);
+        setOpaque(false);
+    }
+
+    public void set(@NotNull MysteryGame game) {
+        if (this.game == null) {
+            this.game = game;
+        }
+        if (game.getCurrentRoom() == 0) {
+            addDoorButtons();
+        }
+        for (Item currentItem : game.getRoom(game.getCurrentRoom()).getRoomItems()) {
+            try {
+                newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
+            } catch (IOException e) {
+                System.out.println(currentItem.getItemName() + ".png not found.");
+                throw new RuntimeException(e);
+            }
+        }
+        try {
+            newButton("npcs/" + game.getRoom(game.getCurrentRoom()).getNPC().getName(), game.getRoom(game.getCurrentRoom()).getNPC().getCoords());
+        } catch (IOException e) {
+            System.out.println(game.getRoom(game.getCurrentRoom()).getNPC().getName() + ".png not found.");
+            throw new RuntimeException(e);
+        }
+    }
+    /*public ForegroundPanel(@NotNull MysteryGame game, int roomIdx) {
         this.game = game;
         Room room = game.getRoom(roomIdx);
         setLayout(null);
@@ -42,7 +70,7 @@ public class ForegroundPanel extends JPanel {
             //System.out.println("NPC missing: " + room.getNPC().getName());
             throw new RuntimeException(e);
         }
-    }
+    }*/
     /*public void set(int roomIdx) throws IOException {
         setLayout(null);
         setBounds(0,0,800,500);
@@ -77,10 +105,10 @@ public class ForegroundPanel extends JPanel {
 
         }
     }*/
-    private JButton newBtn(String name, HashMap<String,Integer> coords) throws IOException { // todo: 4csanad stuff here
+    private JButton newButton(String name, HashMap<String,Integer> coords) throws IOException { // todo: 4csanad stuff here
         Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
-        //img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
         JButton btn = new JButton(new ImageIcon(img));
+        System.out.println(name);
         btn.setBounds(coords.get("x"), coords.get("y"), img.getWidth(null), img.getHeight(null));
         btn.setOpaque(false);
         btn.setContentAreaFilled(false);
@@ -93,7 +121,7 @@ public class ForegroundPanel extends JPanel {
         remove(itemBtns.get(id));
     }
 
-    private void addDoorBtns() {
+    private void addDoorButtons() {
         ArrayList<JButton> btns = new ArrayList<>();
         for(int i = 0; i < 6; i ++) {
             btns.add(new JButton());
@@ -113,6 +141,5 @@ public class ForegroundPanel extends JPanel {
         }
     }
 
-    public void enableButtons(boolean b) {
-    }
+
 }
