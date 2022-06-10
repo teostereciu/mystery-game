@@ -25,6 +25,7 @@ public class ForegroundPanel extends JPanel {
     }
 
     public void set(@NotNull MysteryGame game) {
+        removeAll();
         if (this.game == null) {
             this.game = game;
         }

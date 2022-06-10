@@ -59,13 +59,23 @@ public class MysteryGame {
 
     /* everything with regard to Detective */
 
-    /**
+    /*/**
      * sets the detective at the beginning of the game
      * @param detectiveName is which detective is chosen
      */
-    public void setDetective(String detectiveName) {
+    /*public void setDetective(String detectiveName) {
         Detective detective = new Detective(detectiveName);
         this.detective = detective;
+    }*/
+    public void setDetective(int isGood) { // was easier to work with an int here. kept the names in case you need them -teo
+        String detectiveName;
+        if (isGood == 0) {
+            detectiveName = "SarahSalwitt";
+        } else {
+            detectiveName = "DoctorDormitory";
+        }
+        detective = new Detective(detectiveName);
+        System.out.println("You chose detective" + detectiveName); //todo remove
     }
 
     /**
@@ -89,7 +99,6 @@ public class MysteryGame {
      * @param number the number of the new room
      */
     public void setCurrentRoom(int number) {
-        prevIdx = currentRoom;
         currentRoom = number;
         notifyListeners();
     }
@@ -198,10 +207,6 @@ public class MysteryGame {
 
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
-    }
-    private int prevIdx = 0;
-    public int getPreviousRoomIdx() { // teo
-        return prevIdx;
     }
 }
 
