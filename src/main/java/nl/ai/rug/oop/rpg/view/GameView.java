@@ -49,22 +49,19 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private void init() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Mystery Game");
-        //setSize(800, 500);
-
         setLayout(new BorderLayout(0, 0));
         setResizable(false);
         add(roomPanel, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-        setPanels();
     }
     private InventoryPanel inventoryPanel = new InventoryPanel();
     private DialoguePanel dialoguePanel = new DialoguePanel();
     private LocationPanel locationPanel = new LocationPanel();
     private NavigationPanel navigationPanel = new NavigationPanel(game);
-    private RoomPanel roomPanel = new RoomPanel();
-    private void setPanels() {
+    private RoomPanel roomPanel = new RoomPanel(game, this);
+    public void setPanels() {
         //setSize(960, 580);
         //try {
 
@@ -77,7 +74,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         add(dialoguePanel, BorderLayout.SOUTH);
         add(locationPanel, BorderLayout.NORTH);
         add(navigationPanel, BorderLayout.WEST);
-        roomPanel.init(game);
+        roomPanel.init();
         add(roomPanel, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(null);
@@ -119,7 +116,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         try {
-            System.out.println("Update room from " + game.getPreviousRoomIdx() + " to " + game.getCurrentRoom());
+            //System.out.println("Update room from " + game.getPreviousRoomIdx() + " to " + game.getCurrentRoom());
             updateRoom();
         } catch (IOException e) {
             throw new RuntimeException(e);
