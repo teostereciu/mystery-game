@@ -36,8 +36,10 @@ public class Item {
                 roomNumber = 0;
                 break;
             case(2):
-                itemName = "Phone";
+                itemName = "phone";
                 roomNumber = 3;
+                coords.put("x", 380);
+                coords.put("y", 50); //todo change
                 isCarryAble = 0;
                 break;
             case(3):
@@ -53,8 +55,10 @@ public class Item {
                 coords.put("y", 270);
                 break;
             case(5):
-                itemName = "Flashlight";
+                itemName = "flashlight";
                 roomNumber = 3;
+                coords.put("x", 170);
+                coords.put("y", 270); //todo change
                 break;
             case(6):
                 itemName = "Video Tape";
@@ -98,13 +102,17 @@ public class Item {
                 coords.put("y", 150);
                 break;
             case(14):
-                itemName = "Safe";
+                itemName = "safe";
                 roomNumber = 3;
                 isCarryAble = 0;
+                coords.put("x", 360);
+                coords.put("y", 150); //todo change
                 break;
             case(15):
-                itemName = "Key";
+                itemName = "key";
                 roomNumber = 3;
+                coords.put("x", 360);
+                coords.put("y", 150); //todo change
                 break;
             case(16):
                 itemName = "Beer Crate";

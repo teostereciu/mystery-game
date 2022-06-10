@@ -79,6 +79,8 @@ public class NPC {
         this.NPCNumber = 5;
         this.NPCname = "kyle";
         roomNumber = 3;
+        coords.put("x", 70);
+        coords.put("y", 100);
     }
 
     public int getRoomNumber() {

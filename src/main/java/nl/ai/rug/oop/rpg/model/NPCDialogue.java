@@ -6,7 +6,11 @@ import java.util.HashMap;
 public class NPCDialogue {
 
     private HashMap<Integer, String> dialogueMap = new HashMap<>();
+    private int currentKey = 0; // teo
 
+    public void setLine(int key) {
+        currentKey = key;
+    }
     public NPCDialogue(int NPCnumber, int dialoguetype) {
         switch (NPCnumber) {
             case(0):
