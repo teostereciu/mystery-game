@@ -97,7 +97,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         }*/
     }
 
-    private void updateRoom() throws IOException { // todo learn/decide what to do with IOExceptions
+    private void updateRoom() throws IOException {
         roomPanel.set();
         navigationPanel.enableBtn(game.getCurrentRoom() != 0);
         locationPanel.update(game.getCurrentRoom());
