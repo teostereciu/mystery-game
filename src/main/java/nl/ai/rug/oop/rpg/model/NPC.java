@@ -1,9 +1,6 @@
 package nl.ai.rug.oop.rpg.model;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 
 /**
@@ -13,7 +10,6 @@ public class NPC {
     private int NPCNumber;
     private String NPCname;
     private int roomNumber;
-    private Image img;
     private final int dialogueType;
     private NPCDialogue dialogue;
     private int dialogueCounter;
@@ -81,10 +77,6 @@ public class NPC {
         return NPCname;
     }
 
-    public Image getImg() {
-        return img;
-    }
-
     public int getNPCNumber() {
         return NPCNumber;
     }
@@ -101,9 +93,6 @@ public class NPC {
         dialogueCounter ++;
     }
 
-    public NPCDialogue getDialogue() {
-        return dialogue;
-    }
 
     /**
      * @Author Teo

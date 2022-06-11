@@ -6,12 +6,17 @@ import java.util.HashMap;
 public class NPCDialogue {
 
     private HashMap<Integer, String> dialogueMap = new HashMap<>();
-    private int currentKey = 0; // teo
+    private int currentKey = 0;
 
     public void setLine(int key) {
         currentKey = key;
     }
-    public void increaseLine() { currentKey++; }
+    public void increaseLine() {
+        currentKey++;
+        if (currentKey%10 == 0) {
+            currentKey = 0;
+        }
+    }
     public NPCDialogue(int NPCnumber, int dialoguetype) {
         switch (NPCnumber) {
             case(0):
@@ -50,9 +55,15 @@ public class NPCDialogue {
     private void stacey(){
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Thanks so much for helping me. I really need to find this beer, or else the party will be a disaster!");
-        dialogueMap.put(2, "You can look anywhere in the dorm to find it, but you’ll first need approval to enter anyone’s bedroom – we take privacy seriously here. So make sure you ask before entering! You can obviously go into mine straight away.");
-        dialogueMap.put(3, "You should start by talking to Davey. He is always hanging out in the living room. Maybe he saw something? In the meantime,  I'll make a batch of coffee for you. Cops like that, right?");
-        dialogueMap.put(4, "If you want any other information about the place or my housemates, just let me know!");
+        dialogueMap.put(2, "You can look anywhere in the dorm to find it, but you’ll first need approval to enter anyone’s bedroom.");
+        dialogueMap.put(3, "We take privacy seriously here. So make sure you ask before entering!");
+        dialogueMap.put(4, "You can obviously go into mine straight away.");
+        dialogueMap.put(5, "You should start by talking to Davey. He is always hanging out in the living room. Maybe he saw something?");
+        dialogueMap.put(6, "In the meantime,  I'll make a batch of coffee for you. Cops like that, right?");
+        dialogueMap.put(7, "If you want any other information about the place or my housemates, just let me know!");
+        dialogueMap.put(8, "8");
+        dialogueMap.put(9, "9");
+        dialogueMap.put(10, "0");
 
         /* Second interaction dialogue (After getting hat) */
         dialogueMap.put(11, "Hey, still making that coffee! did you find the beer yet?");
