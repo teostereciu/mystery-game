@@ -16,7 +16,6 @@ import java.io.IOException;
 public class RoomPanel extends JLayeredPane {
     private final int ROOM_WIDTH = 800;
     private final int ROOM_HEIGHT = 500;
-
     //private int detectiveChoice;
     private final MysteryGame game;
     private JLabel roomBackgroundLabel;

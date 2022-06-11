@@ -1,7 +1,6 @@
 package nl.ai.rug.oop.rpg.controller;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
-import nl.ai.rug.oop.rpg.view.GameView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +14,6 @@ public class ItemChooser implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        modelGame.updateInventory(modelItem, 1);
+        // modelGame.getInventory(),addItemToInventory(item);
     }
 }
