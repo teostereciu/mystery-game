@@ -245,6 +245,13 @@ public class MysteryGame {
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
     }
-
+    public int updateInventory(Item item) {
+        int slot = inventory.addToInventory(item);
+        notifyListeners();
+        return slot;
+    }
+    public Inventory getInventory() {
+        return inventory;
+    }
 }
 
