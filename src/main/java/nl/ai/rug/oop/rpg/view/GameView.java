@@ -57,7 +57,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         setVisible(true);
     }
     private InventoryPanel inventoryPanel = new InventoryPanel();
-    private DialoguePanel dialoguePanel = new DialoguePanel(game);
+    private DialoguePanel dialoguePanel = new DialoguePanel();
     private LocationPanel locationPanel = new LocationPanel();
     private NavigationPanel navigationPanel = new NavigationPanel(game);
     private RoomPanel roomPanel = new RoomPanel(game, this);
@@ -101,7 +101,6 @@ public class GameView extends JFrame implements PropertyChangeListener {
         roomPanel.set();
         navigationPanel.enableBtn(game.getCurrentRoom() != 0);
         locationPanel.update(game.getCurrentRoom());
-        dialoguePanel.clear();
         SwingUtilities.updateComponentTreeUI(this);
         SwingUtilities.updateComponentTreeUI(roomPanel);
         SwingUtilities.updateComponentTreeUI(navigationPanel);
@@ -122,9 +121,5 @@ public class GameView extends JFrame implements PropertyChangeListener {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public void updateDialoguePanel() {
-        dialoguePanel.update();
     }
 }
