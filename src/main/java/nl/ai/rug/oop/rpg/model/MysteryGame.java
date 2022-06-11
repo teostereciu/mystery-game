@@ -13,6 +13,7 @@ public class MysteryGame {
     public final int NUMBER_OF_ITEMS = 17;
     public final int NUMBER_OF_NPCS = 6;
     public final int TOTAL_INVENTORY_SLOTS = 5;
+    public final int MAX_DIALOGUE_OPTIONS = 10; /* There are max 10 dialogue sentences per set of dialogue/progress */
     private int currentRoom;
 
     private Detective detective;
@@ -22,7 +23,7 @@ public class MysteryGame {
     private int pickedUpItems = 0;
 
 
-    //TODO: Rewrite the catch parts in NPC, ROOM and Item
+    //TODO Rewrite the catch parts in NPC, ROOM and Item
 
 
     /* everything with regard to initializing game */
@@ -134,6 +135,7 @@ public class MysteryGame {
             return;
         } else if (item.getIsCarryAble() == 1) {
             slotnumber = inventory.addToInventory(item);
+            //TODO give the slotnumber to view so it knows where to put item
         } else {
             //TODO print interaction statement
         }
@@ -145,6 +147,7 @@ public class MysteryGame {
     }
 
     /* everything with regard to NPCs */
+<<<<<<< HEAD
     private int lineCounter;
     public int getLineCounter() {
         return lineCounter;
@@ -158,6 +161,20 @@ public class MysteryGame {
         //}
         rooms.get(currentRoom).getNPC().getNPCDialogue().increaseLine();
         notifyListeners();
+=======
+
+    public void getDialogue() {
+        int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
+        String dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
+        while (dialogue != null) {
+            //TODO print dialogue to view
+            dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
+            counter++;
+            if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
+                break;
+            }
+        }
+>>>>>>> b67c5e82f2b346b2d2bc3ceb886e2b901bef4a02
     }
 
     /* everything with regard to gameState */

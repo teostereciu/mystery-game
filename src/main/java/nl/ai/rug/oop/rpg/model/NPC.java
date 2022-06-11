@@ -103,7 +103,15 @@ public class NPC {
         return dialogueCounter;
     }
 
+<<<<<<< HEAD
     public NPCDialogue getNPCDialogue() {
+=======
+    public void setDialogueCounter() {
+        dialogueCounter++;
+    }
+
+    public NPCDialogue getDialogue() {
+>>>>>>> b67c5e82f2b346b2d2bc3ceb886e2b901bef4a02
         return dialogue;
     }
 

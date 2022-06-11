@@ -42,11 +42,7 @@ public class NPCDialogue {
                 }
                 break;
             case(5):
-                if (dialoguetype == 0) {
-                    kyle1();
-                } else {
-                    kyle2();
-                }
+                kyle();
                 break;
         }
     }
@@ -194,29 +190,110 @@ public class NPCDialogue {
         dialogueMap.put(51, "I told you I didn’t do it. I don’t think I can really help you further bro. Cough cough cough…");
     }
 
-    private void kyle1() {
-
-    }
-
-    private void kyle2() {
-
+    private void kyle() {
+        /* First interaction dialogue (Start of game) */
+        dialogueMap.put(1, "Yo man, I heard the beer got stolen. That is sooo lame! If I find the loser who did this…");
     }
 
     private void alex1() {
+        /* First interaction dialogue (Start of game) */
+        dialogueMap.put(1, "Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
 
+        /* Second interaction dialogue (after watching video on computer */
+        dialogueMap.put(11, "Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(12, "Wait! Oh God, It’s not what it seems, I swear.");
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(13, "Oh Samantha, that b*tch! I’m guessing that she failed to tell you about that fight she had with Stacey earlier, huh?");
+        dialogueMap.put(14, "It’s true that I am upset that there is a planned party for tonight, as if I didn’t exist or that studying wasn’t important!");
+        dialogueMap.put(15, "That darn crate was taking up the whole fridge, so I decided I would just temporarily move it to the storage room. ");
+        dialogueMap.put(16, "But then I asked Kyle for the key, and he said he lost it. So I just left it there in front of the door. ");
+        //TODO insert detective lines
+        dialogueMap.put(17, "I don’t know! It wasn’t me though! I’ve been studying all day!");
+        dialogueMap.put(18, "Kyle might have put the key for the storage room in his safe!");
+        dialogueMap.put(19, "Go talk to Melvin for the code to the safe, but otherwise, I still have an exam tomorrow!!");
+
+        /* Third interaction dialogue (After accessing safe) */
+        dialogueMap.put(21, "Oh god, oh god, what if I don’t get a 10?!");
     }
 
     private void alex2() {
+        /* First interaction dialogue (Start of game) */
+        dialogueMap.put(1, "Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
 
+        /* Second interaction dialogue (after watching video on computer */
+        dialogueMap.put(11, "Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(12, "Wait! Oh God, It’s not what it seems, I swear.");
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(13, "Oh Samantha, that b*tch! I’m guessing that she failed to tell you about that fight she had with Stacey earlier, huh?");
+        dialogueMap.put(14, "It’s true that I am upset that there is a planned party for tonight, as if I didn’t exist or that studying wasn’t important!");
+        dialogueMap.put(15, "That darn crate was taking up the whole fridge, so I decided I would just temporarily move it to the storage room. ");
+        dialogueMap.put(16, "But then I asked Kyle for the key, and he said he lost it. So I just left it there in front of the door. ");
+        //TODO insert detective lines
+        dialogueMap.put(17, "I don’t know! It wasn’t me though! I’ve been studying all day!");
+        dialogueMap.put(18, "Kyle might have put the key for the storage room in his safe!");
+        dialogueMap.put(19, "Go talk to Melvin for the code to the safe, but otherwise, I still have an exam tomorrow!!");
+
+        /* Third interaction dialogue (After accessing safe) */
+        dialogueMap.put(21, "Oh god, oh god, what if I don’t get a 10?!");
     }
 
     private void melvin1() {
+        /* First interaction dialogue (Start of game/ black room) */
+        dialogueMap.put(1, "Can I help you?");
+        //TODO insert detective lines
+        dialogueMap.put(2, "I usually don’t talk with Cops, let alone help them.");
+        //TODO insert detective lines
+        dialogueMap.put(3, "It’s somewhere around here. Find it yourself.");
+        //TODO insert detective lines
+        dialogueMap.put(4, "I like the dark. You’ll have to use a flashlight. Davey usually has one.");
+
+        /* Second interaction dialogue (After finding flashlight) */
+        dialogueMap.put(11, "Two things. First, I usually don’t talk to police, so keep it short. And second, don’t turn on the lights.");
+
+        /* Third interaction dialogue (After watching video tape on computer) */
+        //TODO insert detective lines
+        dialogueMap.put(21, "Maybe. Maybe not. Like I said, I have my ways.");
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(22, "Let’s say I have that code. What can you do for me?");
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(23, "I need a new computer mouse. Mines broken. I have very important stuff to do, and this trackpad isn’t great for my dexterity. Get me that mouse, and the code is yours.");
+
+        /* Fourth interaction dialogue (After getting computer mouse) */
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(31, "Thanks for the help. The code is 420 – what else would you expect from a safe in the room of those two?");
+
+        /* Fourth interaction dialogue (After accessing safe) */
+        dialogueMap.put(41, "Thanks for the help. I’ve got computer stuff to get back to now.");
     }
 
     private void melvin2() {
-        //dialogue.add("Can I help you?");
-        //dialogue.add("I usually don’t talk with Cops, let alone help them.");
-        //dialogue.add("It’s somewhere around here. Find it yourself.");
+        /* First interaction dialogue (Start of game/ black room) */
+        dialogueMap.put(1, "Can I help you?");
+        //TODO insert detective lines
+        dialogueMap.put(2, "I usually don’t talk with Cops, let alone help them.");
+        //TODO insert detective lines
+        dialogueMap.put(3, "It’s somewhere around here. Find it yourself.");
+        //TODO insert detective lines
+        dialogueMap.put(4, "I like the dark. You’ll have to use a flashlight. Davey usually has one.");
+
+        /* Second interaction dialogue (After finding flashlight) */
+        dialogueMap.put(11, "Two things. First, I usually don’t talk to police, so keep it short. And second, don’t turn on the lights.");
+
+        /* Third interaction dialogue (After watching video tape on computer) */
+        //TODO insert detective lines
+        dialogueMap.put(21, "Maybe. Maybe not. Like I said, I have my ways.");
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(22, "Let’s say I have that code. What can you do for me?");
+        //TODO insert detective lines --> X/Y difference
+
+        /* Fourth interaction dialogue (After getting Scissors + screwdriver + interacting with electrical panel) */
+        //TODO insert detective lines --> X/Y difference
+        dialogueMap.put(31, "This is why I don’t trust cops. Twisted pigs. Fine, the code is 420 – what else would you expect from a safe in the room of those two?");
+
+        /* Fourth interaction dialogue (After accessing safe) */
+        dialogueMap.put(41, "You'll regret how you treated me today. I swear it…");
     }
 
     public HashMap<Integer, String> getDialogueMap() {
