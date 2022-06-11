@@ -11,6 +11,7 @@ public class NPCDialogue {
     public void setLine(int key) {
         currentKey = key;
     }
+    public void increaseLine() { currentKey++; }
     public NPCDialogue(int NPCnumber, int dialoguetype) {
         switch (NPCnumber) {
             case(0):

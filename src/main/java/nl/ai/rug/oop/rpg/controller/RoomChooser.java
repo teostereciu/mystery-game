@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 public class RoomChooser implements ActionListener {
     private MysteryGame modelGame;
     private int destIdx;
-    public RoomChooser(MysteryGame modelGame, int destIdx){
-        this.modelGame = modelGame;
+    public RoomChooser(MysteryGame game, int destIdx){
+        this.modelGame = game;
         this.destIdx = destIdx;
     }
     @Override
