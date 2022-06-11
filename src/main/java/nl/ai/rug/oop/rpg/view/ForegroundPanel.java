@@ -1,5 +1,6 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.controller.Dialoguer;
 import nl.ai.rug.oop.rpg.controller.RoomChooser;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
@@ -16,16 +17,20 @@ public class ForegroundPanel extends JPanel {
 
     private ArrayList<JButton> itemBtns = new ArrayList<>();
     private MysteryGame game;
+    private GameView frame;
     public ForegroundPanel(int width, int height) {
         setLayout(null);
         setBounds(0, 0, width, height);
         setOpaque(false);
     }
 
-    public void set(MysteryGame game) {
+    public void set(MysteryGame game, GameView frame) {
         removeAll();
         if (this.game == null) {
             this.game = game;
+        }
+        if (this.frame == null) {
+            this.frame = frame;
         }
         if (game.getCurrentRoom() == 0) {
             addDoorButtons();
@@ -39,7 +44,8 @@ public class ForegroundPanel extends JPanel {
             }
         }
         try {
-            newButton("npcs/" + game.getRoom(game.getCurrentRoom()).getNPC().getName(), game.getRoom(game.getCurrentRoom()).getNPC().getCoords());
+            JButton npcButton = newButton("npcs/" + game.getRoom(game.getCurrentRoom()).getNPC().getName(), game.getRoom(game.getCurrentRoom()).getNPC().getCoords());
+            npcButton.addActionListener(new Dialoguer(game, frame));
         } catch (IOException e) {
             System.out.println(game.getRoom(game.getCurrentRoom()).getNPC().getName() + ".png not found.");
             throw new RuntimeException(e);

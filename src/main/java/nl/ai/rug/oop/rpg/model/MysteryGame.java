@@ -145,15 +145,19 @@ public class MysteryGame {
     }
 
     /* everything with regard to NPCs */
-
-    public void getDialogue() {
-        int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*10 + 1;
-        String dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
-        while (dialogue != null) {
-            //TODO print dialogue to view
-            dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
-        }
-
+    private int lineCounter;
+    public int getLineCounter() {
+        return lineCounter;
+    }
+    public void updateDialogue() {
+         lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*10 + 1;
+        //String dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //while (dialogueLine != null) {
+         //   //TODO print dialogue to view
+         //   dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //}
+        rooms.get(currentRoom).getNPC().getNPCDialogue().increaseLine();
+        notifyListeners();
     }
 
     /* everything with regard to gameState */
@@ -226,5 +230,6 @@ public class MysteryGame {
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
     }
+
 }
 

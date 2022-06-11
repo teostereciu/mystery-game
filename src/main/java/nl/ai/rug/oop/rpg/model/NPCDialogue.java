@@ -230,4 +230,8 @@ public class NPCDialogue {
             return null;
         }
     }
+
+    public Integer getCurrentKey() {
+        return currentKey;
+    }
 }
