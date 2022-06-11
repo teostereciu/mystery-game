@@ -3,8 +3,6 @@ package nl.ai.rug.oop.rpg.view;
 import nl.ai.rug.oop.rpg.controller.RoomChooser;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
-import nl.ai.rug.oop.rpg.model.Room;
-import org.jetbrains.annotations.NotNull;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -24,7 +22,7 @@ public class ForegroundPanel extends JPanel {
         setOpaque(false);
     }
 
-    public void set(@NotNull MysteryGame game) {
+    public void set(MysteryGame game) {
         removeAll();
         if (this.game == null) {
             this.game = game;

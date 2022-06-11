@@ -111,8 +111,8 @@ public class Item {
             case(15):
                 itemName = "key";
                 roomNumber = 3;
-                coords.put("x", 360);
-                coords.put("y", 150); //todo change
+                coords.put("x", 100);
+                coords.put("y", 350); //todo change
                 break;
             case(16):
                 itemName = "Beer Crate";
