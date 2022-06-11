@@ -15,9 +15,6 @@ public class Item {
     private final int itemNumber;
     private int isCarryAble;
     private int roomNumber;
-    private double scale;
-    private Image img;
-
 
     //change names of items to the file names
     public Item(int itemNumber){
@@ -121,17 +118,6 @@ public class Item {
                 break;
             default:
         }
-        /*try {
-            img = ImageIO.read(new File("src/main/resources/items/" + itemName + ".png"));
-            img = img.getScaledInstance((int) (img.getWidth(null) * scale), (int) (img.getHeight(null) * scale), Image.SCALE_SMOOTH);
-        } catch (IOException e) {
-            //e.printStackTrace();
-            //throw new RuntimeException(e);
-        }*/
-    }
-
-    public Image getImg() {
-        return img;
     }
 
     public int getItemNumber() { return itemNumber; }

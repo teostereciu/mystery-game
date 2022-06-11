@@ -134,6 +134,7 @@ public class MysteryGame {
             return;
         } else if (item.getIsCarryAble() == 1) {
             slotnumber = inventory.addToInventory(item);
+            //TODO give the slotnumber to view so it knows where to put item
         } else {
             //TODO print interaction statement
         }
@@ -152,8 +153,11 @@ public class MysteryGame {
         while (dialogue != null) {
             //TODO print dialogue to view
             dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
+            counter++;
+            if (counter%10 == 0 ) { /* There are max 10 dialogue sentences per set of dialogue*/
+                break;
+            }
         }
-
     }
 
     /* everything with regard to gameState */
