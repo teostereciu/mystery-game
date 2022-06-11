@@ -38,17 +38,7 @@ public class NPC {
             case (5) -> this.Kyle();
             default -> {
             }
-
-
         }
-        try {
-            img = ImageIO.read(new File("src/main/resources/npcs/" + NPCname + ".png"));
-            img = img.getScaledInstance((int) (img.getWidth(null) * 1.3), (int) (img.getHeight(null) * 1.3), Image.SCALE_SMOOTH);
-        } catch (IOException e) {
-            //e.printStackTrace();
-            //throw new RuntimeException(e);
-        }
-
     }
 
     /**
@@ -155,6 +145,15 @@ public class NPC {
         dialogueCounter++;
     }
 
+    public NPCDialogue getNPCDialogue() {
+        return dialogue;
+    }
+
+    public void updateDialogueCounter() {
+        dialogueCounter ++;
+
+    }
+
     /**
      * @return the dialogue for this npc
      */
@@ -166,7 +165,8 @@ public class NPC {
      * @Author Teo
      */
     private final HashMap<String, Integer> coords = new HashMap<>();
+
     public HashMap<String, Integer> getCoords() { // teo
         return coords;
     }
-}
+    }

@@ -153,6 +153,7 @@ public class MysteryGame {
 
     /* everything with regard to NPCs */
 
+<<<<<<< HEAD
     /**
      * called by the controller to give the correct dialogue for the NPC
      */
@@ -167,7 +168,34 @@ public class MysteryGame {
                 break;
             }
         }
+=======
+    private int lineCounter;
+    public int getLineCounter() {
+        return lineCounter;
+>>>>>>> 9329c5f263ed007caf3a1e1cf1666adafe4d6150
     }
+    public void updateDialogue() {
+        lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * 10 + 1;
+        //String dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //while (dialogueLine != null) {
+        //   //TODO print dialogue to view
+        //   dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //}
+        rooms.get(currentRoom).getNPC().getNPCDialogue().increaseLine();
+        notifyListeners();
+    }
+    //public void updateDialogue() {
+        //counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
+        //String dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //while (dialogue != null) {
+            //TODO print dialogue to view
+        //    dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //    counter++;
+        //    if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
+        //        break;
+        //    }
+        //}
+   //}
 
     /**
      * Progresses the dialogue options of an NPC when an item is used/interacted with
@@ -247,5 +275,6 @@ public class MysteryGame {
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
     }
+
 }
 
