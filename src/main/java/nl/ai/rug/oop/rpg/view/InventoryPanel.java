@@ -45,12 +45,18 @@ public class InventoryPanel extends JPanel {
         btnList.get(slot).setIcon(new ImageIcon(img)); //todo: 4csanad - use this when adding an item to the inventory
     }*/
     public void update() {
-        for (int i = 0; i < game.getInvetorySize(); i ++) {
-            String name = game.getInventory().getItemsArray().get(i).getItemName();
-            try {
-                btnList.get(i).setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/items/" + name + ".png"))));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        for (int i = 0; i < 5; i ++) {
+            System.out.println("i");
+            if (game.getInventory().getItemsArray().get(i) != null) {
+                String name = game.getInventory().getItemsArray().get(i).getItemName();
+                try {
+                    btnList.get(i).setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/items/" + name + ".png"))));
+                    System.out.println("idk");
+                    btnList.get(i).setOpaque(true);
+                    btnList.get(i).setContentAreaFilled(true);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
