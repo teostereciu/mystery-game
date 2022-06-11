@@ -147,35 +147,33 @@ public class MysteryGame {
     }
 
     /* everything with regard to NPCs */
-<<<<<<< HEAD
+
     private int lineCounter;
     public int getLineCounter() {
         return lineCounter;
     }
     public void updateDialogue() {
-         lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*10 + 1;
+        lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * 10 + 1;
         //String dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
         //while (dialogueLine != null) {
-         //   //TODO print dialogue to view
-         //   dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //   //TODO print dialogue to view
+        //   dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
         //}
         rooms.get(currentRoom).getNPC().getNPCDialogue().increaseLine();
         notifyListeners();
-=======
-
-    public void getDialogue() {
-        int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
-        String dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
-        while (dialogue != null) {
-            //TODO print dialogue to view
-            dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
-            counter++;
-            if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
-                break;
-            }
-        }
->>>>>>> b67c5e82f2b346b2d2bc3ceb886e2b901bef4a02
     }
+    //public void updateDialogue() {
+        //counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
+        //String dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //while (dialogue != null) {
+            //TODO print dialogue to view
+        //    dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //    counter++;
+        //    if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
+        //        break;
+        //    }
+        //}
+   //}
 
     /* everything with regard to gameState */
 
