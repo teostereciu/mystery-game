@@ -38,8 +38,8 @@ public class Item {
             case(2):
                 itemName = "phone";
                 roomNumber = 3;
-                coords.put("x", 380);
-                coords.put("y", 50); //todo change
+                coords.put("x", 90);
+                coords.put("y", 400);
                 isCarryAble = 0;
                 break;
             case(3):
@@ -57,8 +57,8 @@ public class Item {
             case(5):
                 itemName = "flashlight";
                 roomNumber = 3;
-                coords.put("x", 170);
-                coords.put("y", 270); //todo change
+                coords.put("x", 150);
+                coords.put("y", 380);
                 break;
             case(6):
                 itemName = "Video Tape";
@@ -105,8 +105,8 @@ public class Item {
                 itemName = "safe";
                 roomNumber = 3;
                 isCarryAble = 0;
-                coords.put("x", 360);
-                coords.put("y", 150); //todo change
+                coords.put("x", 100);
+                coords.put("y", 245);
                 break;
             case(15):
                 itemName = "key";

@@ -49,13 +49,13 @@ public class NPC {
         NPCname = "stacey";
         roomNumber = 0;
         coords.put("x", 450);
-        coords.put("y", 200);
+        coords.put("y", 100);
     }
     private void Samantha() {
         NPCNumber = 1;
         NPCname = "sam";
         roomNumber = 2;
-        coords.put("x", 70);
+        coords.put("x", 240);
         coords.put("y", 100);
     }
     private void Davey() {
@@ -79,7 +79,7 @@ public class NPC {
         this.NPCNumber = 5;
         this.NPCname = "kyle";
         roomNumber = 3;
-        coords.put("x", 70);
+        coords.put("x", 500);
         coords.put("y", 100);
     }
 
