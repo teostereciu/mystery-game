@@ -40,6 +40,7 @@ public class Room {
     public void addRoomItem(Item item) {
         roomItems.add(item);
     }
+    public void removeRoodItem(Item item) { roomItems.remove(item); }
 
     /**
      * removes an item from the room

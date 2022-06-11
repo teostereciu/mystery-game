@@ -7,11 +7,14 @@ import java.awt.*;
 
 public class DialoguePanel extends JPanel { // note: as a possible future feature this could show the npc talking
     private JLabel jlbl = new JLabel("Text text text");
+    private GameView frame;
     private MysteryGame game;
-    public DialoguePanel(MysteryGame game) {
+    public DialoguePanel(MysteryGame game, GameView frame) {
         this.game = game;
+        this.frame = frame;
         setOpaque(true);
         setBackground(Color.black);
+        //setSize(700, 100);
         jlbl.setForeground(Color.white);
         add(jlbl);
     }
