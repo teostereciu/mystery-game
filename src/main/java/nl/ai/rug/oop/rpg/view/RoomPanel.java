@@ -69,7 +69,7 @@ public class RoomPanel extends JLayeredPane {
             throw new RuntimeException(e);
         }
         foregroundPanel.removeAll();
-        foregroundPanel.set(game);
+        foregroundPanel.set(game, frame);
     }
     /*public void set(int prevIdx, int destIdx) {
         lbl.setIcon(bgImageIcons.get(destIdx));
