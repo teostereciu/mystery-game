@@ -60,20 +60,16 @@ public class MysteryGame {
 
     /* everything with regard to Detective */
 
-    /*/**
+    /**
      * sets the detective at the beginning of the game
-     * @param detectiveName is which detective is chosen
+     * @param isGood is which detective is chosen
      */
-    /*public void setDetective(String detectiveName) {
-        Detective detective = new Detective(detectiveName);
-        this.detective = detective;
-    }*/
-    public void setDetective(int isGood) { // was easier to work with an int here. kept the names in case you need them -teo
+    public void setDetective(int isGood) {
         String detectiveName;
         if (isGood == 0) {
-            detectiveName = "SarahSalwitt";
+            detectiveName = "Good Cop";
         } else {
-            detectiveName = "DoctorDormitory";
+            detectiveName = "Bad Cop";
         }
         detective = new Detective(detectiveName);
         System.out.println("You chose detective" + detectiveName); //todo remove
@@ -103,6 +99,10 @@ public class MysteryGame {
         currentRoom = number;
         notifyListeners();
     }
+
+    /**
+     * @return the current room the player is in
+     */
     public int getCurrentRoom() {
         return currentRoom;
     }
@@ -142,12 +142,20 @@ public class MysteryGame {
         pickedUpItems++;
     }
 
+    /**
+     * removes an item from the inventory and checks if progress is made
+     * @param itemNumber number of item that is used
+     */
     public void useItem (int itemNumber) {
         Item item = inventory.removeFromInventory(itemNumber);
+        progressNPC(item.itemUsage());
     }
 
     /* everything with regard to NPCs */
 
+    /**
+     * called by the controller to give the correct dialogue for the NPC
+     */
     public void getDialogue() {
         int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
         String dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
@@ -161,13 +169,26 @@ public class MysteryGame {
         }
     }
 
+    /**
+     * Progresses the dialogue options of an NPC when an item is used/interacted with
+     * @param npcNumber number of NPC that progresses in story
+     */
+    private void progressNPC(int npcNumber) {
+        if (npcNumber >= 0) {
+            /* npcNumber = roomNumber so can just find the NPC by finding the room */
+            rooms.get(npcNumber).getNPC().setDialogueCounter();
+        }
+    }
+
     /* everything with regard to gameState */
 
     /**
      * Function that starts the game
      */
+    //todo check if needs to be removed
     public void playGame(){}
 
+    //TODO make the load and save game functions
     /**
      * Function that loads in a game state
      */
@@ -195,11 +216,6 @@ public class MysteryGame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        MysteryGame mysteryGame = new MysteryGame();
-        mysteryGame.playGame();
     }
 
     /**

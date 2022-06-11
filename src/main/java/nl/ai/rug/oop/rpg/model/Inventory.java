@@ -10,6 +10,10 @@ public class Inventory {
     private int inventorySlotsFull[];
     //Make sure the items stay in the same positions so that that item position in the inventory clears up
 
+    /**
+     * Constructor for the inventory. Sets all slots to 0
+     * @param totalInventorySlots = total amount of inventory slots possible as decided by the view
+     */
     public Inventory(int totalInventorySlots){
         this.totalInventorySlots = totalInventorySlots;
         inventorySlotsFull = new int[totalInventorySlots];
@@ -19,7 +23,11 @@ public class Inventory {
         }
     }
 
-
+    /**
+     * Adds an item to the inventory
+     * @param item = item to be added to inventory
+     * @return which inventory slot the item is added to
+     */
     public int addToInventory (Item item) {
         for (int i = 0; i < totalInventorySlots; i++) {
             if (inventorySlotsFull[i] == 0) {
@@ -31,6 +39,11 @@ public class Inventory {
         return -1;
     }
 
+    /**
+     * removes an item from the inventory if it is used
+     * @param itemNumber number of item to be removed
+     * @return the item
+     */
     public Item removeFromInventory(int itemNumber) {
         for (int i = 0; i < inventoryItems.size(); i++) {
             if (inventoryItems.get(i).getItemNumber() == itemNumber) {

@@ -15,8 +15,16 @@ public class Item {
     private final int itemNumber;
     private int isCarryAble;
     private int roomNumber;
+    private int progressNPCnumber;
 
     //todo change names of items to the file names
+    //todo couple progressNPCnumber to item
+
+    /**
+     * Creates an instance of the object Item
+     * The object is given multiple functionalities when build
+     * @param itemNumber the number coupled to the item
+     */
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
         isCarryAble = 1;
@@ -120,22 +128,38 @@ public class Item {
         }
     }
 
+    /**
+     * @return the number of the item
+     */
     public int getItemNumber() { return itemNumber; }
 
+    /**
+     * @return whether the player should be able to pick up the item (1) or not (0)
+     */
     public int getIsCarryAble() {
         return isCarryAble;
     }
 
+    /**
+     * @return the name of the item
+     */
     public String getItemName() {
         return itemName;
     }
 
+    /**
+     * @return the room the item is coupled to
+     */
     public int getRoomNumber() {
         return roomNumber;
     }
 
-    public void itemUsage() {
-
+    /**
+     * Whenever an item is used/interacted, should check if NPCs are progressed
+     * @return progressNPCnumber = the number of the NPC that is progressed by using the item
+     */
+    public int itemUsage() {
+        return progressNPCnumber;
     }
     private final HashMap<String, Integer> coords = new HashMap<>(); // note from teo: i needed this, but you still need to set them in the constructor (and in game). try coords.put("x", value);
     public HashMap<String, Integer> getCoords() {
