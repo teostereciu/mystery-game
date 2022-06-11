@@ -16,7 +16,7 @@ public class Item {
     private int isCarryAble;
     private int roomNumber;
 
-    //change names of items to the file names
+    //todo change names of items to the file names
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
         isCarryAble = 1;

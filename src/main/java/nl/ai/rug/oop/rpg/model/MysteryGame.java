@@ -13,6 +13,7 @@ public class MysteryGame {
     public final int NUMBER_OF_ITEMS = 17;
     public final int NUMBER_OF_NPCS = 6;
     public final int TOTAL_INVENTORY_SLOTS = 5;
+    public final int MAX_DIALOGUE_OPTIONS = 10; /* There are max 10 dialogue sentences per set of dialogue/progress */
     private int currentRoom;
 
     private Detective detective;
@@ -22,7 +23,7 @@ public class MysteryGame {
     private int pickedUpItems = 0;
 
 
-    //TODO: Rewrite the catch parts in NPC, ROOM and Item
+    //TODO Rewrite the catch parts in NPC, ROOM and Item
 
 
     /* everything with regard to initializing game */
@@ -148,13 +149,13 @@ public class MysteryGame {
     /* everything with regard to NPCs */
 
     public void getDialogue() {
-        int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*10 + 1;
+        int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
         String dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
         while (dialogue != null) {
             //TODO print dialogue to view
             dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
             counter++;
-            if (counter%10 == 0 ) { /* There are max 10 dialogue sentences per set of dialogue*/
+            if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
                 break;
             }
         }
