@@ -38,8 +38,9 @@ public class Inventory {
         //}
     }
 
-    public Item removeFromInventory(int itemNumber) {
-        for (int i = 0; i < inventoryItems.size(); i++) {
+    public void removeFromInventory(Item item) {
+        inventoryItems.remove(item);
+        /*for (int i = 0; i < inventoryItems.size(); i++) {
             if (inventoryItems.get(i).getItemNumber() == itemNumber) {
                 Item item = inventoryItems.get(i);
                 inventoryItems.set(i, null);
@@ -47,6 +48,6 @@ public class Inventory {
                 return item;
             }
         }
-        return null;
+        return null;*/
     }
 }

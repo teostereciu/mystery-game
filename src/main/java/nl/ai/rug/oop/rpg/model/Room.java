@@ -36,6 +36,7 @@ public class Room {
     public void addRoomItem(Item item) {
         roomItems.add(item);
     }
+    public void removeRoodItem(Item item) { roomItems.remove(item); }
 
     public Item getRoomItem(int itemNumber) {
         for (int i = 0; i < roomItems.size(); i++) {

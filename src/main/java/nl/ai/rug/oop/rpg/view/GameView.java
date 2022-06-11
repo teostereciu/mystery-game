@@ -105,6 +105,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         navigationPanel.enableBtn(game.getCurrentRoom() != 0);
         locationPanel.update(game.getCurrentRoom());
         dialoguePanel.clear();
+        inventoryPanel.update();
         SwingUtilities.updateComponentTreeUI(this);
         SwingUtilities.updateComponentTreeUI(roomPanel);
         SwingUtilities.updateComponentTreeUI(navigationPanel);

@@ -39,7 +39,7 @@ public class ForegroundPanel extends JPanel {
         for (Item currentItem : game.getRoom(game.getCurrentRoom()).getRoomItems()) {
             try {
                 JButton item = newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
-                item.addActionListener(new ItemChooser(game, currentItem, frame));
+                item.addActionListener(new ItemChooser(game, currentItem));
             } catch (IOException e) {
                 System.out.println(currentItem.getItemName() + ".png not found.");
                 throw new RuntimeException(e);

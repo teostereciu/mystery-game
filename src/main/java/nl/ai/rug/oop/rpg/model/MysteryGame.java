@@ -142,9 +142,9 @@ public class MysteryGame {
         pickedUpItems++;
     }
 
-    public void useItem (int itemNumber) {
+    /*public void useItem (int itemNumber) {
         Item item = inventory.removeFromInventory(itemNumber);
-    }
+    }*/
 
     /* everything with regard to NPCs */
 
@@ -245,8 +245,14 @@ public class MysteryGame {
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
     }
-    public void updateInventory(Item item) {
-        inventory.addToInventory(item);
+    public void updateInventory(Item item, int removeSlashAdd) {
+        if(removeSlashAdd==1) {
+            inventory.addToInventory(item);
+            rooms.get(currentRoom).removeRoodItem(item);
+        } else {
+            inventory.removeFromInventory(item);
+            rooms.get(currentRoom).addRoomItem(item);
+        }
         notifyListeners();
     }
     public Inventory getInventory() {

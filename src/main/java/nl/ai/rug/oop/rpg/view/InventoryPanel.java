@@ -1,5 +1,6 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.controller.PutBackItem;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 
@@ -45,19 +46,23 @@ public class InventoryPanel extends JPanel {
         btnList.get(slot).setIcon(new ImageIcon(img)); //todo: 4csanad - use this when adding an item to the inventory
     }*/
     public void update() {
-        for (int i = 0; i < 5; i ++) {
+        int i;
+        for (i = 0; i < game.getInventory().getItemsArray().size(); i ++) {
             System.out.println("i");
             if (game.getInventory().getItemsArray().get(i) != null) {
                 String name = game.getInventory().getItemsArray().get(i).getItemName();
                 try {
                     btnList.get(i).setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/items/" + name + ".png"))));
-                    System.out.println("idk");
-                    btnList.get(i).setOpaque(true);
-                    btnList.get(i).setContentAreaFilled(true);
+                    btnList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i)));
+                    //btnList.get(i).setOpaque(true);
+                    //btnList.get(i).setContentAreaFilled(true);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
+        }
+        for (; i < 5; i ++) {
+            btnList.get(i).setIcon(null);
         }
     }
     public void removeItem(int slot) {
