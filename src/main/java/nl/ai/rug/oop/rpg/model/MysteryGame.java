@@ -60,16 +60,20 @@ public class MysteryGame {
 
     /* everything with regard to Detective */
 
-    /**
+    /*/**
      * sets the detective at the beginning of the game
-     * @param isGood is which detective is chosen
+     * @param detectiveName is which detective is chosen
      */
-    public void setDetective(int isGood) {
+    /*public void setDetective(String detectiveName) {
+        Detective detective = new Detective(detectiveName);
+        this.detective = detective;
+    }*/
+    public void setDetective(int isGood) { // was easier to work with an int here. kept the names in case you need them -teo
         String detectiveName;
         if (isGood == 0) {
-            detectiveName = "Good Cop";
+            detectiveName = "SarahSalwitt";
         } else {
-            detectiveName = "Bad Cop";
+            detectiveName = "DoctorDormitory";
         }
         detective = new Detective(detectiveName);
         System.out.println("You chose detective" + detectiveName); //todo remove
@@ -99,10 +103,6 @@ public class MysteryGame {
         currentRoom = number;
         notifyListeners();
     }
-
-    /**
-     * @return the current room the player is in
-     */
     public int getCurrentRoom() {
         return currentRoom;
     }
@@ -134,7 +134,7 @@ public class MysteryGame {
             //TODO print an error statement
             return;
         } else if (item.getIsCarryAble() == 1) {
-            slotnumber = inventory.addToInventory(item);
+            //slotnumber = inventory.addToInventory(item);
             //TODO give the slotnumber to view so it knows where to put item
         } else {
             //TODO print interaction statement
@@ -142,53 +142,46 @@ public class MysteryGame {
         pickedUpItems++;
     }
 
-    /**
-     * removes an item from the inventory and checks if progress is made
-     * @param itemNumber number of item that is used
-     */
-    public void useItem (int itemNumber) {
+    /*public void useItem (int itemNumber) {
         Item item = inventory.removeFromInventory(itemNumber);
-        progressNPC(item.itemUsage());
-    }
+    }*/
 
     /* everything with regard to NPCs */
 
-    /**
-     * called by the controller to give the correct dialogue for the NPC
-     */
-    public void getDialogue() {
-        int counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
-        String dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
-        while (dialogue != null) {
-            //TODO print dialogue to view
-            dialogue = rooms.get(currentRoom).getNPC().getDialogue().getDialogue(counter);
-            counter++;
-            if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
-                break;
-            }
-        }
+    private int lineCounter;
+    public int getLineCounter() {
+        return lineCounter;
     }
-
-    /**
-     * Progresses the dialogue options of an NPC when an item is used/interacted with
-     * @param npcNumber number of NPC that progresses in story
-     */
-    private void progressNPC(int npcNumber) {
-        if (npcNumber >= 0) {
-            /* npcNumber = roomNumber so can just find the NPC by finding the room */
-            rooms.get(npcNumber).getNPC().setDialogueCounter();
-        }
+    public void updateDialogue() {
+        lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * 10 + 1;
+        //String dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //while (dialogueLine != null) {
+        //   //TODO print dialogue to view
+        //   dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+        //}
+        rooms.get(currentRoom).getNPC().getNPCDialogue().increaseLine();
+        notifyListeners();
     }
+    //public void updateDialogue() {
+    //counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
+    //String dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+    //while (dialogue != null) {
+    //TODO print dialogue to view
+    //    dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
+    //    counter++;
+    //    if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
+    //        break;
+    //    }
+    //}
+    //}
 
     /* everything with regard to gameState */
 
     /**
      * Function that starts the game
      */
-    //todo check if needs to be removed
     public void playGame(){}
 
-    //TODO make the load and save game functions
     /**
      * Function that loads in a game state
      */
@@ -216,6 +209,11 @@ public class MysteryGame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        MysteryGame mysteryGame = new MysteryGame();
+        mysteryGame.playGame();
     }
 
     /**
@@ -246,6 +244,23 @@ public class MysteryGame {
      */
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
+    }
+    public void updateInventory(Item item, int removeSlashAdd) {
+        if(removeSlashAdd==1) {
+            inventory.addToInventory(item);
+            rooms.get(currentRoom).removeRoodItem(item);
+        } else {
+            inventory.removeFromInventory(item);
+            rooms.get(currentRoom).addRoomItem(item);
+        }
+        notifyListeners();
+    }
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public int getInvetorySize() {
+        return inventorySize;
     }
 }
 
