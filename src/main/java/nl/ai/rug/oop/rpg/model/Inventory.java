@@ -27,15 +27,13 @@ public class Inventory {
         return inventoryItems.size() == totalInventorySlots;
     }
 
-    public void addToInventory (Item item) {
-        //for (int i = 0; i < totalInventorySlots; i++) {
-            //if (inventorySlotsFull[i] == 0) {
-        //if (!isFull()) {
+    public int addToInventory (Item item) {
+        if (!isFull()) {
             inventoryItems.add(item);
-        //}
-                //inventorySlotsFull[i] = 1;
-            //}
-        //}
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public void removeFromInventory(Item item) {

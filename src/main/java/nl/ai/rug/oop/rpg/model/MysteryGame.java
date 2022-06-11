@@ -245,15 +245,19 @@ public class MysteryGame {
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
     }
-    public void updateInventory(Item item, int removeSlashAdd) {
-        if(removeSlashAdd==1) {
-            inventory.addToInventory(item);
-            rooms.get(currentRoom).removeRoodItem(item);
+    public int updateInventory(Item item, int removeSlashAdd) {
+        int result = 1;
+        if (removeSlashAdd == 1) {
+            result = inventory.addToInventory(item);
+            if (result == 1) {
+                rooms.get(currentRoom).removeRoomItem(item);
+            }
         } else {
-            inventory.removeFromInventory(item);
             rooms.get(currentRoom).addRoomItem(item);
+            inventory.removeFromInventory(item);
         }
         notifyListeners();
+        return result;
     }
     public Inventory getInventory() {
         return inventory;

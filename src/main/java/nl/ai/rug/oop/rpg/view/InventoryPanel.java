@@ -14,9 +14,11 @@ import java.util.ArrayList;
 public class InventoryPanel extends JPanel {
     private ArrayList<JButton> btnList = new ArrayList<>();
     private MysteryGame game;
+    private GameView frame;
     final int SIZE = 5;
-    public InventoryPanel(MysteryGame game) {
+    public InventoryPanel(MysteryGame game, GameView frame) {
         this.game = game;
+        this.frame = frame;
         GridLayout gridLayout = new GridLayout(SIZE + 1, 1);
         setLayout(gridLayout);
         setOpaque(false);
@@ -53,7 +55,7 @@ public class InventoryPanel extends JPanel {
                 String name = game.getInventory().getItemsArray().get(i).getItemName();
                 try {
                     btnList.get(i).setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/items/" + name + ".png"))));
-                    btnList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i)));
+                    btnList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i), frame));
                     //btnList.get(i).setOpaque(true);
                     //btnList.get(i).setContentAreaFilled(true);
                 } catch (IOException e) {

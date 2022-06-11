@@ -56,7 +56,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-    private InventoryPanel inventoryPanel = new InventoryPanel(game);
+    private InventoryPanel inventoryPanel = new InventoryPanel(game, this);
     private DialoguePanel dialoguePanel = new DialoguePanel(game, this);
     private LocationPanel locationPanel = new LocationPanel();
     private NavigationPanel navigationPanel = new NavigationPanel(game);
@@ -134,5 +134,23 @@ public class GameView extends JFrame implements PropertyChangeListener {
 
     public void updateDialoguePanel() {
         dialoguePanel.update();
+    }
+
+    public void displayErrorMessage(int i) {
+        switch(i) {
+            case 0:
+                System.out.println("Failed to put down item");
+                JOptionPane.showMessageDialog(this, "Can't put back item here.",
+                        "Failed to put back item", JOptionPane.WARNING_MESSAGE);
+                break;
+            case 1:
+                JOptionPane.showMessageDialog(this, "Can't use item here.",
+                        "Failed to use item", JOptionPane.WARNING_MESSAGE);
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(this, "Inventory is full. Put back an item before trying to add a new one.",
+                        "Failed to add item to inventory", JOptionPane.WARNING_MESSAGE);
+                break;
+        }
     }
 }

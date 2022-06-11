@@ -8,13 +8,18 @@ import java.awt.event.ActionListener;
 
 public class ItemChooser implements ActionListener {
     private MysteryGame modelGame;
+    private GameView viewFrame;
     private Item modelItem;
-    public ItemChooser(MysteryGame game, Item item){
+    public ItemChooser(MysteryGame game, Item item, GameView frame){
         this.modelGame = game;
         this.modelItem = item;
+        this.viewFrame = frame;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        modelGame.updateInventory(modelItem, 1);
+        int result = modelGame.updateInventory(modelItem, 1);
+        if (result == 0) {
+            viewFrame.displayErrorMessage(2);
+        }
     }
 }
