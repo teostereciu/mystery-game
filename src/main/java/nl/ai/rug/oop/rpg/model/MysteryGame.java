@@ -134,7 +134,7 @@ public class MysteryGame {
             //TODO print an error statement
             return;
         } else if (item.getIsCarryAble() == 1) {
-            slotnumber = inventory.addToInventory(item);
+            //slotnumber = inventory.addToInventory(item);
             //TODO give the slotnumber to view so it knows where to put item
         } else {
             //TODO print interaction statement
@@ -245,13 +245,16 @@ public class MysteryGame {
     public Room getRoom(int roomIdx) { // note from teo: needed this
         return rooms.get(roomIdx);
     }
-    public int updateInventory(Item item) {
-        int slot = inventory.addToInventory(item);
+    public void updateInventory(Item item) {
+        inventory.addToInventory(item);
         notifyListeners();
-        return slot;
     }
     public Inventory getInventory() {
         return inventory;
+    }
+
+    public int getInvetorySize() {
+        return inventorySize;
     }
 }
 

@@ -17,7 +17,7 @@ public class ItemChooser implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        int slot = modelGame.updateInventory(modelItem);
-        viewFrame.updateInventoryPanel(modelItem.getItemName(), slot);
+        modelGame.updateInventory(modelItem);
+        viewFrame.updateInventoryPanel();
     }
 }

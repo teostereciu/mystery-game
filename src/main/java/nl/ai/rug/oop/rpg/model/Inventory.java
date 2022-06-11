@@ -1,12 +1,16 @@
 package nl.ai.rug.oop.rpg.model;
+
 import java.io.*;
 import java.util.*;
 /**
  * @Author Daniël
  */
 public class Inventory {
+    public ArrayList<Item> getItemsArray() {
+        return inventoryItems;
+    }
     private ArrayList<Item> inventoryItems = new ArrayList<>();
-    private int totalInventorySlots;
+    private final int totalInventorySlots;
     private int inventorySlotsFull[];
     //Make sure the items stay in the same positions so that that item position in the inventory clears up
 
@@ -19,16 +23,19 @@ public class Inventory {
         }
     }
 
+    public boolean isFull() {
+        return inventoryItems.size() == totalInventorySlots;
+    }
 
-    public int addToInventory (Item item) {
-        for (int i = 0; i < totalInventorySlots; i++) {
-            if (inventorySlotsFull[i] == 0) {
-                inventoryItems.set(i, item);
-                inventorySlotsFull[i] = 1;
-                return i;
-            }
-        }
-        return -1;
+    public void addToInventory (Item item) {
+        //for (int i = 0; i < totalInventorySlots; i++) {
+            //if (inventorySlotsFull[i] == 0) {
+        //if (!isFull()) {
+            inventoryItems.add(item);
+        //}
+                //inventorySlotsFull[i] = 1;
+            //}
+        //}
     }
 
     public Item removeFromInventory(int itemNumber) {

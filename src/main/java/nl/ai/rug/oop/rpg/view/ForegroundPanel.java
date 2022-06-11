@@ -1,6 +1,7 @@
 package nl.ai.rug.oop.rpg.view;
 
 import nl.ai.rug.oop.rpg.controller.Dialoguer;
+import nl.ai.rug.oop.rpg.controller.ItemChooser;
 import nl.ai.rug.oop.rpg.controller.RoomChooser;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
@@ -37,7 +38,8 @@ public class ForegroundPanel extends JPanel {
         }
         for (Item currentItem : game.getRoom(game.getCurrentRoom()).getRoomItems()) {
             try {
-                newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
+                JButton item = newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
+                item.addActionListener(new ItemChooser(game, currentItem, frame));
             } catch (IOException e) {
                 System.out.println(currentItem.getItemName() + ".png not found.");
                 throw new RuntimeException(e);
