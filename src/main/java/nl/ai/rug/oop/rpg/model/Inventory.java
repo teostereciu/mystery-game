@@ -17,10 +17,10 @@ public class Inventory {
     public Inventory(int totalInventorySlots){
         this.totalInventorySlots = totalInventorySlots;
         inventorySlotsFull = new int[totalInventorySlots];
-        for (int i = 0; i < totalInventorySlots; i++) {
+        /*for (int i = 0; i < totalInventorySlots; i++) {
             inventorySlotsFull[i] = 0;
             inventoryItems = null;
-        }
+        }*/
     }
 
     public boolean isFull() {
