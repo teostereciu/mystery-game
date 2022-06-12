@@ -1,13 +1,10 @@
 package nl.ai.rug.oop.rpg.view;
 
 import nl.ai.rug.oop.rpg.model.MysteryGame;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -26,6 +23,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         setTitle("Mystery Game");
         setLayout(new BorderLayout(0, 0));
         setResizable(false);
+        //setBackground(Color.black);
         add(roomPanel, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(null);
@@ -80,7 +78,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         dialoguePanel.update();
     }
 
-    public void displayErrorMessage(int i) {
+    public void displayErrorMessage(int i) { // todo idea have the option to put back or use item
         switch (i) {
             case 0 -> {
                 System.out.println("Failed to put down item");
