@@ -17,16 +17,13 @@ public class Inventory {
     public Inventory(int totalInventorySlots){
         this.totalInventorySlots = totalInventorySlots;
         inventorySlotsFull = new int[totalInventorySlots];
-        /*for (int i = 0; i < totalInventorySlots; i++) {
-            inventorySlotsFull[i] = 0;
-            inventoryItems = null;
-        }*/
     }
 
     public boolean isFull() {
         return inventoryItems.size() == totalInventorySlots;
     }
 
+<<<<<<< HEAD
     public int addToInventory (Item item) {
         if (!isFull()) {
             inventoryItems.add(item);
@@ -34,18 +31,16 @@ public class Inventory {
         } else {
             return 0;
         }
+=======
+    public void addToInventory (Item item) {
+        //for (int i = 0; i < totalInventorySlots; i++) {
+        //if (inventorySlotsFull[i] == 0) {
+        //if (!isFull()) {
+        inventoryItems.add(item);
+>>>>>>> 37a62afc0bcde0b8b7d246d6b6268c5de5e32bf2
     }
 
     public void removeFromInventory(Item item) {
         inventoryItems.remove(item);
-        /*for (int i = 0; i < inventoryItems.size(); i++) {
-            if (inventoryItems.get(i).getItemNumber() == itemNumber) {
-                Item item = inventoryItems.get(i);
-                inventoryItems.set(i, null);
-                inventorySlotsFull[i] = 0;
-                return item;
-            }
-        }
-        return null;*/
     }
 }

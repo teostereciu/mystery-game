@@ -19,8 +19,10 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         add(jlbl);
     }
     public void update() {
-        //String txt = game.getRoom(game.getCurrentRoom()).getNPC().getDialogue().getDialogueMap().get(game.getRoom(game.getCurrentRoom()).getNPC().getDialogue().getCurrentKey());
-        String dialogueLine = game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getDialogue(game.getLineCounter());
+        //Note from daniel: The next line works, however not completely yet.
+        //Also: Lines need to be shorter. I can make that work
+        String dialogueLine = game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getDialogueMap().get(game.getRoom(game.getCurrentRoom()).getNPC().getDialogueCounter() * game.getMAX_DIALOGUE_OPTIONS() + game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getCurrentKey());
+        //String dialogueLine = game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getDialogue(game.getLineCounter());
         jlbl.setText(dialogueLine);
     }
     public void clear() {

@@ -48,12 +48,8 @@ public class MysteryGame {
         }
 
         for (int i = 0; i < NUMBER_OF_NPCS; i++) {
-//<<<<<<< HEAD
-            NPC npc = new NPC(i, 0/*, detective.getDetectiveKind()*/); //commented this bc view won't run bc detective is null
-//=======
+            NPC npc = new NPC(i, 0);
             //TODO  NPC npc = new NPC(i, detective.getDetectiveKind());
-            //NPC npc = new NPC(i, 0); //teo commented this
-//>>>>>>> ef9265a43598cc7766b7ed7bbe69570a906138b6
             this.rooms.get(npc.getRoomNumber()).setNPC(npc);
         }
     }
@@ -64,11 +60,8 @@ public class MysteryGame {
      * sets the detective at the beginning of the game
      * @param detectiveName is which detective is chosen
      */
-    /*public void setDetective(String detectiveName) {
-        Detective detective = new Detective(detectiveName);
-        this.detective = detective;
-    }*/
-    public void setDetective(int isGood) { // was easier to work with an int here. kept the names in case you need them -teo
+
+    public void setDetective(int isGood) {
         String detectiveName;
         if (isGood == 0) {
             detectiveName = "SarahSalwitt";
@@ -153,27 +146,17 @@ public class MysteryGame {
         return lineCounter;
     }
     public void updateDialogue() {
-        lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * 10 + 1;
-        //String dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
-        //while (dialogueLine != null) {
-        //   //TODO print dialogue to view
-        //   dialogueLine = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
-        //}
+        //lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * MAX_DIALOGUE_OPTIONS + 1;
         rooms.get(currentRoom).getNPC().getNPCDialogue().increaseLine();
+        if (rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(rooms.get(currentRoom).getNPC().getDialogueCounter() * MAX_DIALOGUE_OPTIONS + rooms.get(currentRoom).getNPC().getNPCDialogue().getCurrentKey()) == null) {
+            rooms.get(currentRoom).getNPC().getNPCDialogue().setCurrentKey(0);
+        }
         notifyListeners();
     }
-    //public void updateDialogue() {
-        //counter = (rooms.get(currentRoom).getNPC().getDialogueCounter())*MAX_DIALOGUE_OPTIONS + 1;
-        //String dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
-        //while (dialogue != null) {
-            //TODO print dialogue to view
-        //    dialogue = rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(counter);
-        //    counter++;
-        //    if (counter%MAX_DIALOGUE_OPTIONS == 0 ) {
-        //        break;
-        //    }
-        //}
-   //}
+
+    public int getMAX_DIALOGUE_OPTIONS() {
+        return MAX_DIALOGUE_OPTIONS;
+    }
 
     /* everything with regard to gameState */
 
@@ -209,11 +192,6 @@ public class MysteryGame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        MysteryGame mysteryGame = new MysteryGame();
-        mysteryGame.playGame();
     }
 
     /**
