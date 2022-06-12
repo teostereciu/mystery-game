@@ -57,7 +57,7 @@ public class ForegroundPanel extends JPanel {
     private JButton newButton(String name, HashMap<String,Integer> coords) throws IOException { // todo: 4csanad stuff here
         Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
         JButton btn = new JButton(new ImageIcon(img));
-        System.out.println(name);
+        //System.out.println(name);
         btn.setBounds(coords.get("x"), coords.get("y"), img.getWidth(null), img.getHeight(null));
         btn.setOpaque(false);
         btn.setContentAreaFilled(false);

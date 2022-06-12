@@ -139,15 +139,12 @@ public class MysteryGame {
     public int updateInventory(Item item, int removeSlashAdd) {
         int result = 1;
         if (removeSlashAdd == 1) {
-            if (item.getIsCarryAble() == 1) {
-                result = inventory.addToInventory(item);
-                if (result == 1) {
-                    rooms.get(currentRoomNum).removeRoomItem(item);
-                }
-            } else {
-                System.out.println("You cannot pick up this item");
-                //TODO print a statement in view
-            }
+            //if (item.getIsCarryAble() == 1) { // items that are not carriable won't make it this far
+            result = inventory.addToInventory(item);
+           //     if (result == 1) {
+            rooms.get(currentRoomNum).removeRoomItem(item);
+                //}
+            //}
         } else {
             rooms.get(currentRoomNum).addRoomItem(item);
             inventory.removeFromInventory(item);
@@ -166,17 +163,18 @@ public class MysteryGame {
 
     /* everything with regard to NPCs */
 
-    private int lineCounter; //TODO remove
-    public int getLineCounter() { //TODO remove
-        return lineCounter;
-    }
     public void updateDialogue() {
         //lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * MAX_DIALOGUE_OPTIONS + 1; //TODO remove
         rooms.get(currentRoomNum).getNPC().getNPCDialogue().increaseLine();
         if (rooms.get(currentRoomNum).getNPC().getNPCDialogue().getDialogue(rooms.get(currentRoomNum).getNPC().getDialogueCounter() * MAX_DIALOGUE_OPTIONS + rooms.get(currentRoomNum).getNPC().getNPCDialogue().getCurrentKey()) == null) {
             rooms.get(currentRoomNum).getNPC().getNPCDialogue().setCurrentKey(0);
         }
+        //if (rooms.get(currentRoomNum).getNPC().getNPCDialogue().getCurrentKey()) {
+        //    notifyListeners();
+        //    return 1;
+        //}
         notifyListeners();
+        //return 0;
     }
 
     public void checkForProgress(int NPCnumber) {

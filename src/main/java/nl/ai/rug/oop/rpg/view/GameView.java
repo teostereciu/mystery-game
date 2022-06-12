@@ -55,10 +55,6 @@ public class GameView extends JFrame implements PropertyChangeListener {
         SwingUtilities.updateComponentTreeUI(this);
     }
 
-    public void updateInventoryPanel() {
-        inventoryPanel.update();
-    }
-
     /**
      * This method gets called when a bound property is changed.
      *

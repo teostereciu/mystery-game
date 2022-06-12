@@ -1,10 +1,8 @@
 package nl.ai.rug.oop.rpg.view;
 
 import nl.ai.rug.oop.rpg.controller.Dialoguer;
-import nl.ai.rug.oop.rpg.controller.ItemChooser;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 import nl.ai.rug.oop.rpg.model.NPC;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
@@ -40,6 +38,9 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         String dialogueLine = npc.getNPCDialogue().getDialogueMap().get(npc.getDialogueCounter() * game.MAX_DIALOGUE_OPTIONS + npc.getNPCDialogue().getCurrentKey());
         //String dialogueLine = game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getDialogue(game.getLineCounter());
         jlbl.setText(dialogueLine);
+        if (Objects.equals(dialogueLine, "END")) {
+            clear();
+        }
     }
     public void clear() { //todo this also when dialogue ends
         jlbl.setText("");

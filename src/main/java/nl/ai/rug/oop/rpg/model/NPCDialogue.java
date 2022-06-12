@@ -60,6 +60,7 @@ public class NPCDialogue {
         dialogueMap.put(4, "Stacey: You should start by talking to Davey. He is always hanging out in the living room. Maybe he saw something?");
         dialogueMap.put(5, "Stacey: In the meantime,  I'll make a batch of coffee for you. Cops like that, right?");
         dialogueMap.put(6, "Stacey: If you want any other information about the place or my housemates, just let me know!");
+        dialogueMap.put(7, "END"); // hello, teo added this for view. i'll need one at the end of each interaction, but i'll keep to just this one for now in case you want to do it differently.
 
         /* Second interaction dialogue (After getting hat) */
         dialogueMap.put(101, "Stacey: Hey, still making that coffee! did you find the beer yet?");

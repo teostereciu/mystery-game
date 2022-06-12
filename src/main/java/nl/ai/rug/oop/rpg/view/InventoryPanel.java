@@ -13,26 +13,26 @@ import java.util.ArrayList;
 
 public class InventoryPanel extends JPanel {
     private ArrayList<JButton> inventoryButtonsList = new ArrayList<>();
-    JComboBox<String> itemOptionsComboBox;
+    //JComboBox<String> itemOptionsComboBox;
     private final MysteryGame game;
     private final GameView frame;
     final int SIZE = 5; // todo replace with cont from model
     public InventoryPanel(MysteryGame game, GameView frame) {
         this.game = game;
         this.frame = frame;
-        setPreferredSize(new Dimension(200, 500));
-        GridLayout gridLayout = new GridLayout(SIZE + 1, 2);
+        setPreferredSize(new Dimension(100, 500));
+        GridLayout gridLayout = new GridLayout(SIZE + 1, 1);
         setLayout(gridLayout);
         //setOpaque(false);
         setBackground(Color.black);
-        add(new JButton("Hint"));
+        //add(new JButton("Hint"));
         JButton btn = newEmptyButton();
         btn.setText("Inventory"); // todo: 4csanad idk - could hide/reveal the item list. or some instructions
-        String[] itemOptions = {"Use item", "Put back item"};
+        //String[] itemOptions = {"Use item", "Put back item"};
         for (int i = 1; i <= SIZE; i ++) {
-            itemOptionsComboBox = new JComboBox<>(itemOptions);
-            add(itemOptionsComboBox);
-            itemOptionsComboBox.setVisible(false);
+            //itemOptionsComboBox = new JComboBox<>(itemOptions);
+            //add(itemOptionsComboBox);
+            //itemOptionsComboBox.setVisible(false);
             //itemOptionsComboBox.setBackground(Color.black);
             inventoryButtonsList.add(newEmptyButton());
         }

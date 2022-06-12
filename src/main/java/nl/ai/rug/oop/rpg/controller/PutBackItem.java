@@ -17,12 +17,13 @@ public class PutBackItem implements ActionListener {
         this.viewFrame = frame;
     }
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) { // this happens 6 times instead of 1 todo figure out why
+        //System.out.println("Here is room " + modelGame.getCurrentRoomNum() + "and the" + modelItem.getItemName() + "room is " + modelItem.getRoomNumber());
         if (modelItem.getRoomNumber() == modelGame.getCurrentRoomNum()) {
+            //System.out.println("Here is room " + modelGame.getCurrentRoomNum());
             modelGame.updateInventory(modelItem, 0);
         } else {
             viewFrame.displayErrorMessage(0);
-            // todo 4 some reason this happens a bunch of times after just one click csanad pls fix
         }
     }
 }
