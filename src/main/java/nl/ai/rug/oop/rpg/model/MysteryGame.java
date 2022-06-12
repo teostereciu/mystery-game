@@ -13,7 +13,7 @@ public class MysteryGame {
     public final int NUMBER_OF_ITEMS = 17;
     public final int NUMBER_OF_NPCS = 6;
     public final int TOTAL_INVENTORY_SLOTS = 5;
-    public final int MAX_DIALOGUE_OPTIONS = 10; /* There are max 10 dialogue sentences per set of dialogue/progress */
+    public final int MAX_DIALOGUE_OPTIONS = 100; /* There are max 100 dialogue sentences per set of dialogue/progress */
     private int currentRoomNum;
 
     private Detective detective;
@@ -226,9 +226,14 @@ public class MysteryGame {
     public int updateInventory(Item item, int removeSlashAdd) {
         int result = 1;
         if (removeSlashAdd == 1) {
-            result = inventory.addToInventory(item);
-            if (result == 1) {
-                rooms.get(currentRoomNum).removeRoomItem(item);
+            if (item.getIsCarryAble() == 1) {
+                result = inventory.addToInventory(item);
+                if (result == 1) {
+                    rooms.get(currentRoomNum).removeRoomItem(item);
+                }
+            } else {
+                System.out.println("You cannot pick up this item");
+                //TODO print a statement in view
             }
         } else {
             rooms.get(currentRoomNum).addRoomItem(item);

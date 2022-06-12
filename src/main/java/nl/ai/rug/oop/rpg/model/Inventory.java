@@ -11,12 +11,9 @@ public class Inventory {
     }
     private ArrayList<Item> inventoryItems = new ArrayList<>();
     private final int totalInventorySlots;
-    //private int inventorySlotsFull[];
-    //Make sure the items stay in the same positions so that that item position in the inventory clears up
 
     public Inventory(int totalInventorySlots) {
         this.totalInventorySlots = totalInventorySlots;
-        //inventorySlotsFull = new int[totalInventorySlots];
     }
 
     public boolean isFull() {
