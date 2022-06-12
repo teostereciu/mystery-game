@@ -14,6 +14,6 @@ public class RoomChooser implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        modelGame.setCurrentRoom(destIdx);
+        modelGame.setCurrentRoomNum(destIdx);
     }
 }

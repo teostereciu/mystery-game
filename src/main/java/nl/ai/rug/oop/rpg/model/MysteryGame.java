@@ -14,7 +14,7 @@ public class MysteryGame {
     public final int NUMBER_OF_NPCS = 6;
     public final int TOTAL_INVENTORY_SLOTS = 5;
     public final int MAX_DIALOGUE_OPTIONS = 10; /* There are max 10 dialogue sentences per set of dialogue/progress */
-    private int currentRoom;
+    private int currentRoomNum;
 
     private Detective detective;
     private final List<Room> rooms = new ArrayList<>();
@@ -36,7 +36,7 @@ public class MysteryGame {
      * Initiates a game
      */
     public void init() {
-        currentRoom = 0;
+        currentRoomNum = 0;
         for (int i = 0; i < NUMBER_OF_ROOMS; i++) {
             Room room = new Room(i);
             this.rooms.add(room);
@@ -92,12 +92,12 @@ public class MysteryGame {
      * Changes the current room
      * @param number the number of the new room
      */
-    public void setCurrentRoom(int number) {
-        currentRoom = number;
+    public void setCurrentRoomNum(int number) {
+        currentRoomNum = number;
         notifyListeners();
     }
-    public int getCurrentRoom() {
-        return currentRoom;
+    public int getCurrentRoomNum() {
+        return currentRoomNum;
     }
 
     /**
@@ -105,7 +105,7 @@ public class MysteryGame {
      * @return 1 if open, 0 if closed
      */
     public int isRoomOpen(){
-        return rooms.get(currentRoom).getIsOpen();
+        return rooms.get(currentRoomNum).getIsOpen();
     }
 
     /* everything with regard to items */
@@ -122,7 +122,7 @@ public class MysteryGame {
             return;
         }
         int slotnumber;
-        Item item = rooms.get(currentRoom).getRoomItem(itemNumber);
+        Item item = rooms.get(currentRoomNum).getRoomItem(itemNumber);
         if (item == null) {
             //TODO print an error statement
             return;
@@ -147,9 +147,9 @@ public class MysteryGame {
     }
     public void updateDialogue() {
         //lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * MAX_DIALOGUE_OPTIONS + 1;
-        rooms.get(currentRoom).getNPC().getNPCDialogue().increaseLine();
-        if (rooms.get(currentRoom).getNPC().getNPCDialogue().getDialogue(rooms.get(currentRoom).getNPC().getDialogueCounter() * MAX_DIALOGUE_OPTIONS + rooms.get(currentRoom).getNPC().getNPCDialogue().getCurrentKey()) == null) {
-            rooms.get(currentRoom).getNPC().getNPCDialogue().setCurrentKey(0);
+        rooms.get(currentRoomNum).getNPC().getNPCDialogue().increaseLine();
+        if (rooms.get(currentRoomNum).getNPC().getNPCDialogue().getDialogue(rooms.get(currentRoomNum).getNPC().getDialogueCounter() * MAX_DIALOGUE_OPTIONS + rooms.get(currentRoomNum).getNPC().getNPCDialogue().getCurrentKey()) == null) {
+            rooms.get(currentRoomNum).getNPC().getNPCDialogue().setCurrentKey(0);
         }
         notifyListeners();
     }
@@ -170,7 +170,7 @@ public class MysteryGame {
      */
     public void loadGame() {
         try (Scanner loadState = new Scanner(new FileInputStream("saveState.txt"))) {
-            currentRoom = loadState.nextInt();
+            currentRoomNum = loadState.nextInt();
             inventorySize = loadState.nextInt();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -185,7 +185,7 @@ public class MysteryGame {
             new File("saveState").mkdir();
         }
         try (PrintWriter saveState = new PrintWriter(new FileOutputStream("saveState.txt"))){
-            saveState.println(currentRoom);
+            saveState.println(currentRoomNum);
             saveState.println(inventorySize);
             //first needs to be # items in inventory followed by the items
             //also need to save developments from NPCs
@@ -228,10 +228,10 @@ public class MysteryGame {
         if (removeSlashAdd == 1) {
             result = inventory.addToInventory(item);
             if (result == 1) {
-                rooms.get(currentRoom).removeRoomItem(item);
+                rooms.get(currentRoomNum).removeRoomItem(item);
             }
         } else {
-            rooms.get(currentRoom).addRoomItem(item);
+            rooms.get(currentRoomNum).addRoomItem(item);
             inventory.removeFromInventory(item);
         }
         notifyListeners();

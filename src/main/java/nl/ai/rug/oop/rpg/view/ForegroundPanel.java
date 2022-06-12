@@ -16,9 +16,9 @@ import java.util.HashMap;
 
 public class ForegroundPanel extends JPanel {
 
-    private ArrayList<JButton> itemBtns = new ArrayList<>();
     private MysteryGame game;
     private GameView frame;
+
     public ForegroundPanel(int width, int height) {
         setLayout(null);
         setBounds(0, 0, width, height);
@@ -33,85 +33,27 @@ public class ForegroundPanel extends JPanel {
         if (this.frame == null) {
             this.frame = frame;
         }
-        if (game.getCurrentRoom() == 0) {
-            addDoorButtons();
+        if (game.getCurrentRoomNum() == 0) {
+            addDoorButtons(); // todo consider having the buttons on a sublayer
         }
-        for (Item currentItem : game.getRoom(game.getCurrentRoom()).getRoomItems()) {
+        for (Item currentItem : game.getRoom(game.getCurrentRoomNum()).getRoomItems()) {
             try {
-                JButton item = newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
-                item.addActionListener(new ItemChooser(game, currentItem, frame));
+                JButton itemButton = newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
+                itemButton.addActionListener(new ItemChooser(game, currentItem, frame));
             } catch (IOException e) {
                 System.out.println(currentItem.getItemName() + ".png not found.");
                 throw new RuntimeException(e);
             }
         }
         try {
-            JButton npcButton = newButton("npcs/" + game.getRoom(game.getCurrentRoom()).getNPC().getName(), game.getRoom(game.getCurrentRoom()).getNPC().getCoords());
+            JButton npcButton = newButton("npcs/" + game.getRoom(game.getCurrentRoomNum()).getNPC().getName(), game.getRoom(game.getCurrentRoomNum()).getNPC().getCoords());
             npcButton.addActionListener(new Dialoguer(game, frame));
         } catch (IOException e) {
-            System.out.println(game.getRoom(game.getCurrentRoom()).getNPC().getName() + ".png not found.");
+            System.out.println(game.getRoom(game.getCurrentRoomNum()).getNPC().getName() + ".png not found.");
             throw new RuntimeException(e);
         }
     }
-    /*public ForegroundPanel(@NotNull MysteryGame game, int roomIdx) {
-        this.game = game;
-        Room room = game.getRoom(roomIdx);
-        setLayout(null);
-        setBounds(0,0,800,500);
-        setOpaque(false);
-        if (roomIdx == 0) {
-            addDoorBtns();
-            for (Item currentItem : room.getRoomItems()) {
-                //System.out.println(roomIdx+ ": items - " + currentItem.getItemName());
-                try {
-                    itemBtns.add(newBtn("items/" + currentItem.getItemName(), currentItem.getCoords())); // id btns by the idx. same idx in model for itms
-                } catch (IOException e) {
-                    //System.out.println("Item missing" + roomIdx);
-                    throw new RuntimeException(e);
-                }
-            }
-        }
-        try {
-            newBtn("npcs/" + room.getNPC().getName(), room.getNPC().getCoords());
-        } catch (IOException e) {
-            //System.out.println("NPC missing: " + room.getNPC().getName());
-            throw new RuntimeException(e);
-        }
-    }*/
-    /*public void set(int roomIdx) throws IOException {
-        setLayout(null);
-        setBounds(0,0,800,500);
-        setOpaque(false);
-        SwingUtilities.updateComponentTreeUI(this);
-        switch(roomIdx) {
-            case 0:
-                addDoorBtns();
-                btnsDict.put((Integer)1, newBtn(gameItems.get(1)));
-                btns.add(newBtn("items/pxeuro", 0.2, 380, 50));
-                btns.add(newBtn("npcs/pxstacey", 0.5, 450, 200));
-                btns.add(newBtn("items/pxcleaning-supplies", 0.15, 70, 270));
-                break;
-            case 1:
-                btns.add(newBtn("npcs/pxdavey", 1.5, 70, 100));
-                //btns.add(newBtn("npcs/pxsam", 1.5, 190, 100));
-                //btns.add(newBtn("npcs/pxalex", 1.5, 310, 100));
-                //btns.add(newBtn("npcs/pxkyle", 1.5, 430, 100));
-                //btns.add(newBtn("npcs/pxmelvin", 1.5, 550, 100));
-                //btns.add(newBtn("items/pxelectric-panel", 0.58, 360, 150));
-                break;
-            case 2:
-                btns.add(newBtn("npcs/sam", 1.3, 250, 200));
-                break;
-            case 3:
-                btns.add(newBtn("npcs/kyle", 1.3, 800, 280));
-            case 4:
-                btns.add(newBtn("npcs/alex", 1.3, 800, 280));
-            case 5:
-                btns.add(newBtn("npcs/melvin", 1.3, 800, 280));
-            case 6:
 
-        }
-    }*/
     private JButton newButton(String name, HashMap<String,Integer> coords) throws IOException { // todo: 4csanad stuff here
         Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
         JButton btn = new JButton(new ImageIcon(img));
@@ -124,11 +66,7 @@ public class ForegroundPanel extends JPanel {
         return btn;
     }
 
-    protected void removeBtn(int id) { // todo: !!!find a way to id the buttons
-        remove(itemBtns.get(id));
-    }
-
-    private void addDoorButtons() {
+    private void addDoorButtons() { // todo add some labels maybe
         ArrayList<JButton> btns = new ArrayList<>();
         for(int i = 0; i < 6; i ++) {
             btns.add(new JButton());
@@ -147,6 +85,4 @@ public class ForegroundPanel extends JPanel {
             add(btns.get(i));
         }
     }
-
-
 }

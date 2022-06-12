@@ -18,12 +18,11 @@ public class PutBackItem implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (modelItem.getRoomNumber() == modelGame.getCurrentRoom()) {
+        if (modelItem.getRoomNumber() == modelGame.getCurrentRoomNum()) {
             modelGame.updateInventory(modelItem, 0);
         } else {
-            System.out.println("Controller failed");
             viewFrame.displayErrorMessage(0);
-            // todo 4 some reason those happen a bunch of times after just one click csanad pls fix
+            // todo 4 some reason this happens a bunch of times after just one click csanad pls fix
         }
     }
 }

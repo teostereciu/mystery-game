@@ -1,31 +1,49 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.controller.Dialoguer;
+import nl.ai.rug.oop.rpg.controller.ItemChooser;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
+import nl.ai.rug.oop.rpg.model.NPC;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 public class DialoguePanel extends JPanel { // note: as a possible future feature this could show the npc talking
-    private JLabel jlbl = new JLabel("Text text text");
+    private JLabel jlbl = new JLabel("");
     private GameView frame;
     private MysteryGame game;
+    private JButton nextButton;
     public DialoguePanel(MysteryGame game, GameView frame) {
         this.game = game;
         this.frame = frame;
         setOpaque(true);
         setBackground(Color.black);
+        setLayout(new BorderLayout(0, 0));
+        setBorder(BorderFactory.createLineBorder(Color.black, 10));
         //setSize(700, 100);
         jlbl.setForeground(Color.white);
-        add(jlbl);
+        jlbl.setPreferredSize(new Dimension(600, 40));
+        add(jlbl, BorderLayout.CENTER);
+        nextButton = new JButton(">");
+        nextButton.setPreferredSize(new Dimension(40,40));
+        //nextButton.setForeground(Color.white);
+        nextButton.addActionListener(new Dialoguer(game, frame));
+        add(nextButton, BorderLayout.EAST);
+        clear();
     }
     public void update() {
-        //Note from daniel: The next line works, however not completely yet.
-        //Also: Lines need to be shorter. I can make that work
-        String dialogueLine = game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getDialogueMap().get(game.getRoom(game.getCurrentRoom()).getNPC().getDialogueCounter() * game.getMAX_DIALOGUE_OPTIONS() + game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getCurrentKey());
+        nextButton.setEnabled(true);
+        nextButton.setVisible(true);
+        jlbl.setForeground(Color.white);
+        NPC npc = game.getRoom(game.getCurrentRoomNum()).getNPC();
+        String dialogueLine = npc.getNPCDialogue().getDialogueMap().get(npc.getDialogueCounter() * game.MAX_DIALOGUE_OPTIONS + npc.getNPCDialogue().getCurrentKey());
         //String dialogueLine = game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getDialogue(game.getLineCounter());
         jlbl.setText(dialogueLine);
     }
-    public void clear() {
+    public void clear() { //todo this also when dialogue ends
         jlbl.setText("");
+        nextButton.setEnabled(false);
+        nextButton.setVisible(false);
     }
 }

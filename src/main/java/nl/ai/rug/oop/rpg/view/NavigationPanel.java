@@ -7,20 +7,20 @@ import javax.swing.*;
 import java.awt.*;
 
 public class NavigationPanel extends JPanel {
-    protected JButton btn = new JButton("<"); // todo: design. change max size(?); 4csanad - pressing this btn should lead back to room0
+    protected JButton navigateButton = new JButton("<"); // todo: design. change max size(?);
     private MysteryGame game;
     public NavigationPanel(MysteryGame game) {
         this.game = game;
         setLayout(new BorderLayout(0, 0));
-        btn.setOpaque(true);
-        btn.setBorderPainted(true);
-        btn.setBackground(Color.black);
-        btn.setPreferredSize((new Dimension(70,10)));
-        btn.setEnabled(false);
-        btn.addActionListener(new RoomChooser(game, 0)); // todo: import game
-        add(btn, BorderLayout.CENTER);
+        navigateButton.setOpaque(true);
+        navigateButton.setBorderPainted(true);
+        navigateButton.setBackground(Color.black);
+        navigateButton.setPreferredSize((new Dimension(70,10)));
+        navigateButton.setEnabled(false);
+        navigateButton.addActionListener(new RoomChooser(game, 0));
+        add(navigateButton, BorderLayout.CENTER);
     }
-    public void enableBtn(Boolean bool) {
-        btn.setEnabled(bool);
+    public void enableNavigateButton(Boolean bool) {
+        navigateButton.setEnabled(bool);
     }
 }

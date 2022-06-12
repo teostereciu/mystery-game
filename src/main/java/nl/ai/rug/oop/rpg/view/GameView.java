@@ -18,31 +18,6 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private final MysteryGame game = new MysteryGame(); // note: update this if constructor changes
     public GameView() {
         init();
-        /*JLayeredPane welcomePanel = new JLayeredPane();
-        JLabel bgLabel = new JLabel();
-        bgLabel.setBounds(0, 0, 800, 500);
-        welcomePanel.setBounds(0, 0, 800, 500);
-        try {
-            Image bgImage = ImageIO.read(new File("src/main/resources/detective-choice.png"));
-            bgLabel.setIcon(new ImageIcon(bgImage));
-        } catch (IOException e) {
-            throw new RuntimeException();
-        }
-        welcomePanel.add(bgLabel, 0);
-        JPanel choicePanel = new JPanel(null);
-        choicePanel.setBounds(0, 0, 800, 500);
-        JButton goodCopButton = new JButton();
-        JButton badCopButton = new JButton();
-        goodCopButton.setBounds(190, 60, 180, 160);
-        badCopButton.setBounds(400, 60, 180, 160);
-
-        choicePanel.add(goodCopButton);
-        choicePanel.add(badCopButton);
-        welcomePanel.add(choicePanel, 1);
-        add(welcomePanel, BorderLayout.CENTER);
-        setVisible(true);*/
-        /**/
-        //pack();
         game.addListener(this);
     }
 
@@ -56,23 +31,15 @@ public class GameView extends JFrame implements PropertyChangeListener {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-    private InventoryPanel inventoryPanel = new InventoryPanel(game, this);
-    private DialoguePanel dialoguePanel = new DialoguePanel(game, this);
-    private LocationPanel locationPanel = new LocationPanel();
-    private NavigationPanel navigationPanel = new NavigationPanel(game);
-    private RoomPanel roomPanel = new RoomPanel(game, this);
+    private final InventoryPanel inventoryPanel = new InventoryPanel(game, this);
+    private final DialoguePanel dialoguePanel = new DialoguePanel(game, this);
+    private final LocationPanel locationPanel = new LocationPanel();
+    private final NavigationPanel navigationPanel = new NavigationPanel(game);
+    private final RoomPanel roomPanel = new RoomPanel(game, this);
     public RoomPanel getRoomPanel() {
         return roomPanel;
     }
     public void setPanels() {
-        //setSize(960, 580);
-        //try {
-
-        //} catch (IOException e) {
-        //    System.out.println("File not found.");
-        //    throw new RuntimeException();
-        //}
-
         add(inventoryPanel, BorderLayout.EAST);
         add(dialoguePanel, BorderLayout.SOUTH);
         add(locationPanel, BorderLayout.NORTH);
@@ -81,29 +48,12 @@ public class GameView extends JFrame implements PropertyChangeListener {
         add(roomPanel, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(null);
-
-        /*try {
-            inventoryPanel.addItem("euro",0.1,0);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }*/
-        //backgroundPanel.removeBtnFromFG(0);
-        //updateRoom(1);
-        //updateRoom(2);
-        /*try {
-            Image eurImg = ImageIO.read(new File("src/main/resources/euro.png"));
-            eurImg = eurImg.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-            inventoryPanel.addItem(eurImg, 1);
-            inventoryPanel.removeItem(1);
-        } catch(IOException ignored) {
-
-        }*/
     }
 
     private void updateRoom() throws IOException {
         roomPanel.set();
-        navigationPanel.enableBtn(game.getCurrentRoom() != 0);
-        locationPanel.update(game.getCurrentRoom());
+        navigationPanel.enableNavigateButton(game.getCurrentRoomNum() != 0);
+        locationPanel.update(game.getCurrentRoomNum());
         dialoguePanel.clear();
         inventoryPanel.update();
         SwingUtilities.updateComponentTreeUI(this);
@@ -125,7 +75,6 @@ public class GameView extends JFrame implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         try {
-            //System.out.println("Update room from " + game.getPreviousRoomIdx() + " to " + game.getCurrentRoom());
             updateRoom();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -137,20 +86,17 @@ public class GameView extends JFrame implements PropertyChangeListener {
     }
 
     public void displayErrorMessage(int i) {
-        switch(i) {
-            case 0:
+        switch (i) {
+            case 0 -> {
                 System.out.println("Failed to put down item");
                 JOptionPane.showMessageDialog(this, "Can't put back item here.",
                         "Failed to put back item", JOptionPane.WARNING_MESSAGE);
-                break;
-            case 1:
-                JOptionPane.showMessageDialog(this, "Can't use item here.",
-                        "Failed to use item", JOptionPane.WARNING_MESSAGE);
-                break;
-            case 2:
-                JOptionPane.showMessageDialog(this, "Inventory is full. Put back an item before trying to add a new one.",
-                        "Failed to add item to inventory", JOptionPane.WARNING_MESSAGE);
-                break;
+            }
+            case 1 -> JOptionPane.showMessageDialog(this, "Can't use item here.",
+                    "Failed to use item", JOptionPane.WARNING_MESSAGE);
+            case 2 ->
+                    JOptionPane.showMessageDialog(this, "Inventory is full. Put back an item before trying to add a new one.",
+                            "Failed to add item to inventory", JOptionPane.WARNING_MESSAGE);
         }
     }
 }

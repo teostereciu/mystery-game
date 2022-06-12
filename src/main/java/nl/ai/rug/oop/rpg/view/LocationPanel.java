@@ -4,24 +4,25 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LocationPanel extends JPanel {
-    private JLabel roomLbl = new JLabel("Hallway");
+    private final JLabel roomLabel = new JLabel("Hallway");
     public LocationPanel() {
         setOpaque(true);
         setBackground(Color.black);
-        roomLbl.setForeground(Color.white);
-        add(roomLbl);
+        roomLabel.setForeground(Color.white);
+        add(roomLabel);
     }
-    public void update(int roomIdx) { // todo: 4csanad - use this to update the label
-        String txt;
+
+    public void update(int roomIdx) {
+        String text;
         switch (roomIdx) {
-            case 1 -> txt = "Kitchen";
-            case 2 -> txt = "Stacey's and Samantha's Room";
-            case 3 -> txt = "Davey's and Kyle's Room";
-            case 4 -> txt = "Melvin's Room";
-            case 5 -> txt = "Alex's Room";
-            case 6 -> txt = "Storage Room";
-            default -> txt = "Hallway";
+            case 1 -> text = "Kitchen";
+            case 2 -> text = "Stacey and Samantha's Room";
+            case 3 -> text = "Davey and Kyle's Room";
+            case 4 -> text = "Melvin's Room";
+            case 5 -> text = "Alex's Room";
+            case 6 -> text = "Storage Room";
+            default -> text = "Hallway";
         }
-        roomLbl.setText(txt);
+        roomLabel.setText(text);
     }
 }
