@@ -72,12 +72,14 @@ public class Item {
                 roomNumber = 5;
                 break;
             case(7):
-                itemName = "Computer";
+                itemName = "computer";
                 roomNumber = 4;
                 isCarryAble = 0;
                 updateNPC.add(0);
                 updateNPC.add(3);
                 updateNPC.add(4);
+                coords.put("x", 550);
+                coords.put("y", 250);
                 break;
             case(8):
                 itemName = "hammer";
@@ -86,9 +88,11 @@ public class Item {
                 coords.put("y", 280);
                 break;
             case(9):
-                itemName = "Locked desk";
+                itemName = "locked-drawer"; // note changed from desk. todo change in dialogue
                 roomNumber = 4;
                 isCarryAble = 0;
+                coords.put("x", 350);
+                coords.put("y", 230);
                 break;
             case(10):
                 itemName = "screwdriver";
@@ -97,13 +101,17 @@ public class Item {
                 coords.put("y", 400);
                 break;
             case(11):
-                itemName = "Scissors";
+                itemName = "scissors";
                 roomNumber = 4;
+                coords.put("x", 450);
+                coords.put("y", 300); //todo change
                 break;
             case(12):
-                itemName = "Computer Mouse";
+                itemName = "mouse";
                 roomNumber = 4;
                 updateNPC.add(3);
+                coords.put("x", 250);
+                coords.put("y", 400); //todo change
                 break;
             case(13):
                 itemName = "electrical-panel";
@@ -169,7 +177,7 @@ public class Item {
     public void useItem() {
 
     }
-    private final HashMap<String, Integer> coords = new HashMap<>(); // note from teo: i needed this, but you still need to set them in the constructor (and in game). try coords.put("x", value);
+    private final HashMap<String, Integer> coords = new HashMap<>();
     public HashMap<String, Integer> getCoords() {
         return coords;
     }

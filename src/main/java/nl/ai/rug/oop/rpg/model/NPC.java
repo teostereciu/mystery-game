@@ -61,6 +61,8 @@ public class NPC {
         this.NPCNumber = 4;
         this.NPCname = "alex";
         roomNumber = 4;
+        coords.put("x", 100);
+        coords.put("y", 100);
     }
     private void Kyle() {
         this.NPCNumber = 5;
