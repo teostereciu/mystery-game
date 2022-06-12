@@ -19,7 +19,7 @@ public class ItemChooser implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         int result = modelGame.updateInventory(modelItem, 1);
         if (result == 0) {
-            viewFrame.displayErrorMessage(2);
+            viewFrame.displayErrorMessage(2); // note we can stick to only using the property change by having an error variable in the model (set to 2 by this event for eg)
         }
     }
 }
