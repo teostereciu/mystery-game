@@ -139,12 +139,8 @@ public class MysteryGame {
     public int updateInventory(Item item, int removeSlashAdd) {
         int result = 1;
         if (removeSlashAdd == 1) {
-            //if (item.getIsCarryAble() == 1) { // items that are not carriable won't make it this far
             result = inventory.addToInventory(item);
-           //     if (result == 1) {
             rooms.get(currentRoomNum).removeRoomItem(item);
-                //}
-            //}
         } else {
             rooms.get(currentRoomNum).addRoomItem(item);
             inventory.removeFromInventory(item);

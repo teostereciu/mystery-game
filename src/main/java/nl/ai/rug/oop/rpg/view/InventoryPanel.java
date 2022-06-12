@@ -49,12 +49,16 @@ public class InventoryPanel extends JPanel {
     public void update() {
         int i;
         for (i = 0; i < game.getInventory().getItemsArray().size(); i ++) {
-            System.out.println("i");
             if (game.getInventory().getItemsArray().get(i) != null) {
                 String name = game.getInventory().getItemsArray().get(i).getItemName();
                 try {
+                    if (inventoryButtonsList.get(i).getActionListeners().length == 0) {
+                        inventoryButtonsList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i), frame));
+                    }
+                    //inventoryButtonsList.get(i).removeActionListener(inventoryButtonsList.get(i).getActionListeners()[0]);
                     inventoryButtonsList.get(i).setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/items/" + name + ".png"))));
-                    inventoryButtonsList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i), frame));
+                    //inventoryButtonsList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i), frame));
+
                     //inventoryButtonsList.get(i).addActionListener(new ShowItemOptions(game));
                     //itemOptionsComboBox.addActionListener(new UseItem(game, game.getInventory().getItemsArray().get(i), frame)); //todo this
 
