@@ -77,7 +77,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     public void displayErrorMessage(int i) { // todo idea have the option to put back or use item
         switch (i) {
             case 0 -> {
-                System.out.println("Failed to put down item");
+                //System.out.println("Failed to put down item");
                 JOptionPane.showMessageDialog(this, "Can't put back item here.",
                         "Failed to put back item", JOptionPane.WARNING_MESSAGE);
             }

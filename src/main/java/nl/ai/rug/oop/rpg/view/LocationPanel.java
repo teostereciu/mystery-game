@@ -18,8 +18,8 @@ public class LocationPanel extends JPanel {
             case 1 -> text = "Kitchen";
             case 2 -> text = "Stacey and Samantha's Room";
             case 3 -> text = "Davey and Kyle's Room";
-            case 4 -> text = "Melvin's Room";
-            case 5 -> text = "Alex's Room";
+            case 4 -> text = "Alex's Room";
+            case 5 -> text = "Melvin's Room";
             case 6 -> text = "Storage Room";
             default -> text = "Hallway";
         }

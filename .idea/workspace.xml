@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="017b9679-486a-4cbf-8d61-e2e931734e47" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/NPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/model/NPC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/LocationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/ai/rug/oop/rpg/view/LocationPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

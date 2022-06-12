@@ -65,7 +65,7 @@ public class MysteryGame {
             detectiveName = "DoctorDormitory";
         }
         detective = new Detective(detectiveName);
-        System.out.println("You chose detective" + detectiveName); //todo remove
+        //System.out.println("You chose detective" + detectiveName); //todo remove
     }
 
     /**
