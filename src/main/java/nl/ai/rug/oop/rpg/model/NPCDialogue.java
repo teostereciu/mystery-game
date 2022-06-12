@@ -8,7 +8,7 @@ public class NPCDialogue {
     private HashMap<Integer, String> dialogueMap = new HashMap<>();
     private int currentKey = 0;
 
-    public void setLine(int key) {
+    public void setCurrentKey(int key) {
         currentKey = key;
     }
     public void increaseLine() {
@@ -61,9 +61,6 @@ public class NPCDialogue {
         dialogueMap.put(5, "You should start by talking to Davey. He is always hanging out in the living room. Maybe he saw something?");
         dialogueMap.put(6, "In the meantime,  I'll make a batch of coffee for you. Cops like that, right?");
         dialogueMap.put(7, "If you want any other information about the place or my housemates, just let me know!");
-        dialogueMap.put(8, "8");
-        dialogueMap.put(9, "9");
-        dialogueMap.put(10, "0");
 
         /* Second interaction dialogue (After getting hat) */
         dialogueMap.put(11, "Hey, still making that coffee! did you find the beer yet?");
