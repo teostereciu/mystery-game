@@ -15,8 +15,11 @@ public class Item {
     private final int itemNumber;
     private int isCarryAble;
     private int roomNumber;
+    private ArrayList<Integer> updateNPC = new ArrayList<>();
 
     //todo change names of items to the file names
+    //TODO give the items functions
+    //TODO couple the item functions to NPCs
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
         isCarryAble = 1;
@@ -26,11 +29,14 @@ public class Item {
                 roomNumber = 2;
                 coords.put("x", 360);
                 coords.put("y", 150);
+                updateNPC.add(0);
+                updateNPC.add(2);
             case(1):
                 itemName = "euro";
+                roomNumber = 0;
                 coords.put("x", 380);
                 coords.put("y", 50);
-                roomNumber = 0;
+                updateNPC.add(2);
                 break;
             case(2):
                 itemName = "phone";
@@ -38,6 +44,8 @@ public class Item {
                 coords.put("x", 90);
                 coords.put("y", 400);
                 isCarryAble = 0;
+                updateNPC.add(0);
+                updateNPC.add(2);
                 break;
             case(3):
                 itemName = "coffee";
@@ -56,6 +64,8 @@ public class Item {
                 roomNumber = 3;
                 coords.put("x", 150);
                 coords.put("y", 380);
+                updateNPC.add(2);
+                updateNPC.add(3);
                 break;
             case(6):
                 itemName = "Video Tape";
@@ -65,6 +75,9 @@ public class Item {
                 itemName = "Computer";
                 roomNumber = 4;
                 isCarryAble = 0;
+                updateNPC.add(0);
+                updateNPC.add(3);
+                updateNPC.add(4);
                 break;
             case(8):
                 itemName = "hammer";
@@ -90,6 +103,7 @@ public class Item {
             case(12):
                 itemName = "Computer Mouse";
                 roomNumber = 4;
+                updateNPC.add(3);
                 break;
             case(13):
                 itemName = "electrical-panel";
@@ -97,6 +111,7 @@ public class Item {
                 isCarryAble = 0;
                 coords.put("x", 360);
                 coords.put("y", 150);
+                updateNPC.add(3);
                 break;
             case(14):
                 itemName = "safe";
@@ -104,6 +119,8 @@ public class Item {
                 isCarryAble = 0;
                 coords.put("x", 100);
                 coords.put("y", 245);
+                updateNPC.add(3);
+                updateNPC.add(4);
                 break;
             case(15):
                 itemName = "key";
@@ -115,6 +132,7 @@ public class Item {
                 itemName = "Beer Crate";
                 roomNumber = 6;
                 isCarryAble = 0;
+                updateNPC.add(0);
                 break;
             default:
         }
@@ -134,7 +152,21 @@ public class Item {
         return roomNumber;
     }
 
-    public void itemUsage() {
+    public ArrayList<Integer> getUpdateNPC() {
+        return updateNPC;
+    }
+
+    public int checkItemProgress(int NPCnumber) {
+        int i = 0;
+        while (updateNPC.get(i) != null) {
+            if (updateNPC.get(i) == NPCnumber) {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    public void useItem() {
 
     }
     private final HashMap<String, Integer> coords = new HashMap<>(); // note from teo: i needed this, but you still need to set them in the constructor (and in game). try coords.put("x", value);

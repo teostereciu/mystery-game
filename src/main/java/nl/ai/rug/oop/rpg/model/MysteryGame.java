@@ -22,10 +22,6 @@ public class MysteryGame {
     private int inventorySize;
     private int pickedUpItems = 0;
 
-
-    //TODO Rewrite the catch parts in NPC, ROOM and Item
-
-
     /* everything with regard to initializing game */
 
     public MysteryGame() {
@@ -88,6 +84,10 @@ public class MysteryGame {
         return NUMBER_OF_ROOMS;
     }
 
+    public Room getRoom(int roomNumber) { // note from teo: needed this
+        return rooms.get(roomNumber);
+    }
+
     /**
      * Changes the current room
      * @param number the number of the new room
@@ -135,18 +135,43 @@ public class MysteryGame {
         pickedUpItems++;
     }
 
-    /*public void useItem (int itemNumber) {
-        Item item = inventory.removeFromInventory(itemNumber);
-    }*/
+    /* Everything with regard to Inventory*/
+    public int updateInventory(Item item, int removeSlashAdd) {
+        int result = 1;
+        if (removeSlashAdd == 1) {
+            if (item.getIsCarryAble() == 1) {
+                result = inventory.addToInventory(item);
+                if (result == 1) {
+                    rooms.get(currentRoomNum).removeRoomItem(item);
+                }
+            } else {
+                System.out.println("You cannot pick up this item");
+                //TODO print a statement in view
+            }
+        } else {
+            rooms.get(currentRoomNum).addRoomItem(item);
+            inventory.removeFromInventory(item);
+        }
+        notifyListeners();
+        return result;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public int getInventorySize() {
+        return inventorySize;
+    }
 
     /* everything with regard to NPCs */
 
-    private int lineCounter;
-    public int getLineCounter() {
+    private int lineCounter; //TODO remove
+    public int getLineCounter() { //TODO remove
         return lineCounter;
     }
     public void updateDialogue() {
-        //lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * MAX_DIALOGUE_OPTIONS + 1;
+        //lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * MAX_DIALOGUE_OPTIONS + 1; //TODO remove
         rooms.get(currentRoomNum).getNPC().getNPCDialogue().increaseLine();
         if (rooms.get(currentRoomNum).getNPC().getNPCDialogue().getDialogue(rooms.get(currentRoomNum).getNPC().getDialogueCounter() * MAX_DIALOGUE_OPTIONS + rooms.get(currentRoomNum).getNPC().getNPCDialogue().getCurrentKey()) == null) {
             rooms.get(currentRoomNum).getNPC().getNPCDialogue().setCurrentKey(0);
@@ -154,8 +179,11 @@ public class MysteryGame {
         notifyListeners();
     }
 
-    public int getMAX_DIALOGUE_OPTIONS() {
-        return MAX_DIALOGUE_OPTIONS;
+    public void checkForProgress(int NPCnumber) {
+        if (getInventory().checkProgress(NPCnumber) == 1 /*TODO add check that sees if items can be played already*/ ) {
+            rooms.get(currentRoomNum).getNPC().updateDialogueCounter();
+            inventory.removeFromInventory(inventory.getItemFromInventory(NPCnumber));
+        }
     }
 
     /* everything with regard to gameState */
@@ -215,39 +243,6 @@ public class MysteryGame {
     }
 
 
-    /**
-     * @Author Teo
-     * @param roomIdx
-     * @return
-     */
-    public Room getRoom(int roomIdx) { // note from teo: needed this
-        return rooms.get(roomIdx);
-    }
-    public int updateInventory(Item item, int removeSlashAdd) {
-        int result = 1;
-        if (removeSlashAdd == 1) {
-            if (item.getIsCarryAble() == 1) {
-                result = inventory.addToInventory(item);
-                if (result == 1) {
-                    rooms.get(currentRoomNum).removeRoomItem(item);
-                }
-            } else {
-                System.out.println("You cannot pick up this item");
-                //TODO print a statement in view
-            }
-        } else {
-            rooms.get(currentRoomNum).addRoomItem(item);
-            inventory.removeFromInventory(item);
-        }
-        notifyListeners();
-        return result;
-    }
-    public Inventory getInventory() {
-        return inventory;
-    }
 
-    public int getInvetorySize() {
-        return inventorySize;
-    }
 }
 
