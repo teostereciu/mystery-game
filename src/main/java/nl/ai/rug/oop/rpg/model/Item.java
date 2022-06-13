@@ -68,7 +68,7 @@ public class Item {
                 updateNPC.add(3);
                 break;
             case(6):
-                itemName = "Video Tape";
+                itemName = "camera";
                 roomNumber = 5;
                 break;
             case(7):
