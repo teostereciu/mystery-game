@@ -15,6 +15,7 @@ public class Item {
     private final int itemNumber;
     private int isCarryAble;
     private int roomNumber;
+
     private ArrayList<Integer> updateNPC = new ArrayList<>();
 
     //todo change names of items to the file names
