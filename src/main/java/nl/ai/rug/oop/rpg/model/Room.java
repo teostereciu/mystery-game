@@ -14,7 +14,7 @@ public class Room {
     public final int roomNumber;
     private List<Item> roomItems = new ArrayList<>();
     private NPC npc;
-    private int isOpen;
+    private boolean isOpen;
     private Image img;
 
     /**
@@ -23,7 +23,11 @@ public class Room {
      */
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
-        isOpen = 0;
+        if(roomNumber <= 2){
+            isOpen = true;
+        } else {
+            isOpen = false;
+        }
         try {
             img = ImageIO.read(new File("src/main/resources/rooms/room" + roomNumber + ".png"));
             img = img.getScaledInstance(1067, 600, Image.SCALE_SMOOTH);
@@ -55,11 +59,11 @@ public class Room {
         return npc;
     }
 
-    public int getIsOpen() {
+    public boolean getIsOpen() {
         return isOpen;
     }
 
-    public void setIsOpen(int isOpen) {
+    public void setIsOpen(boolean isOpen) {
         this.isOpen = isOpen;
     }
 

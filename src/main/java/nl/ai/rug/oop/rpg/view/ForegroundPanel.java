@@ -73,7 +73,7 @@ public class ForegroundPanel extends JPanel {
             btns.get(i).setOpaque(false);
             btns.get(i).setContentAreaFilled(false);
             btns.get(i).setBorderPainted(false);
-            btns.get(i).addActionListener(new RoomChooser(game, i + 1));
+            btns.get(i).addActionListener(new RoomChooser(game, i + 1, frame));
             switch (i) {
                 case 0 -> btns.get(i).setBounds(50, 180, 90, 190); // note: this leads to room1 (common area)
                 case 1 -> btns.get(i).setBounds(170, 180, 90, 190);

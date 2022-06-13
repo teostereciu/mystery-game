@@ -104,7 +104,7 @@ public class MysteryGame {
      * checks if room is open
      * @return 1 if open, 0 if closed
      */
-    public int isRoomOpen(){
+    public boolean isRoomOpen(){
         return rooms.get(currentRoomNum).getIsOpen();
     }
 

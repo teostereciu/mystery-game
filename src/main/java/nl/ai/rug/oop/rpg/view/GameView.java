@@ -32,7 +32,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     private final InventoryPanel inventoryPanel = new InventoryPanel(game, this);
     private final DialoguePanel dialoguePanel = new DialoguePanel(game, this);
     private final LocationPanel locationPanel = new LocationPanel();
-    private final NavigationPanel navigationPanel = new NavigationPanel(game);
+    private final NavigationPanel navigationPanel = new NavigationPanel(game, this);
     private final RoomPanel roomPanel = new RoomPanel(game, this);
 
     public void setPanels() {
@@ -87,6 +87,8 @@ public class GameView extends JFrame implements PropertyChangeListener {
                 return JOptionPane.showOptionDialog(null,"What do you want to do with this item?","Drop/Use item.", JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE,null, options, null);
             }
+            case 4 -> JOptionPane.showMessageDialog(this, "You do not have access to this room.",
+                    "Failed to enter room", JOptionPane.WARNING_MESSAGE);
         }
         return -1;
     }
