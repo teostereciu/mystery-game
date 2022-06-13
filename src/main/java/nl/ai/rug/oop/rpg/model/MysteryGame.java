@@ -159,7 +159,10 @@ public class MysteryGame {
     public int getInventorySize() {
         return inventorySize;
     }
-    public void pressFlashlightButton() { flashlightWasUsed = !flashlightWasUsed; }
+    public void pressFlashlightButton() {
+        flashlightWasUsed = !flashlightWasUsed;
+        notifyListeners();
+    }
     public boolean getFlashlightWasUsed() { return flashlightWasUsed; }
 
     /* everything with regard to NPCs */
