@@ -37,7 +37,7 @@ public class ForegroundPanel extends JPanel {
             addDoorButtons(); // todo consider having the buttons on a sublayer
         }
 
-        if (game.getCurrentRoomNum() == 5 && !game.getFlashlightWasUsed()) {
+        if (game.getCurrentRoomNum() == 5 && !game.getFlashlightIsOn()) {
             addDarkness();
             return;
         }

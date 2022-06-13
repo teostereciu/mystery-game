@@ -53,7 +53,7 @@ public class SelectInventoryItem implements ActionListener {
                     break;
                 case "flashlight":
                     //light up melvin's room
-                    modelGame.pressFlashlightButton();
+                    modelGame.setFlashlightIsOn(!modelGame.getFlashlightIsOn());
                     break;
                 case "Video Tape":
                     //new dialogue

@@ -21,7 +21,7 @@ public class MysteryGame {
     private Inventory inventory = new Inventory(TOTAL_INVENTORY_SLOTS);
     private int inventorySize;
     private int pickedUpItems = 0;
-    private boolean flashlightWasUsed = false;
+    private boolean flashlightIsOn = false;
 
     /* everything with regard to initializing game */
 
@@ -159,11 +159,11 @@ public class MysteryGame {
     public int getInventorySize() {
         return inventorySize;
     }
-    public void pressFlashlightButton() {
-        flashlightWasUsed = !flashlightWasUsed;
+    public void setFlashlightIsOn(boolean n) {
+        flashlightIsOn = n;
         notifyListeners();
     }
-    public boolean getFlashlightWasUsed() { return flashlightWasUsed; }
+    public boolean getFlashlightIsOn() { return flashlightIsOn; }
 
     /* everything with regard to NPCs */
 
