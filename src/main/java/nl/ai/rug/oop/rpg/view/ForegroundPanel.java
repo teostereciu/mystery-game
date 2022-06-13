@@ -36,6 +36,12 @@ public class ForegroundPanel extends JPanel {
         if (game.getCurrentRoomNum() == 0) {
             addDoorButtons(); // todo consider having the buttons on a sublayer
         }
+
+        if (game.getCurrentRoomNum() == 5 && !game.getFlashlightWasUsed()) {
+            addDarkness();
+            return;
+        }
+
         for (Item currentItem : game.getRoom(game.getCurrentRoomNum()).getRoomItems()) {
             try {
                 JButton itemButton = newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
@@ -64,6 +70,17 @@ public class ForegroundPanel extends JPanel {
         btn.setBorderPainted(false);
         add(btn);
         return btn;
+    }
+
+    private void addDarkness() {
+        JLabel darkLabel = null;
+        try {
+            darkLabel = new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/darkness.png"))));
+            darkLabel.setBounds(0, 0, 800, 500);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        add(darkLabel);
     }
 
     private void addDoorButtons() { // todo add some labels maybe

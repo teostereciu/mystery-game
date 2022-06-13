@@ -27,10 +27,11 @@ public class Item {
             case(0):
                 itemName = "hat";
                 roomNumber = 2;
-                coords.put("x", 360);
-                coords.put("y", 150);
+                coords.put("x", 100);
+                coords.put("y", 200);
                 updateNPC.add(0);
                 updateNPC.add(2);
+                break;
             case(1):
                 itemName = "euro";
                 roomNumber = 0;
