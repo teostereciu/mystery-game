@@ -19,10 +19,14 @@ public class SelectInventoryItem implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         int result = viewFrame.displayDialog(3);
+        //System.out.println("You clicked an inventory item!");
         if (result == 0) {
+            //System.out.println("You chose to drop it!");
             if (modelItem.getRoomNumber() == modelGame.getCurrentRoomNum()) {
+                //System.out.println("Item was dropped!");
                 modelGame.updateInventory(modelItem, 0);
             } else {
+                //System.out.println("You could not be dropped!");
                 viewFrame.displayDialog(0);
             }
         } else {

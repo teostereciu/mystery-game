@@ -48,12 +48,16 @@ public class InventoryPanel extends JPanel {
     public void update() {
         int i;
         for (i = 0; i < game.getInventory().getItemsArray().size(); i ++) {
+            if (inventoryButtonsList.get(i).getActionListeners().length != 0) {
+                inventoryButtonsList.get(i).removeActionListener(inventoryButtonsList.get(i).getActionListeners()[0]);
+            }
             if (game.getInventory().getItemsArray().get(i) != null) {
                 String name = game.getInventory().getItemsArray().get(i).getItemName();
                 try {
-                    if (inventoryButtonsList.get(i).getActionListeners().length == 0) {
+                    //if (inventoryButtonsList.get(i).getActionListeners().length == 0) {
+                        //System.out.println("Action listener added to " + name + "in slot " + i);
                         inventoryButtonsList.get(i).addActionListener(new SelectInventoryItem(game, game.getInventory().getItemsArray().get(i), frame));
-                    }
+                    //}
                     //inventoryButtonsList.get(i).removeActionListener(inventoryButtonsList.get(i).getActionListeners()[0]);
                     inventoryButtonsList.get(i).setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/items/" + name + ".png"))));
                     //inventoryButtonsList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i), frame));
@@ -66,10 +70,7 @@ public class InventoryPanel extends JPanel {
                 }
             }
         }
-        for (; i < 5; i ++) {
-            if (inventoryButtonsList.get(i).getActionListeners().length != 0) {
-                inventoryButtonsList.get(i).removeActionListener(inventoryButtonsList.get(i).getActionListeners()[0]);
-            }
+        for (; i < SIZE; i ++) {
             inventoryButtonsList.get(i).setIcon(null);
         }
     }
