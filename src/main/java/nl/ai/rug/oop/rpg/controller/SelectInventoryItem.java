@@ -30,6 +30,34 @@ public class SelectInventoryItem implements ActionListener {
                 viewFrame.displayDialog(0);
             }
         } else {
+            switch(modelItem.getItemName()){
+                case "hat":
+                    modelGame.getRoom(3).setIsOpen(true);
+                    break;
+                case "euro":
+                    modelGame.getRoom(5).setIsOpen(true);
+                    break;
+                case "phone":
+                    //new dialogue
+                    break;
+                case "coffee":
+                    modelGame.getRoom(4).setIsOpen(true);
+                    break;
+                case "cleaning-supplies":
+                    //get access to safe
+                    break;
+                case "flashlight":
+                    //light up melvin's room
+                    break;
+                case "Video Tape":
+                    //new dialogue
+                    break;
+                case "hammer":
+                    //break desk lock
+                    break;
+            }
+            modelGame.updateInventory(modelItem,0);
+            viewFrame.displayDialog(5);
             // USE ITEM; // todo csanad
         }
     }
