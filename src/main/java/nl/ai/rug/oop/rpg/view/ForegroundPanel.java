@@ -52,8 +52,10 @@ public class ForegroundPanel extends JPanel {
             }
         }
         try {
-            JButton npcButton = newButton("npcs/" + game.getRoom(game.getCurrentRoomNum()).getNPC().getName(), game.getRoom(game.getCurrentRoomNum()).getNPC().getCoords());
-            npcButton.addActionListener(new Dialoguer(game, frame));
+            if (game.getRoom(game.getCurrentRoomNum()).getNPC() != null) {
+                JButton npcButton = newButton("npcs/" + game.getRoom(game.getCurrentRoomNum()).getNPC().getName(), game.getRoom(game.getCurrentRoomNum()).getNPC().getCoords());
+                npcButton.addActionListener(new Dialoguer(game, frame));
+            }
         } catch (IOException e) {
             System.out.println(game.getRoom(game.getCurrentRoomNum()).getNPC().getName() + ".png not found.");
             throw new RuntimeException(e);

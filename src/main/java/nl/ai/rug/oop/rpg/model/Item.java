@@ -141,10 +141,12 @@ public class Item {
                 coords.put("y", 350); //todo change
                 break;
             case(16):
-                itemName = "Beer Crate";
+                itemName = "crate";
                 roomNumber = 6;
                 isCarryAble = 0;
                 updateNPC.add(0);
+                coords.put("x", 100);
+                coords.put("y", 350); //todo change
                 break;
             default:
         }
