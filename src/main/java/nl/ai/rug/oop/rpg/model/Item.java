@@ -70,6 +70,8 @@ public class Item {
             case(6):
                 itemName = "camera";
                 roomNumber = 5;
+                coords.put("x", 450);
+                coords.put("y", 380);
                 break;
             case(7):
                 itemName = "computer";
