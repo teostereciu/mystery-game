@@ -74,18 +74,20 @@ public class GameView extends JFrame implements PropertyChangeListener {
         dialoguePanel.update();
     }
 
-    public void displayErrorMessage(int i) { // todo idea have the option to put back or use item
+    public int displayDialog(int i) {
         switch (i) {
-            case 0 -> {
-                //System.out.println("Failed to put down item");
-                JOptionPane.showMessageDialog(this, "Can't put back item here.",
+            case 0 -> JOptionPane.showMessageDialog(this, "Cannot drop item here.",
                         "Failed to put back item", JOptionPane.WARNING_MESSAGE);
-            }
-            case 1 -> JOptionPane.showMessageDialog(this, "Can't use item here.",
+            case 1 -> JOptionPane.showMessageDialog(this, "Cannot use item here.",
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
-            case 2 ->
-                    JOptionPane.showMessageDialog(this, "Inventory is full. Put back an item before trying to add a new one.",
+            case 2 -> JOptionPane.showMessageDialog(this, "Inventory is full. Drop an item before trying to add a new one.",
                             "Failed to add item to inventory", JOptionPane.WARNING_MESSAGE);
+            case 3 -> {
+                String[] options = {"Drop", "Use"};
+                return JOptionPane.showOptionDialog(null,"What do you want to do with this item?","Drop/Use item.", JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,null, options, null);
+            }
         }
+        return -1;
     }
 }

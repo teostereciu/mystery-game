@@ -39,7 +39,7 @@ public class ForegroundPanel extends JPanel {
         for (Item currentItem : game.getRoom(game.getCurrentRoomNum()).getRoomItems()) {
             try {
                 JButton itemButton = newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
-                itemButton.addActionListener(new ItemChooser(game, currentItem, frame));
+                itemButton.addActionListener(new ItemChooser(game, currentItem, frame)); // non-carryables might need a different one
             } catch (IOException e) {
                 System.out.println(currentItem.getItemName() + ".png not found.");
                 throw new RuntimeException(e);
@@ -54,7 +54,7 @@ public class ForegroundPanel extends JPanel {
         }
     }
 
-    private JButton newButton(String name, HashMap<String,Integer> coords) throws IOException { // todo: 4csanad stuff here
+    private JButton newButton(String name, HashMap<String,Integer> coords) throws IOException {
         Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
         JButton btn = new JButton(new ImageIcon(img));
         //System.out.println(name);

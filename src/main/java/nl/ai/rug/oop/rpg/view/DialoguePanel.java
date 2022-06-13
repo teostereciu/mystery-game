@@ -42,7 +42,7 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
             clear();
         }
     }
-    public void clear() { //todo this also when dialogue ends
+    public void clear() {
         jlbl.setText("");
         nextButton.setEnabled(false);
         nextButton.setVisible(false);

@@ -1,8 +1,7 @@
 package nl.ai.rug.oop.rpg.view;
 
-import nl.ai.rug.oop.rpg.controller.PutBackItem;
+import nl.ai.rug.oop.rpg.controller.SelectInventoryItem;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
-import nl.ai.rug.oop.rpg.model.Room;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -53,14 +52,14 @@ public class InventoryPanel extends JPanel {
                 String name = game.getInventory().getItemsArray().get(i).getItemName();
                 try {
                     if (inventoryButtonsList.get(i).getActionListeners().length == 0) {
-                        inventoryButtonsList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i), frame));
+                        inventoryButtonsList.get(i).addActionListener(new SelectInventoryItem(game, game.getInventory().getItemsArray().get(i), frame));
                     }
                     //inventoryButtonsList.get(i).removeActionListener(inventoryButtonsList.get(i).getActionListeners()[0]);
                     inventoryButtonsList.get(i).setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/items/" + name + ".png"))));
                     //inventoryButtonsList.get(i).addActionListener(new PutBackItem(game, game.getInventory().getItemsArray().get(i), frame));
 
                     //inventoryButtonsList.get(i).addActionListener(new ShowItemOptions(game));
-                    //itemOptionsComboBox.addActionListener(new UseItem(game, game.getInventory().getItemsArray().get(i), frame)); //todo this
+                    //itemOptionsComboBox.addActionListener(new UseItem(game, game.getInventory().getItemsArray().get(i), frame));
 
                 } catch (IOException e) {
                     throw new RuntimeException(e);
