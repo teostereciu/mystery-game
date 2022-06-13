@@ -32,34 +32,71 @@ public class SelectInventoryItem implements ActionListener {
         } else {
             switch(modelItem.getItemName()){
                 case "hat":
+                    modelGame.increaseNPCProgress(1);
+                    modelGame.increaseNPCProgress(0);
                     modelGame.getRoom(3).setIsOpen(true);
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "euro":
+                    if (modelGame.checkIfPlayable(modelItem) == 0){
+                        //todo print "this item cannot be played yet" or something
+                        break;
+                    }
+                    modelGame.increaseNPCProgress(0);
+                    modelGame.increaseNPCProgress(1);
                     modelGame.getRoom(5).setIsOpen(true);
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "phone":
-                    //new dialogue
+                    if (modelGame.checkIfPlayable(modelItem) == 0){
+                        //todo print "this item cannot be played yet" or something
+                        break;
+                    }
+                    modelGame.increaseNPCProgress(0);
+                    modelGame.increaseNPCProgress(1);
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "coffee":
+                    if (modelGame.checkIfPlayable(modelItem) == 0){
+                        //todo print "this item cannot be played yet" or something
+                        break;
+                    }
                     modelGame.getRoom(4).setIsOpen(true);
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "cleaning-supplies":
+                    if (modelGame.checkIfPlayable(modelItem) == 0){
+                        //todo print "this item cannot be played yet" or something
+                        break;
+                    }
                     //get access to safe
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "flashlight":
+                    if (modelGame.checkIfPlayable(modelItem) == 0){
+                        //todo print "this item cannot be played yet" or something
+                        break;
+                    }
+                    modelGame.increaseNPCProgress(1);
+                    modelGame.increaseNPCProgress(5);
                     //light up melvin's room
                     modelGame.setFlashlightIsOn(!modelGame.getFlashlightIsOn());
+                    modelGame.updateInventory(modelItem, 2);
                     break;
                 case "Video Tape":
+                    if (modelGame.checkIfPlayable(modelItem) == 0){
+                        //todo print "this item cannot be played yet" or something
+                        System.out.println("to soon");
+                        break;
+                    }
                     //new dialogue
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "hammer":
+                    if (modelGame.checkIfPlayable(modelItem) == 0){
+                        //todo print "this item cannot be played yet" or something
+                        break;
+                    }
                     //break desk lock
                     modelGame.updateInventory(modelItem, 2);
                     break;

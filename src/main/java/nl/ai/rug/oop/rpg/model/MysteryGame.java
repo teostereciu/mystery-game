@@ -21,6 +21,7 @@ public class MysteryGame {
     private Inventory inventory = new Inventory(TOTAL_INVENTORY_SLOTS);
     private int inventorySize;
     private int pickedUpItems = 0;
+    private ArrayList<Item> usedItems = new ArrayList<>();
     private boolean flashlightIsOn = false;
 
     /* everything with regard to initializing game */
@@ -66,7 +67,6 @@ public class MysteryGame {
             detectiveName = "DoctorDormitory";
         }
         detective = new Detective(detectiveName);
-        //System.out.println("You chose detective" + detectiveName); //todo remove
     }
 
     /**
@@ -146,6 +146,7 @@ public class MysteryGame {
             rooms.get(currentRoomNum).addRoomItem(item);
             inventory.removeFromInventory(item);
         } else {
+            usedItems.add(item);
             inventory.removeFromInventory(item);
         }
         notifyListeners();
@@ -183,17 +184,26 @@ public class MysteryGame {
 
     public void checkForProgress(int NPCnumber) {
         if (getInventory().checkProgress(NPCnumber) == 1 /*TODO add check that sees if items can be played already*/ ) {
-            rooms.get(currentRoomNum).getNPC().updateDialogueCounter();
-            inventory.removeFromInventory(inventory.getItemFromInventory(NPCnumber));
+            increaseNPCProgress(NPCnumber);
         }
     }
 
-    /* everything with regard to gameState */
+    public void increaseNPCProgress(int roomNumber) {
+        rooms.get(roomNumber).getNPC().updateDialogueCounter();
+    }
 
-    /**
-     * Function that starts the game
-     */
-    public void playGame(){}
+    public void increaseItemProgress(Item item) {
+
+    }
+
+    public int checkIfPlayable(Item item) {
+        if (item.getItemNumber() <= usedItems.size()) {
+            return 1;
+        }
+        return 0;
+    }
+
+    /* everything with regard to gameState */
 
     /**
      * Function that loads in a game state

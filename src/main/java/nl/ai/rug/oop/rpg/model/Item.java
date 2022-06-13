@@ -15,6 +15,7 @@ public class Item {
     private final int itemNumber;
     private int isCarryAble;
     private int roomNumber;
+    private int progressValue;
 
     private ArrayList<Integer> updateNPC = new ArrayList<>();
 
@@ -24,6 +25,7 @@ public class Item {
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
         isCarryAble = 1;
+        progressValue = 1;
         switch (itemNumber) {
             case(0):
                 itemName = "hat";
@@ -33,7 +35,7 @@ public class Item {
                 updateNPC.add(0);
                 updateNPC.add(2);
                 break;
-            case(1):
+            case(1): //todo switch euro and phone
                 itemName = "euro";
                 roomNumber = 0;
                 coords.put("x", 380);
@@ -97,18 +99,21 @@ public class Item {
                 isCarryAble = 0;
                 coords.put("x", 350);
                 coords.put("y", 230);
+                progressValue = 4;
                 break;
             case(10):
                 itemName = "screwdriver";
                 roomNumber = 2;
                 coords.put("x", 450);
                 coords.put("y", 400);
+                progressValue = 0;
                 break;
             case(11):
                 itemName = "scissors";
                 roomNumber = 4;
                 coords.put("x", 450);
                 coords.put("y", 300); //todo change
+                progressValue = 0;
                 break;
             case(12):
                 itemName = "mouse";
@@ -183,6 +188,11 @@ public class Item {
     public void useItem() {
 
     }
+
+    public int getProgressValue() {
+        return progressValue;
+    }
+
     private final HashMap<String, Integer> coords = new HashMap<>();
     public HashMap<String, Integer> getCoords() {
         return coords;

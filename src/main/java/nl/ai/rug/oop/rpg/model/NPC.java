@@ -95,7 +95,7 @@ public class NPC {
     }
 
     public void updateDialogueCounter() {
-        dialogueCounter ++;
+        dialogueCounter++;
     }
 
 
