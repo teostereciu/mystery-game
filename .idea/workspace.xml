@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="da7e3438-716b-42e5-baac-84dbfd8d5cc9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/2022_Project_023.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2022_Project_023.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a1082f31-3793-494b-aa19-88d7c51f3b06" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/RoomChooser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/RoomChooser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/MysteryGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/MysteryGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/ForegroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/ForegroundPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +18,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectId" id="2AWKaigElGh6oRhjTy5mk5pIsfI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="nl.ai.rug.oop.rpg.Main" />
@@ -37,18 +41,15 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1082f31-3793-494b-aa19-88d7c51f3b06" name="Changes" comment="" />
+      <created>1655119967803</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655119967803</updated>
+    </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

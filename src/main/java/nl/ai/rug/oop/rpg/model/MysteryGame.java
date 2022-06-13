@@ -137,13 +137,15 @@ public class MysteryGame {
     }
 
     /* Everything with regard to Inventory*/
-    public int updateInventory(Item item, int removeSlashAdd) {
+    public int updateInventory(Item item, int removeSlashAddSlashUltimatelyRemove) {
         int result = 1;
-        if (removeSlashAdd == 1) {
+        if (removeSlashAddSlashUltimatelyRemove == 1) {
             result = inventory.addToInventory(item);
             rooms.get(currentRoomNum).removeRoomItem(item);
-        } else {
+        } else if (removeSlashAddSlashUltimatelyRemove == 0){
             rooms.get(currentRoomNum).addRoomItem(item);
+            inventory.removeFromInventory(item);
+        } else {
             inventory.removeFromInventory(item);
         }
         notifyListeners();
@@ -157,7 +159,7 @@ public class MysteryGame {
     public int getInventorySize() {
         return inventorySize;
     }
-    public void useFlashlight() { flashlightWasUsed = true; }
+    public void pressFlashlightButton() { flashlightWasUsed = !flashlightWasUsed; }
     public boolean getFlashlightWasUsed() { return flashlightWasUsed; }
 
     /* everything with regard to NPCs */

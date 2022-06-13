@@ -18,6 +18,9 @@ public class RoomChooser implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(modelGame.getCurrentRoomNum()==5 && modelGame.getInventory().getItemsArray().contains(modelGame.getRoom(2).getRoomItem(5))){
+            modelGame.pressFlashlightButton();
+        }
         if(modelGame.getRoom(destIdx).getIsOpen() == true){
             modelGame.setCurrentRoomNum(destIdx);
         } else {
