@@ -141,7 +141,7 @@ public class MysteryGame {
         pickedUpItems++;
     }
 
-    public void updateProgress(Item item) {
+    public int updateProgress(Item item) {
         switch(item.getItemName()){
             //TODO Teo do these TODO's!!!
             case "hat":
@@ -151,26 +151,24 @@ public class MysteryGame {
                     getRoom(3).setIsOpen(true);
                     updateInventory(item, 2);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3; //"this is wrong room"
                 }
                 break;
             case "phone":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2; //"this item cannot be played yet" or something
                 }
                 if (increaseNPCProgress(2) == 1) {
                     increaseNPCProgress(0);
                     accessItems.get(2).setIsPlayable(1);
                     updateInventory(item, 2);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
                 break;
             case "euro":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 if (increaseNPCProgress(2) == 1) {
                     getRoom(5).setIsOpen(true);
@@ -178,13 +176,12 @@ public class MysteryGame {
                     accessItems.get(3).setIsPlayable(1);
                     accessItems.get(5).setIsPlayable(1);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
                 break;
             case "coffee":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 accessItems.get(4).setIsPlayable(1);
                 getRoom(4).setIsOpen(true);
@@ -192,16 +189,14 @@ public class MysteryGame {
                 break;
             case "cleaning-supplies":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 //get access to safe
                 updateInventory(item, 2);
                 break;
             case "flashlight":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 //todo if flashlight is activated multiple times, this is a problem
                 if (increaseNPCProgress(3) == 1) {
@@ -210,13 +205,12 @@ public class MysteryGame {
                     setFlashlightIsOn(!getFlashlightIsOn());
                     accessItems.get(6).setIsPlayable(1);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
                 break;
             case "camera":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 accessItems.get(7).setIsPlayable(1);
                 accessItems.get(8).setIsPlayable(1);
@@ -224,28 +218,25 @@ public class MysteryGame {
                 break;
             case "computer":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 increaseNPCProgress(0);
                 increaseNPCProgress(3);
                 increaseNPCProgress(4);
             case "hammer":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 if (currentRoomNum == 4) {
                     accessItems.get(9).setIsPlayable(1);
                     updateInventory(item, 2);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
                 break;
             case "locked-drawer":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 if (detective.getDetectiveKind() == 0) {
                     accessItems.get(10).setIsPlayable(1);
@@ -257,63 +248,59 @@ public class MysteryGame {
                 }
             case "screwdriver":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 if (currentRoomNum == 1) {
                     accessItems.get(13).setIsPlayable(1);
                     updateInventory(item, 2);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
             case "scissors":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 if (currentRoomNum == 1) {
                     updateInventory(item, 2);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
             case "mouse":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 if (increaseNPCProgress(3) == 1) {
                     accessItems.get(14).setIsPlayable(1);
                     updateInventory(item, 2);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
             case "electrical-panel":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
+                increaseNPCProgress(3);
                 accessItems.get(14).setIsPlayable(1);
             case "safe":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 accessItems.get(15).setIsAvailable(1);
                 increaseNPCProgress(3);
                 increaseNPCProgress(4);
             case "key":
                 if (checkIfPlayable(item) == 0){
-                    //todo print "this item cannot be played yet" or something
-                    break;
+                    return 2;
                 }
                 if (currentRoomNum == 0) {
                     rooms.get(6).setIsOpen(true);
                 } else {
-                    //todo print "this is wrong room"
+                    return 3;
                 }
             case "crate":
                 increaseNPCProgress(0);
         }
+        return 1;
     }
     public int checkIfPlayable(Item item) {
         if (item.getIsPlayable() == 1) {
