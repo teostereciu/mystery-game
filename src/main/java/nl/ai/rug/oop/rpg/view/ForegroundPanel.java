@@ -18,8 +18,12 @@ public class ForegroundPanel extends JPanel {
 
     private MysteryGame game;
     private GameView frame;
+    private final int width;
+    private final int height;
 
     public ForegroundPanel(int width, int height) {
+        this.width = width;
+        this.height = height;
         setLayout(null);
         setBounds(0, 0, width, height);
         setOpaque(false);
@@ -27,7 +31,6 @@ public class ForegroundPanel extends JPanel {
 
     public void set(MysteryGame game, GameView frame) {
         removeAll();
-
         this.game = game;
         this.frame = frame;
 
@@ -36,7 +39,7 @@ public class ForegroundPanel extends JPanel {
         }
 
         if (game.getCurrentRoomNum() == 5 && !game.getFlashlightIsOn()) {
-            addDarkness();
+            makeDark();
             return;
         }
 
@@ -51,7 +54,18 @@ public class ForegroundPanel extends JPanel {
         }
     }
 
-    public JButton newButton(String name, HashMap<String,Integer> coords, int width, int height) {
+    public void addDoors() { // todo add some labels maybe; change artwork
+        JButton doorButton = null;
+        for(int i = 1; i < game.NUMBER_OF_ROOMS; i ++) {
+            HashMap<String,Integer> coords = new HashMap<>();
+            coords.put("x", 50 + (i - 1) * 120);
+            coords.put("y", 170);
+            doorButton = newButton("", coords, 100, 180);
+            doorButton.addActionListener(new RoomChooser(game, i, frame));
+        }
+    }
+
+    public JButton newButton(String name, HashMap<String,Integer> coords, int buttonWidth, int buttonHeight) {
         JButton button = new JButton();
 
         if (!Objects.equals(name, "")) {
@@ -64,7 +78,7 @@ public class ForegroundPanel extends JPanel {
                 throw new RuntimeException(e);
             }
         } else {
-            button.setBounds(coords.get("x"), coords.get("y"), width, height);
+            button.setBounds(coords.get("x"), coords.get("y"), buttonWidth, buttonHeight);
         }
 
         button.setOpaque(false);
@@ -74,26 +88,15 @@ public class ForegroundPanel extends JPanel {
         return button;
     }
 
-    public void addDarkness() {
+    public void makeDark() {
         JLabel darkLabel = null;
         try {
             darkLabel = new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/darkness.png"))));
-            darkLabel.setBounds(0, 0, 800, 500);
+            darkLabel.setBounds(0, 0, width, height);
         } catch (IOException e) {
             System.out.println("src/main/resources/rooms/darkness.png not found.");
             throw new RuntimeException(e);
         }
         add(darkLabel);
-    }
-
-    public void addDoors() { // todo add some labels maybe; change artwork
-        JButton doorButton = null;
-        for(int i = 0; i < 6; i ++) {
-            HashMap<String,Integer> coords = new HashMap<>();
-            coords.put("x", 50 + i * 120);
-            coords.put("y", 170);
-            doorButton = newButton("", coords, 100, 180);
-            doorButton.addActionListener(new RoomChooser(game, i + 1, frame));
-        }
     }
 }
