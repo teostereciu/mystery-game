@@ -29,7 +29,7 @@ public class SelectInventoryItem implements ActionListener {
                 //System.out.println("You could not be dropped!");
                 viewFrame.displayDialog(0);
             }
-        } else {
+        } else if (response == 1) {
             int outcome = modelGame.updateProgress(modelItem);
             if(outcome == 2){
                 viewFrame.displayDialog(5);
