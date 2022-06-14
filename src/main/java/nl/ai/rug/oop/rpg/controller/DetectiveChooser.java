@@ -24,5 +24,6 @@ public class DetectiveChooser implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         modelGame.setDetective(isGood);
         viewFrame.setPanels();
+        viewFrame.displayDialog(10 + isGood);
     }
 }

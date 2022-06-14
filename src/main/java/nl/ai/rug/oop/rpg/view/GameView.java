@@ -95,6 +95,10 @@ public class GameView extends JFrame implements PropertyChangeListener {
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
             case 6 -> JOptionPane.showMessageDialog(this, "Cannot use this item in this room.",
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
+            case 10 -> JOptionPane.showMessageDialog(this, "You chose bad cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
+                    "Intro", JOptionPane.WARNING_MESSAGE);
+            case 11 -> JOptionPane.showMessageDialog(this, "You chose good cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
+                        "Intro", JOptionPane.WARNING_MESSAGE);
         }
         return -1;
     }
