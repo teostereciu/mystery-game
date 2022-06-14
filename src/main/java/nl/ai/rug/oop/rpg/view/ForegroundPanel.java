@@ -11,8 +11,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class ForegroundPanel extends JPanel {
 
@@ -27,14 +27,12 @@ public class ForegroundPanel extends JPanel {
 
     public void set(MysteryGame game, GameView frame) {
         removeAll();
-        if (this.game == null) {
-            this.game = game;
-        }
-        if (this.frame == null) {
-            this.frame = frame;
-        }
+
+        this.game = game;
+        this.frame = frame;
+
         if (game.getCurrentRoomNum() == 0) {
-            addDoorButtons(); // todo consider having the buttons on a sublayer
+            addDoors();
         }
 
         if (game.getCurrentRoomNum() == 5 && !game.getFlashlightIsOn()) {
@@ -43,65 +41,59 @@ public class ForegroundPanel extends JPanel {
         }
 
         for (Item currentItem : game.getRoom(game.getCurrentRoomNum()).getRoomItems()) {
+            JButton itemButton = newButton("items/" + currentItem.getItemName(), currentItem.getCoords(), 0, 0);
+            itemButton.addActionListener(new ItemChooser(game, currentItem, frame));
+        }
+
+        if (game.getRoom(game.getCurrentRoomNum()).getNPC() != null) {
+            JButton npcButton = newButton("npcs/" + game.getRoom(game.getCurrentRoomNum()).getNPC().getName(), game.getRoom(game.getCurrentRoomNum()).getNPC().getCoords(), 0, 0);
+            npcButton.addActionListener(new Dialoguer(game, frame));
+        }
+    }
+
+    public JButton newButton(String name, HashMap<String,Integer> coords, int width, int height) {
+        JButton button = new JButton();
+
+        if (!Objects.equals(name, "")) {
             try {
-                JButton itemButton = newButton("items/" + currentItem.getItemName(), currentItem.getCoords());
-                itemButton.addActionListener(new ItemChooser(game, currentItem, frame)); // non-carryables might need a different one
+                Image image = ImageIO.read(new File("src/main/resources/" + name + ".png"));
+                button.setIcon(new ImageIcon(image));
+                button.setBounds(coords.get("x"), coords.get("y"), image.getWidth(null), image.getHeight(null));
             } catch (IOException e) {
-                System.out.println(currentItem.getItemName() + ".png not found.");
+                System.out.println("src/main/resources/" + name + ".png not found.");
                 throw new RuntimeException(e);
             }
+        } else {
+            button.setBounds(coords.get("x"), coords.get("y"), width, height);
         }
-        try {
-            if (game.getRoom(game.getCurrentRoomNum()).getNPC() != null) {
-                JButton npcButton = newButton("npcs/" + game.getRoom(game.getCurrentRoomNum()).getNPC().getName(), game.getRoom(game.getCurrentRoomNum()).getNPC().getCoords());
-                npcButton.addActionListener(new Dialoguer(game, frame));
-            }
-        } catch (IOException e) {
-            System.out.println(game.getRoom(game.getCurrentRoomNum()).getNPC().getName() + ".png not found.");
-            throw new RuntimeException(e);
-        }
+
+        button.setOpaque(false);
+        button.setContentAreaFilled(false);
+        button.setBorderPainted(false);
+        add(button);
+        return button;
     }
 
-    private JButton newButton(String name, HashMap<String,Integer> coords) throws IOException {
-        Image img = ImageIO.read(new File("src/main/resources/" + name + ".png"));
-        JButton btn = new JButton(new ImageIcon(img));
-        //System.out.println(name);
-        btn.setBounds(coords.get("x"), coords.get("y"), img.getWidth(null), img.getHeight(null));
-        btn.setOpaque(false);
-        btn.setContentAreaFilled(false);
-        btn.setBorderPainted(false);
-        add(btn);
-        return btn;
-    }
-
-    private void addDarkness() {
+    public void addDarkness() {
         JLabel darkLabel = null;
         try {
             darkLabel = new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/darkness.png"))));
             darkLabel.setBounds(0, 0, 800, 500);
         } catch (IOException e) {
+            System.out.println("src/main/resources/rooms/darkness.png not found.");
             throw new RuntimeException(e);
         }
         add(darkLabel);
     }
 
-    private void addDoorButtons() { // todo add some labels maybe
-        ArrayList<JButton> btns = new ArrayList<>();
+    public void addDoors() { // todo add some labels maybe; change artwork
+        JButton doorButton = null;
         for(int i = 0; i < 6; i ++) {
-            btns.add(new JButton());
-            btns.get(i).setOpaque(false);
-            btns.get(i).setContentAreaFilled(false);
-            btns.get(i).setBorderPainted(false);
-            btns.get(i).addActionListener(new RoomChooser(game, i + 1, frame));
-            switch (i) {
-                case 0 -> btns.get(i).setBounds(50, 180, 90, 190); // note: this leads to room1 (common area)
-                case 1 -> btns.get(i).setBounds(170, 180, 90, 190);
-                case 2 -> btns.get(i).setBounds(290, 180, 90, 190);
-                case 3 -> btns.get(i).setBounds(410, 180, 90, 190);
-                case 4 -> btns.get(i).setBounds(530, 180, 90, 190);
-                case 5 -> btns.get(i).setBounds(650, 180, 90, 190);
-            }
-            add(btns.get(i));
+            HashMap<String,Integer> coords = new HashMap<>();
+            coords.put("x", 50 + i * 120);
+            coords.put("y", 170);
+            doorButton = newButton("", coords, 100, 180);
+            doorButton.addActionListener(new RoomChooser(game, i + 1, frame));
         }
     }
 }
