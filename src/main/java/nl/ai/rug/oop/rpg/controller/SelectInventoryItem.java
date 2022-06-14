@@ -18,9 +18,9 @@ public class SelectInventoryItem implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        int result = viewFrame.displayDialog(3);
+        int response = viewFrame.displayDialog(3);
         //System.out.println("You clicked an inventory item!");
-        if (result == 0) {
+        if (response == 0) {
             //System.out.println("You chose to drop it!");
             if (modelItem.getRoomNumber() == modelGame.getCurrentRoomNum()) {
                 //System.out.println("Item was dropped!");
@@ -30,10 +30,11 @@ public class SelectInventoryItem implements ActionListener {
                 viewFrame.displayDialog(0);
             }
         } else {
-            if (modelGame.checkIfPlayable(modelItem) == 0){
+            int outcome = modelGame.updateProgress(modelItem);
+            if(outcome == 2){
                 viewFrame.displayDialog(5);
-            } else {
-                modelGame.updateProgress(modelItem);
+            } else if(outcome == 3){
+                viewFrame.displayDialog(6);
             }
         }
     }
