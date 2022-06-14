@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * A view class for the background panel of the game. It extends JLayeredPane, so foreground layers can be added.
@@ -16,7 +17,7 @@ import java.io.IOException;
 public class RoomPanel extends JLayeredPane {
     public final int ROOM_WIDTH = 800;
     public final int ROOM_HEIGHT = 500;
-    private JLabel roomBackgroundLabel;
+    private JLabel roomBackgroundLabel = new JLabel();;
     private ForegroundPanel foregroundPanel;
     private final MysteryGame game;
     private final GameView frame;
@@ -29,44 +30,44 @@ public class RoomPanel extends JLayeredPane {
     }
 
     private void displayStartWindow() {
-        roomBackgroundLabel = new JLabel();
         roomBackgroundLabel.setBounds(0, 0, ROOM_WIDTH, ROOM_HEIGHT);
         try {
-            ImageIcon startImageIcon = new ImageIcon(ImageIO.read(new File("src/main/resources/detective-choice.png")));
-            roomBackgroundLabel.setIcon(startImageIcon);
+            Image startImage = ImageIO.read(new File("src/main/resources/detective-choice.png"));
+            roomBackgroundLabel.setIcon(new ImageIcon(startImage));
         } catch(IOException e) {
+            System.out.println("src/main/resources/detective-choice.png not found.");
             throw new RuntimeException();
         }
         add(roomBackgroundLabel, (Integer) 0);
+
         foregroundPanel = new ForegroundPanel(ROOM_WIDTH, ROOM_HEIGHT);
-        JButton goodCopButton = new JButton();
-        JButton badCopButton = new JButton(); // todo shorthen this bit by using the foreground
-        goodCopButton.setBounds(190, 60, 180, 160);
-        goodCopButton.setOpaque(false);
-        goodCopButton.setContentAreaFilled(false);
-        goodCopButton.setBorderPainted(false);
-        goodCopButton.addActionListener(new DetectiveChooser(game, frame, 0));
-        badCopButton.setBounds(400, 60, 180, 160);
-        badCopButton.setOpaque(false);
-        badCopButton.setContentAreaFilled(false);
-        badCopButton.setBorderPainted(false);
-        badCopButton.addActionListener(new DetectiveChooser(game, frame, 1));
+        HashMap<String,Integer> coords = new HashMap<>();
+        coords.put("x", 190);
+        coords.put("y", 60);
+        JButton goodCopButton = foregroundPanel.newButton("", coords, 180, 160);
+        goodCopButton.addActionListener(new DetectiveChooser(game, frame, 1));
         foregroundPanel.add(goodCopButton);
+
+        coords.replace("x", 400);
+        JButton badCopButton = foregroundPanel.newButton("", coords, 180, 160);
+        badCopButton.addActionListener(new DetectiveChooser(game, frame, 0));
         foregroundPanel.add(badCopButton);
         add(foregroundPanel, (Integer) 1);
     }
+
     public void init() {
         removeAll();
-        roomBackgroundLabel.setBounds(0, 0, ROOM_WIDTH, ROOM_HEIGHT);
+        //roomBackgroundLabel.setBounds(0, 0, ROOM_WIDTH, ROOM_HEIGHT);
         set();
         add(roomBackgroundLabel, (Integer) 0);
         add(foregroundPanel, (Integer) 1);
     }
+
     public void set() {
         try {
             roomBackgroundLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/room" + game.getCurrentRoomNum() + ".png"))));
         } catch (IOException e) {
-            System.out.println("room" + game.getCurrentRoomNum() + ".png not found.");
+            System.out.println("src/main/resources/rooms/room" + game.getCurrentRoomNum() + ".png not found.");
             throw new RuntimeException(e);
         }
         foregroundPanel.removeAll();

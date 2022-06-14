@@ -66,9 +66,9 @@ public class MysteryGame {
     public void setDetective(int isGood) {
         String detectiveName;
         if (isGood == 0) {
-            detectiveName = "SarahSalwitt";
-        } else {
             detectiveName = "DoctorDormitory";
+        } else {
+            detectiveName = "SarahSalwitt";
         }
         detective = new Detective(detectiveName);
         setNPCs();
