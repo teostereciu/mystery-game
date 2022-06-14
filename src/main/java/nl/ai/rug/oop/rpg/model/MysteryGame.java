@@ -44,9 +44,11 @@ public class MysteryGame {
             Item item = new Item(i);
             this.rooms.get(item.getRoomNumber()).addRoomItem(item);
         }
+    }
 
+    private void setNPCs() {
         for (int i = 0; i < NUMBER_OF_NPCS; i++) {
-            NPC npc = new NPC(i, 0);
+            NPC npc = new NPC(i, detective.getDetectiveKind());
             //TODO  NPC npc = new NPC(i, detective.getDetectiveKind());
             this.rooms.get(npc.getRoomNumber()).setNPC(npc);
         }
@@ -67,6 +69,7 @@ public class MysteryGame {
             detectiveName = "DoctorDormitory";
         }
         detective = new Detective(detectiveName);
+        setNPCs();
     }
 
     /**
@@ -134,6 +137,10 @@ public class MysteryGame {
             //TODO print interaction statement
         }
         pickedUpItems++;
+    }
+
+    public void updateProgress(Item item) {
+        
     }
 
     /* Everything with regard to Inventory*/

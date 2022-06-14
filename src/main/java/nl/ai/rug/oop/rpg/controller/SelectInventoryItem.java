@@ -59,6 +59,7 @@ public class SelectInventoryItem implements ActionListener {
                 case "coffee":
                     if (modelGame.checkIfPlayable(modelItem) == 0){
                         //todo print "this item cannot be played yet" or something
+                        viewFrame.displayDialog(2);
                         break;
                     }
                     modelGame.getRoom(4).setIsOpen(true);
@@ -81,7 +82,6 @@ public class SelectInventoryItem implements ActionListener {
                     modelGame.increaseNPCProgress(5);
                     //light up melvin's room
                     modelGame.setFlashlightIsOn(!modelGame.getFlashlightIsOn());
-                    modelGame.updateInventory(modelItem, 2);
                     break;
                 case "Video Tape":
                     if (modelGame.checkIfPlayable(modelItem) == 0){

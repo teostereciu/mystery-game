@@ -15,7 +15,8 @@ public class Item {
     private final int itemNumber;
     private int isCarryAble;
     private int roomNumber;
-    private int progressValue;
+    private int isPlayable;
+    private int isAvailable;
 
     private ArrayList<Integer> updateNPC = new ArrayList<>();
 
@@ -25,7 +26,7 @@ public class Item {
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
         isCarryAble = 1;
-        progressValue = 1;
+        isAvailable = 1;
         switch (itemNumber) {
             case(0):
                 itemName = "hat";
@@ -99,21 +100,19 @@ public class Item {
                 isCarryAble = 0;
                 coords.put("x", 350);
                 coords.put("y", 230);
-                progressValue = 4;
                 break;
             case(10):
                 itemName = "screwdriver";
                 roomNumber = 2;
                 coords.put("x", 450);
                 coords.put("y", 400);
-                progressValue = 0;
                 break;
             case(11):
                 itemName = "scissors";
                 roomNumber = 4;
                 coords.put("x", 450);
                 coords.put("y", 300); //todo change
-                progressValue = 0;
+                isAvailable = 0;
                 break;
             case(12):
                 itemName = "mouse";
@@ -121,6 +120,7 @@ public class Item {
                 updateNPC.add(3);
                 coords.put("x", 250);
                 coords.put("y", 400); //todo change
+                isAvailable = 0;
                 break;
             case(13):
                 itemName = "electrical-panel";
@@ -144,6 +144,7 @@ public class Item {
                 roomNumber = 3;
                 coords.put("x", 100);
                 coords.put("y", 350); //todo change
+                isAvailable = 0;
                 break;
             case(16):
                 itemName = "crate";
@@ -189,8 +190,12 @@ public class Item {
 
     }
 
-    public int getProgressValue() {
-        return progressValue;
+    public int getIsAvailable() {
+        return isAvailable;
+    }
+
+    public void setIsAvailable(int isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
     private final HashMap<String, Integer> coords = new HashMap<>();
