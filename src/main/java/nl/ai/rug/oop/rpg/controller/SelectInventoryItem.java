@@ -30,6 +30,10 @@ public class SelectInventoryItem implements ActionListener {
                 viewFrame.displayDialog(0);
             }
         } else {
+            if (modelGame.checkIfPlayable(modelItem) == 0){
+                viewFrame.displayDialog(5);
+                return;
+            }
             switch(modelItem.getItemName()){
                 case "hat":
                     modelGame.increaseNPCProgress(1);
@@ -38,57 +42,31 @@ public class SelectInventoryItem implements ActionListener {
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "euro":
-                    if (modelGame.checkIfPlayable(modelItem) == 0){
-                        //todo print "this item cannot be played yet" or something
-                        break;
-                    }
                     modelGame.increaseNPCProgress(0);
                     modelGame.increaseNPCProgress(1);
                     modelGame.getRoom(5).setIsOpen(true);
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "phone":
-                    if (modelGame.checkIfPlayable(modelItem) == 0){
-                        //todo print "this item cannot be played yet" or something
-                        break;
-                    }
                     modelGame.increaseNPCProgress(0);
                     modelGame.increaseNPCProgress(1);
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "coffee":
-                    if (modelGame.checkIfPlayable(modelItem) == 0){
-                        //todo print "this item cannot be played yet" or something
-                        viewFrame.displayDialog(2);
-                        break;
-                    }
                     modelGame.getRoom(4).setIsOpen(true);
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "cleaning-supplies":
-                    if (modelGame.checkIfPlayable(modelItem) == 0){
-                        //todo print "this item cannot be played yet" or something
-                        break;
-                    }
                     //get access to safe
                     modelGame.updateInventory(modelItem, 2);
                     break;
                 case "flashlight":
-                    if (modelGame.checkIfPlayable(modelItem) == 0){
-                        //todo print "this item cannot be played yet" or something
-                        break;
-                    }
                     modelGame.increaseNPCProgress(1);
                     modelGame.increaseNPCProgress(5);
                     //light up melvin's room
                     modelGame.setFlashlightIsOn(!modelGame.getFlashlightIsOn());
                     break;
                 case "Video Tape":
-                    if (modelGame.checkIfPlayable(modelItem) == 0){
-                        //todo print "this item cannot be played yet" or something
-                        System.out.println("to soon");
-                        break;
-                    }
                     //new dialogue
                     modelGame.updateInventory(modelItem, 2);
                     break;
@@ -101,7 +79,6 @@ public class SelectInventoryItem implements ActionListener {
                     modelGame.updateInventory(modelItem, 2);
                     break;
             }
-            viewFrame.displayDialog(5);
             // USE ITEM; // todo csanad
         }
     }
