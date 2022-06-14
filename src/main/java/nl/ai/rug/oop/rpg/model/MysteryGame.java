@@ -239,12 +239,12 @@ public class MysteryGame {
                     return 2;
                 }
                 if (detective.getDetectiveKind() == 0) {
+                    accessItems.get(12).setIsAvailable(1);
+                    accessItems.get(12).setIsPlayable(1);
+                } else {
                     accessItems.get(10).setIsPlayable(1);
                     accessItems.get(11).setIsAvailable(1);
                     accessItems.get(11).setIsPlayable(1);
-                } else {
-                    accessItems.get(12).setIsAvailable(1);
-                    accessItems.get(12).setIsPlayable(1);
                 }
             case "screwdriver":
                 if (checkIfPlayable(item) == 0){
