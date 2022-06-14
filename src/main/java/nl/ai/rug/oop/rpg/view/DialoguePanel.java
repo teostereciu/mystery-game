@@ -18,10 +18,10 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         setOpaque(true);
         setBackground(Color.black);
         setLayout(new BorderLayout(0, 0));
-        setBorder(BorderFactory.createLineBorder(Color.black, 10));
+        setBorder(BorderFactory.createLineBorder(Color.black, 5));
         //setSize(700, 100);
         jlbl.setForeground(Color.white);
-        jlbl.setPreferredSize(new Dimension(600, 40));
+        jlbl.setPreferredSize(new Dimension(600, 60));
         add(jlbl, BorderLayout.CENTER);
         nextButton = new JButton(">");
         nextButton.setPreferredSize(new Dimension(40,40));
@@ -36,7 +36,6 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         jlbl.setForeground(Color.white);
         NPC npc = game.getRoom(game.getCurrentRoomNum()).getNPC();
         String dialogueLine = npc.getNPCDialogue().getDialogueMap().get(npc.getDialogueCounter() * game.MAX_DIALOGUE_OPTIONS + npc.getNPCDialogue().getCurrentKey());
-        //String dialogueLine = game.getRoom(game.getCurrentRoom()).getNPC().getNPCDialogue().getDialogue(game.getLineCounter());
         jlbl.setText(dialogueLine);
         if (Objects.equals(dialogueLine, "END")) {
             clear();

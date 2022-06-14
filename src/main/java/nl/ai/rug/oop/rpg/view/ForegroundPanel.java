@@ -55,7 +55,7 @@ public class ForegroundPanel extends JPanel {
     public void addDoors() { // todo add some labels maybe; change artwork
         JButton doorButton = null;
         for(int i = 1; i < game.NUMBER_OF_ROOMS; i ++) {
-            HashMap<String,Integer> coords = new HashMap<>();
+            HashMap<String, Integer> coords = new HashMap<>();
             coords.put("x", 50 + (i - 1) * 120);
             coords.put("y", 170);
             doorButton = newButton("", coords, 100, 180);
@@ -63,7 +63,7 @@ public class ForegroundPanel extends JPanel {
         }
     }
 
-    public JButton newButton(String name, HashMap<String,Integer> coords, int buttonWidth, int buttonHeight) {
+    public JButton newButton(String name, HashMap<String, Integer> coords, int buttonWidth, int buttonHeight) {
         JButton button = new JButton();
 
         if (!Objects.equals(name, "")) {

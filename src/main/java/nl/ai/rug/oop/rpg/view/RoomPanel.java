@@ -40,7 +40,7 @@ public class RoomPanel extends JLayeredPane {
         add(roomBackgroundLabel, (Integer) 0);
 
         foregroundPanel = new ForegroundPanel(game, frame);
-        HashMap<String,Integer> coords = new HashMap<>();
+        HashMap<String, Integer> coords = new HashMap<>();
         coords.put("x", 190);
         coords.put("y", 60);
         JButton goodCopButton = foregroundPanel.newButton("", coords, 180, 160);
