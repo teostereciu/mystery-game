@@ -71,6 +71,9 @@ public class InventoryPanel extends JPanel {
             }
         }
         for (; i < SIZE; i ++) {
+            if (inventoryButtonsList.get(i).getActionListeners().length != 0) {
+                inventoryButtonsList.get(i).removeActionListener(inventoryButtonsList.get(i).getActionListeners()[0]);
+            }
             inventoryButtonsList.get(i).setIcon(null);
         }
     }

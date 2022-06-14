@@ -320,6 +320,9 @@ public class MysteryGame {
     public int updateInventory(Item item, int removeSlashAddSlashUltimatelyRemove) {
         int result = 1;
         if (removeSlashAddSlashUltimatelyRemove == 1) {
+            if(inventory.isFull()){
+                return 0;
+            }
             result = inventory.addToInventory(item);
             rooms.get(currentRoomNum).removeRoomItem(item);
         } else if (removeSlashAddSlashUltimatelyRemove == 0){
