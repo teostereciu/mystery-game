@@ -23,11 +23,7 @@ public class Room {
      */
     public Room(int roomNumber) {
         this.roomNumber = roomNumber;
-        if(roomNumber <= 2){
-            isOpen = true;
-        } else {
-            isOpen = false;
-        }
+        isOpen = roomNumber <= 2;
     }
 
     public void addRoomItem(Item item) {
@@ -61,9 +57,6 @@ public class Room {
         this.isOpen = isOpen;
     }
 
-    public Image getImg() {
-        return img;
-    }
 
     public List<Item> getRoomItems() {
         return roomItems;

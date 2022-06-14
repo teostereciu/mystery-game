@@ -27,30 +27,27 @@ public class Item {
         this.itemNumber = itemNumber;
         isCarryAble = 1;
         isAvailable = 1;
+        isPlayable = 0;
         switch (itemNumber) {
             case(0):
+                isPlayable = 1;
                 itemName = "hat";
                 roomNumber = 2;
                 coords.put("x", 100);
                 coords.put("y", 200);
-                updateNPC.add(0);
-                updateNPC.add(2);
                 break;
             case(1): //todo switch euro and phone
-                itemName = "euro";
-                roomNumber = 0;
-                coords.put("x", 380);
-                coords.put("y", 50);
-                updateNPC.add(2);
-                break;
-            case(2):
                 itemName = "phone";
                 roomNumber = 3;
                 coords.put("x", 90);
                 coords.put("y", 400);
                 isCarryAble = 0;
-                updateNPC.add(0);
-                updateNPC.add(2);
+                break;
+            case(2):
+                itemName = "euro";
+                roomNumber = 0;
+                coords.put("x", 380);
+                coords.put("y", 50);
                 break;
             case(3):
                 itemName = "coffee";
@@ -69,8 +66,6 @@ public class Item {
                 roomNumber = 3;
                 coords.put("x", 150);
                 coords.put("y", 380);
-                updateNPC.add(2);
-                updateNPC.add(3);
                 break;
             case(6):
                 itemName = "camera";
@@ -82,9 +77,6 @@ public class Item {
                 itemName = "computer";
                 roomNumber = 4;
                 isCarryAble = 0;
-                updateNPC.add(0);
-                updateNPC.add(3);
-                updateNPC.add(4);
                 coords.put("x", 550);
                 coords.put("y", 250);
                 break;
@@ -186,16 +178,20 @@ public class Item {
         return 0;
     }
 
-    public void useItem() {
-
-    }
-
     public int getIsAvailable() {
         return isAvailable;
     }
 
     public void setIsAvailable(int isAvailable) {
         this.isAvailable = isAvailable;
+    }
+
+    public int getIsPlayable() {
+        return isPlayable;
+    }
+
+    public void setIsPlayable(int isPlayable) {
+        this.isPlayable = isPlayable;
     }
 
     private final HashMap<String, Integer> coords = new HashMap<>();
