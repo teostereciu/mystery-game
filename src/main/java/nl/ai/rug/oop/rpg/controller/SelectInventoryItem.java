@@ -32,54 +32,9 @@ public class SelectInventoryItem implements ActionListener {
         } else {
             if (modelGame.checkIfPlayable(modelItem) == 0){
                 viewFrame.displayDialog(5);
-                return;
+            } else {
+                modelGame.updateProgress(modelItem);
             }
-            switch(modelItem.getItemName()){
-                case "hat":
-                    modelGame.increaseNPCProgress(1);
-                    modelGame.increaseNPCProgress(0);
-                    modelGame.getRoom(3).setIsOpen(true);
-                    modelGame.updateInventory(modelItem, 2);
-                    break;
-                case "euro":
-                    modelGame.increaseNPCProgress(0);
-                    modelGame.increaseNPCProgress(1);
-                    modelGame.getRoom(5).setIsOpen(true);
-                    modelGame.updateInventory(modelItem, 2);
-                    break;
-                case "phone":
-                    modelGame.increaseNPCProgress(0);
-                    modelGame.increaseNPCProgress(1);
-                    modelGame.updateInventory(modelItem, 2);
-                    break;
-                case "coffee":
-                    modelGame.getRoom(4).setIsOpen(true);
-                    modelGame.updateInventory(modelItem, 2);
-                    break;
-                case "cleaning-supplies":
-                    //get access to safe
-                    modelGame.updateInventory(modelItem, 2);
-                    break;
-                case "flashlight":
-                    modelGame.increaseNPCProgress(1);
-                    modelGame.increaseNPCProgress(5);
-                    //light up melvin's room
-                    modelGame.setFlashlightIsOn(!modelGame.getFlashlightIsOn());
-                    break;
-                case "Video Tape":
-                    //new dialogue
-                    modelGame.updateInventory(modelItem, 2);
-                    break;
-                case "hammer":
-                    if (modelGame.checkIfPlayable(modelItem) == 0){
-                        //todo print "this item cannot be played yet" or something
-                        break;
-                    }
-                    //break desk lock
-                    modelGame.updateInventory(modelItem, 2);
-                    break;
-            }
-            // USE ITEM; // todo csanad
         }
     }
 }
