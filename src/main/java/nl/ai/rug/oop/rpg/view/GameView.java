@@ -80,20 +80,20 @@ public class GameView extends JFrame implements PropertyChangeListener {
         switch (i) {
             case 0 -> JOptionPane.showMessageDialog(this, "Cannot drop item here.",
                         "Failed to put back item", JOptionPane.WARNING_MESSAGE);
-            case 1 -> JOptionPane.showMessageDialog(this, "Cannot use item here.",
+            case 1 -> JOptionPane.showMessageDialog(this, "Cannot use item here.", //todo remove?
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
-            case 2 -> JOptionPane.showMessageDialog(this, "Inventory is full. Drop an item before trying to add a new one.",
+            case 2 -> JOptionPane.showMessageDialog(this, "Inventory is full. I should drop an item before trying to pick up a new one.",
                             "Failed to add item to inventory", JOptionPane.WARNING_MESSAGE);
             case 3 -> {
                 String[] options = {"Drop", "Use"};
-                return JOptionPane.showOptionDialog(null,"What do you want to do with this item?","Drop/Use item.", JOptionPane.YES_NO_CANCEL_OPTION,
+                return JOptionPane.showOptionDialog(null,"What should I do with this item?","Drop/Use item.", JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE,null, options, null);
             }
-            case 4 -> JOptionPane.showMessageDialog(this, "You do not have access to this room.",
+            case 4 -> JOptionPane.showMessageDialog(this, "I do not have access to this room.",
                     "Failed to enter room", JOptionPane.WARNING_MESSAGE);
-            case 5 -> JOptionPane.showMessageDialog(this, "You cannot use this item yet.",
+            case 5 -> JOptionPane.showMessageDialog(this, "I do not know what to do with this item yet.",
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
-            case 6 -> JOptionPane.showMessageDialog(this, "You cannot use this item in this room.",
+            case 6 -> JOptionPane.showMessageDialog(this, "Cannot use this item in this room.",
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
         }
         return -1;

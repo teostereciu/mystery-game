@@ -42,8 +42,10 @@ public class ForegroundPanel extends JPanel {
         }
 
         for (Item currentItem : game.getRoom(game.getCurrentRoomNum()).getRoomItems()) {
-            JButton itemButton = newButton("items/" + currentItem.getItemName(), currentItem.getCoords(), 0, 0);
-            itemButton.addActionListener(new ItemChooser(game, currentItem, frame));
+            if (currentItem.getIsAvailable() == 1) {
+                JButton itemButton = newButton("items/" + currentItem.getItemName(), currentItem.getCoords(), 0, 0);
+                itemButton.addActionListener(new ItemChooser(game, currentItem, frame));
+            }
         }
 
         if (game.getRoom(game.getCurrentRoomNum()).getNPC() != null) {
