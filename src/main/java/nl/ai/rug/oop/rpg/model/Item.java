@@ -152,10 +152,6 @@ public class Item {
 
     public int getItemNumber() { return itemNumber; }
 
-    public int getIsCarryAble() {
-        return isCarryAble;
-    }
-
     public String getItemName() {
         return itemName;
     }
@@ -176,6 +172,10 @@ public class Item {
             }
         }
         return 0;
+    }
+
+    public int getIsCarryAble() {
+        return isCarryAble;
     }
 
     public int getIsAvailable() {
