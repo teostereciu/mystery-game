@@ -140,7 +140,51 @@ public class MysteryGame {
     }
 
     public void updateProgress(Item item) {
-        
+        switch(item.getItemName()){
+            case "hat":
+                increaseNPCProgress(1);
+                increaseNPCProgress(0);
+                getRoom(3).setIsOpen(true);
+                updateInventory(item, 2);
+                break;
+            case "euro":
+                increaseNPCProgress(0);
+                increaseNPCProgress(1);
+                getRoom(5).setIsOpen(true);
+                updateInventory(item, 2);
+                break;
+            case "phone":
+                increaseNPCProgress(0);
+                increaseNPCProgress(1);
+                updateInventory(item, 2);
+                break;
+            case "coffee":
+                getRoom(4).setIsOpen(true);
+                updateInventory(item, 2);
+                break;
+            case "cleaning-supplies":
+                //get access to safe
+                updateInventory(item, 2);
+                break;
+            case "flashlight":
+                increaseNPCProgress(1);
+                increaseNPCProgress(5);
+                //light up melvin's room
+                setFlashlightIsOn(!getFlashlightIsOn());
+                break;
+            case "Video Tape":
+                //new dialogue
+                updateInventory(item, 2);
+                break;
+            case "hammer":
+                if (checkIfPlayable(item) == 0){
+                    //todo print "this item cannot be played yet" or something
+                    break;
+                }
+                //break desk lock
+                updateInventory(item, 2);
+                break;
+        }
     }
 
     /* Everything with regard to Inventory*/
