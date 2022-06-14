@@ -12,7 +12,9 @@ import java.io.IOException;
  * @author teo stereciu
  */
 public class GameView extends JFrame implements PropertyChangeListener {
-    private final MysteryGame game = new MysteryGame(); // note: update this if constructor changes
+    private final MysteryGame game = new MysteryGame();
+    public final int ROOM_WIDTH = 800;
+    public final int ROOM_HEIGHT = 500;
     public GameView() {
         init();
         game.addListener(this);

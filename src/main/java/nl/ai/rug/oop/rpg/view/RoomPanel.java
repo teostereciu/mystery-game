@@ -15,9 +15,8 @@ import java.util.HashMap;
  * author: teo stereciu
  */
 public class RoomPanel extends JLayeredPane {
-    public final int ROOM_WIDTH = 800;
-    public final int ROOM_HEIGHT = 500;
-    private JLabel roomBackgroundLabel = new JLabel();;
+
+    private final JLabel roomBackgroundLabel = new JLabel();;
     private ForegroundPanel foregroundPanel;
     private final MysteryGame game;
     private final GameView frame;
@@ -25,12 +24,12 @@ public class RoomPanel extends JLayeredPane {
     public RoomPanel(MysteryGame game, GameView frame) {
         this.game = game;
         this.frame = frame;
-        setPreferredSize(new Dimension(ROOM_WIDTH, ROOM_HEIGHT));
+        setPreferredSize(new Dimension(frame.ROOM_WIDTH, frame.ROOM_HEIGHT));
         displayStartWindow();
     }
 
     private void displayStartWindow() {
-        roomBackgroundLabel.setBounds(0, 0, ROOM_WIDTH, ROOM_HEIGHT);
+        roomBackgroundLabel.setBounds(0, 0, frame.ROOM_WIDTH, frame.ROOM_HEIGHT);
         try {
             Image startImage = ImageIO.read(new File("src/main/resources/detective-choice.png"));
             roomBackgroundLabel.setIcon(new ImageIcon(startImage));
@@ -40,7 +39,7 @@ public class RoomPanel extends JLayeredPane {
         }
         add(roomBackgroundLabel, (Integer) 0);
 
-        foregroundPanel = new ForegroundPanel(ROOM_WIDTH, ROOM_HEIGHT);
+        foregroundPanel = new ForegroundPanel(game, frame);
         HashMap<String,Integer> coords = new HashMap<>();
         coords.put("x", 190);
         coords.put("y", 60);

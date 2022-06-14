@@ -18,14 +18,12 @@ public class ForegroundPanel extends JPanel {
 
     private MysteryGame game;
     private GameView frame;
-    private final int width;
-    private final int height;
 
-    public ForegroundPanel(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public ForegroundPanel(MysteryGame game, GameView frame) {
+        this.game = game;
+        this.frame = frame;
         setLayout(null);
-        setBounds(0, 0, width, height);
+        setBounds(0, 0, frame.ROOM_WIDTH, frame.ROOM_HEIGHT);
         setOpaque(false);
     }
 
@@ -92,7 +90,7 @@ public class ForegroundPanel extends JPanel {
         JLabel darkLabel = null;
         try {
             darkLabel = new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/darkness.png"))));
-            darkLabel.setBounds(0, 0, width, height);
+            darkLabel.setBounds(0, 0, frame.ROOM_WIDTH, frame.ROOM_HEIGHT);
         } catch (IOException e) {
             System.out.println("src/main/resources/rooms/darkness.png not found.");
             throw new RuntimeException(e);

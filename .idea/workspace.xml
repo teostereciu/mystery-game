@@ -5,6 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1082f31-3793-494b-aa19-88d7c51f3b06" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/LocationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/LocationPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/NavigationPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/NavigationPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/RoomPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/RoomPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/ForegroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/InventoryPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/LocationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/NavigationPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/RoomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/RoomPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

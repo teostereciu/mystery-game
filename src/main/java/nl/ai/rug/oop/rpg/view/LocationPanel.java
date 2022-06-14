@@ -4,11 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LocationPanel extends JPanel {
-    private final JLabel roomLabel = new JLabel("Hallway");
+    private final JLabel roomLabel = new JLabel();
+
     public LocationPanel() {
         setOpaque(true);
         setBackground(Color.black);
         roomLabel.setForeground(Color.white);
+        roomLabel.setText("Hallway");
         add(roomLabel);
     }
 
