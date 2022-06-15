@@ -117,37 +117,11 @@ public class MysteryGame {
 
     /* everything with regard to items */
 
-    /**
-     * Picks up or interacts with an item if the player has progressed enough through the story
-     * @param itemNumber is the number of the item that is picked up/interacted with
-     */
-
-    //TODO  Make it an int function with return 0 if failed and 1 if picked up/interacted
-    public void itemInteraction(int itemNumber) {
-        if (itemNumber > pickedUpItems + TOTAL_INVENTORY_SLOTS) {
-            //TODO print statement that this object is not of interest to the detective as of yet
-            return;
-        }
-        int slotnumber;
-        Item item = rooms.get(currentRoomNum).getRoomItem(itemNumber);
-        if (item == null) {
-            //TODO print an error statement
-            return;
-        } else if (item.getIsCarryAble() == 1) {
-            //slotnumber = inventory.addToInventory(item);
-            //TODO give the slotnumber to view so it knows where to put item
-        } else {
-            //TODO print interaction statement
-        }
-        pickedUpItems++;
-    }
-
     public int updateProgress(Item item) {
         switch(item.getItemName()){
-            //TODO Teo do these TODO's!!!
             case "hat":
                 if (increaseNPCProgress(2) == 1) {
-                    increaseNPCProgress(0);
+                    increaseNPCProgressOutsideRoom(0);
                     accessItems.get(1).setIsPlayable(1);
                     getRoom(3).setIsOpen(true);
                     updateInventory(item, 2);
@@ -160,7 +134,7 @@ public class MysteryGame {
                     return 2; //"this item cannot be played yet" or something
                 }
                 if (increaseNPCProgress(2) == 1) {
-                    increaseNPCProgress(0);
+                    increaseNPCProgressOutsideRoom(0);
                     accessItems.get(2).setIsPlayable(1);
                     updateInventory(item, 2);
                 } else {
@@ -180,14 +154,18 @@ public class MysteryGame {
                     return 3;
                 }
                 break;
-            case "coffee": // todo: 4daniel coffee should only be usable when in the hallway. Right now i can use it anywhere
+            case "coffee":
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                accessItems.get(4).setIsPlayable(1);
-                getRoom(4).setIsOpen(true);
-                updateInventory(item, 2);
-                break;
+                if (currentRoomNum == 0) {
+                    accessItems.get(4).setIsPlayable(1);
+                    getRoom(4).setIsOpen(true);
+                    updateInventory(item, 2);
+                    break;
+                } else {
+                    return 3;
+                }
             case "cleaning-supplies":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -202,7 +180,7 @@ public class MysteryGame {
                 }
                 //todo if flashlight is activated multiple times, this is a problem
                 if (increaseNPCProgress(3) == 1) {
-                    increaseNPCProgress(2);
+                    increaseNPCProgressOutsideRoom(3);
                     //light up melvin's room
                     setFlashlightIsOn(!getFlashlightIsOn());
                     accessItems.get(6).setIsPlayable(1);
@@ -222,9 +200,9 @@ public class MysteryGame {
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                increaseNPCProgress(0);
-                increaseNPCProgress(3);
-                increaseNPCProgress(4);
+                increaseNPCProgressOutsideRoom(0);
+                increaseNPCProgressOutsideRoom(5);
+                increaseNPCProgressOutsideRoom(4);
             case "hammer":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -281,15 +259,15 @@ public class MysteryGame {
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                increaseNPCProgress(3);
+                increaseNPCProgressOutsideRoom(5);
                 accessItems.get(14).setIsPlayable(1);
             case "safe":
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
                 accessItems.get(15).setIsAvailable(1);
-                increaseNPCProgress(3);
-                increaseNPCProgress(4);
+                increaseNPCProgressOutsideRoom(5);
+                increaseNPCProgressOutsideRoom(4);
             case "key":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -300,7 +278,7 @@ public class MysteryGame {
                     return 3;
                 }
             case "crate":
-                increaseNPCProgress(0);
+                increaseNPCProgressOutsideRoom(0);
         }
         return 1;
     }
@@ -370,13 +348,18 @@ public class MysteryGame {
         //return 0;
     }
 
-    public int increaseNPCProgress(int NPCnumber) {
+    private int increaseNPCProgress(int NPCnumber) {
         if (rooms.get(currentRoomNum).getNPC().getNPCNumber() == NPCnumber) {
             rooms.get(currentRoomNum).getNPC().updateDialogueCounter();
             rooms.get(currentRoomNum).getNPC().getNPCDialogue().setCurrentKey(0);
             return 1;
         }
         return 0;
+    }
+
+    private void increaseNPCProgressOutsideRoom(int roomNumber) {
+        rooms.get(roomNumber).getNPC().updateDialogueCounter();
+        rooms.get(roomNumber).getNPC().getNPCDialogue().setCurrentKey(0);
     }
 
     public void increaseItemProgress(Item item) {

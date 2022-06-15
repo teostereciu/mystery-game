@@ -33,21 +33,4 @@ public class Inventory {
         inventoryItems.remove(item);
     }
 
-    public int checkProgress(int NPCnumber) {
-        for (int i = 0; i < inventoryItems.size(); i++) {
-            if (inventoryItems.get(i).checkItemProgress(NPCnumber) == 1) {
-                return 1;
-            }
-        }
-        return 0;
-    }
-
-    public Item getItemFromInventory(int NPCnumber) {
-        for (int i = 0; i < inventoryItems.size(); i++) {
-            if (inventoryItems.get(i).checkItemProgress(NPCnumber) == 1) {
-                return inventoryItems.get(i);
-            }
-        }
-        return null;
-    }
 }

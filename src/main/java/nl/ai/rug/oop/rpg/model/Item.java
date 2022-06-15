@@ -18,8 +18,6 @@ public class Item {
     private int isPlayable;
     private int isAvailable;
 
-    private ArrayList<Integer> updateNPC = new ArrayList<>();
-
     //todo change names of items to the file names
     //TODO give the items functions
     //TODO couple the item functions to NPCs
@@ -36,7 +34,7 @@ public class Item {
                 coords.put("x", 100);
                 coords.put("y", 200);
                 break;
-            case(1): //todo switch euro and phone
+            case(1):
                 itemName = "phone";
                 roomNumber = 3;
                 coords.put("x", 90);
@@ -109,7 +107,6 @@ public class Item {
             case(12):
                 itemName = "mouse";
                 roomNumber = 4;
-                updateNPC.add(3);
                 coords.put("x", 250);
                 coords.put("y", 400); //todo change
                 isAvailable = 0;
@@ -120,7 +117,6 @@ public class Item {
                 isCarryAble = 0;
                 coords.put("x", 360);
                 coords.put("y", 150);
-                updateNPC.add(3);
                 break;
             case(14):
                 itemName = "safe";
@@ -128,8 +124,6 @@ public class Item {
                 isCarryAble = 0;
                 coords.put("x", 100);
                 coords.put("y", 245);
-                updateNPC.add(3);
-                updateNPC.add(4);
                 break;
             case(15):
                 itemName = "key";
@@ -142,7 +136,6 @@ public class Item {
                 itemName = "crate";
                 roomNumber = 6;
                 isCarryAble = 0;
-                updateNPC.add(0);
                 coords.put("x", 100);
                 coords.put("y", 350); //todo change
                 break;
@@ -158,20 +151,6 @@ public class Item {
 
     public int getRoomNumber() {
         return roomNumber;
-    }
-
-    public ArrayList<Integer> getUpdateNPC() {
-        return updateNPC;
-    }
-
-    public int checkItemProgress(int NPCnumber) {
-        int i = 0;
-        while (updateNPC.get(i) != null) {
-            if (updateNPC.get(i) == NPCnumber) {
-                return 1;
-            }
-        }
-        return 0;
     }
 
     public int getIsCarryAble() {
