@@ -36,6 +36,10 @@ public class ForegroundPanel extends JPanel {
             addDoors();
         }
 
+        if (game.getCurrentRoomNum() == 3 && game.getIsMessy()) {
+            makeMess();
+        }
+
         if (game.getCurrentRoomNum() == 5 && !game.getFlashlightIsOn()) {
             makeDark();
             return;
@@ -63,6 +67,14 @@ public class ForegroundPanel extends JPanel {
             doorButton = newButton("", coords, 100, 200);
             doorButton.addActionListener(new RoomChooser(game, i, frame));
         }
+    }
+
+    public void makeMess() {
+        HashMap<String, Integer> coords = new HashMap<>();
+        coords.put("x", 10);
+        coords.put("y", 180);
+        JButton messButton = newButton("items/trash", coords, 0, 0);
+        messButton.addActionListener(new RoomChooser(game, 0, frame)); // lmao todo 4csanad change
     }
 
     public JButton newButton(String name, HashMap<String, Integer> coords, int buttonWidth, int buttonHeight) {
