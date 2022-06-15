@@ -31,8 +31,8 @@ public class Item {
                 isPlayable = 1;
                 itemName = "hat";
                 roomNumber = 2;
-                coords.put("x", 100);
-                coords.put("y", 200);
+                coords.put("x", 500);
+                coords.put("y", 180);
                 break;
             case(1):
                 itemName = "phone";

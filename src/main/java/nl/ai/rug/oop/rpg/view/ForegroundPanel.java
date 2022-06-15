@@ -58,7 +58,7 @@ public class ForegroundPanel extends JPanel {
         }
     }
 
-    public void addDoors() { // todo add some labels maybe; change artwork
+    public void addDoors() {
         JButton doorButton = null;
         for(int i = 1; i < game.NUMBER_OF_ROOMS; i ++) {
             HashMap<String, Integer> coords = new HashMap<>();
