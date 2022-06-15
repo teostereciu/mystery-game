@@ -123,6 +123,7 @@ public class MysteryGame {
                 if (increaseNPCProgress(2) == 1) {
                     increaseNPCProgressOutsideRoom(0);
                     accessItems.get(1).setIsPlayable(1);
+                    accessItems.get(4).setIsPlayable(1);
                     getRoom(3).setIsOpen(true);
                     updateInventory(item, 2);
                 } else {
@@ -159,7 +160,7 @@ public class MysteryGame {
                     return 2;
                 }
                 if (currentRoomNum == 0) {
-                    accessItems.get(4).setIsPlayable(1);
+                    //accessItems.get(4).setIsPlayable(1);
                     getRoom(4).setIsOpen(true);
                     updateInventory(item, 2);
                     break;
