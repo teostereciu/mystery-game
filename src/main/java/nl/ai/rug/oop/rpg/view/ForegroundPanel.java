@@ -59,8 +59,8 @@ public class ForegroundPanel extends JPanel {
         for(int i = 1; i < game.NUMBER_OF_ROOMS; i ++) {
             HashMap<String, Integer> coords = new HashMap<>();
             coords.put("x", 50 + (i - 1) * 120);
-            coords.put("y", 170);
-            doorButton = newButton("", coords, 100, 180);
+            coords.put("y", 140);
+            doorButton = newButton("", coords, 100, 200);
             doorButton.addActionListener(new RoomChooser(game, i, frame));
         }
     }
