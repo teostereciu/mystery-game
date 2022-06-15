@@ -35,6 +35,9 @@ public class SelectInventoryItem implements ActionListener {
                 viewFrame.displayDialog(5);
             } else if(outcome == 3){
                 viewFrame.displayDialog(6);
+            } else {
+                modelGame.updateDialogue();
+                viewFrame.updateDialoguePanel();
             }
         }
     }

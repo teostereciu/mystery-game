@@ -31,18 +31,22 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         clear();
     }
     public void update() {
-        nextButton.setEnabled(true);
-        nextButton.setVisible(true);
+        clear();
         jlbl.setForeground(Color.white);
         NPC npc = game.getRoom(game.getCurrentRoomNum()).getNPC();
         String dialogueLine = npc.getNPCDialogue().getDialogueMap().get(npc.getDialogueCounter() * game.MAX_DIALOGUE_OPTIONS + npc.getNPCDialogue().getCurrentKey());
+        System.out.println("dialogueLine = " + dialogueLine);
         jlbl.setText(dialogueLine);
+        jlbl.setVisible(true);
+        nextButton.setEnabled(true);
+        nextButton.setVisible(true);
         if (Objects.equals(dialogueLine, "END")) {
             clear();
         }
     }
     public void clear() {
-        jlbl.setText("");
+        //jlbl.setText("");
+        jlbl.setVisible(false);
         nextButton.setEnabled(false);
         nextButton.setVisible(false);
     }

@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a1082f31-3793-494b-aa19-88d7c51f3b06" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/DetectiveChooser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/DetectiveChooser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/GameView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/DetectiveChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/DetectiveChooser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/RoomChooser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/SelectInventoryItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPCDialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/NPCDialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +41,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="nl.ai.rug.oop.rpg.Main" />
@@ -73,5 +78,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

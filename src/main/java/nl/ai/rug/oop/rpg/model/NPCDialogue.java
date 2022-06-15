@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too long. also add info about flatmates to sam()
 
     private HashMap<Integer, String> dialogueMap = new HashMap<>();
-    private int currentKey = 0;
+    private int currentKey = 1;
 
     public void setCurrentKey(int key) {
         currentKey = key;
@@ -14,7 +14,7 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
     public void increaseLine() {
         currentKey++;
         if (currentKey%100 == 0) {
-            currentKey = 0;
+            currentKey = 1;
         }
     }
     public NPCDialogue(int NPCnumber, int dialoguetype) {
@@ -57,7 +57,7 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(1, "Stacey: Thanks so much for helping me. I really need to find this beer, or else the party will be a disaster!");
         dialogueMap.put(2, "Stacey: You can look anywhere in the dorm to find it, but you’ll first need approval to enter anyone’s bedroom.");
         dialogueMap.put(3, "Stacey: We take privacy seriously here. So make sure you ask before entering! You can obviously go into mine straight away.");
-        dialogueMap.put(4, "Stacey: You should start by talking to Davey. He is always hanging out in the living room. Maybe he saw something?");
+        dialogueMap.put(4, "Stacey: You should start by talking to Davey. He is always hanging out in the kitchen. Maybe he saw something?");
         dialogueMap.put(5, "Stacey: In the meantime, I'll make a batch of coffee for you. Cops like that, right?");
         dialogueMap.put(6, "Stacey: If you want any other information about the place or my housemates, just let me know!");
         dialogueMap.put(7, "END");

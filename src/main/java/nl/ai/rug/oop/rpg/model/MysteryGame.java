@@ -24,6 +24,7 @@ public class MysteryGame {
     private ArrayList<Item> usedItems = new ArrayList<>();
     private ArrayList<Item> accessItems = new ArrayList<>();
     private boolean flashlightIsOn = false;
+    private boolean isMessy = true;
 
     /* everything with regard to initializing game */
 
@@ -179,7 +180,7 @@ public class MysteryGame {
                     return 3;
                 }
                 break;
-            case "coffee":
+            case "coffee": // todo: 4daniel coffee should only be usable when in the hallway. Right now i can use it anywhere
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
@@ -191,6 +192,7 @@ public class MysteryGame {
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
+                notMessy();
                 //get access to safe
                 updateInventory(item, 2);
                 break;
@@ -348,6 +350,9 @@ public class MysteryGame {
         notifyListeners();
     }
     public boolean getFlashlightIsOn() { return flashlightIsOn; }
+
+    public boolean getIsMessy() { return isMessy; }
+    public void notMessy() { isMessy = false; }
 
     /* everything with regard to NPCs */
 
