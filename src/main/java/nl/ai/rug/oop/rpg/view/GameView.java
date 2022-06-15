@@ -44,7 +44,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         add(navigationPanel, BorderLayout.WEST);
         roomPanel.init();
         add(roomPanel, BorderLayout.CENTER);
-        dialoguePanel.update();
+        //dialoguePanel.update();
         pack();
         setLocationRelativeTo(null);
     }
@@ -53,7 +53,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         roomPanel.set();
         navigationPanel.enableNavigateButton(game.getCurrentRoomNum() != 0);
         locationPanel.update(game.getCurrentRoomNum());
-        //dialoguePanel.clear();
+        dialoguePanel.clear();
         //dialoguePanel.update();
         inventoryPanel.update();
         SwingUtilities.updateComponentTreeUI(this);

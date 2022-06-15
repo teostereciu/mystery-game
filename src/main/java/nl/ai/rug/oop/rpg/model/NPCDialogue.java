@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too long. also add info about flatmates to sam()
 
     private HashMap<Integer, String> dialogueMap = new HashMap<>();
-    private int currentKey = 1;
+    private int currentKey = 0;
 
     public void setCurrentKey(int key) {
         currentKey = key;
@@ -14,7 +14,7 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
     public void increaseLine() {
         currentKey++;
         if (currentKey%100 == 0) {
-            currentKey = 1;
+            currentKey = 0;
         }
     }
     public NPCDialogue(int NPCnumber, int dialoguetype) {

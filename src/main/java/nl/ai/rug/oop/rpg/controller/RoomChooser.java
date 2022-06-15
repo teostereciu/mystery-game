@@ -23,10 +23,10 @@ public class RoomChooser implements ActionListener {
         }
         if(modelGame.getRoom(destIdx).getIsOpen() == true){
             modelGame.setCurrentRoomNum(destIdx);
-            if(destIdx != 6){
+            //if(destIdx != 6){
                 //modelGame.updateDialogue();
-                viewFrame.updateDialoguePanel();
-            }
+                //viewFrame.updateDialoguePanel();
+            //}
         } else {
             viewFrame.displayDialog(4);
         }

@@ -35,7 +35,7 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         jlbl.setForeground(Color.white);
         NPC npc = game.getRoom(game.getCurrentRoomNum()).getNPC();
         String dialogueLine = npc.getNPCDialogue().getDialogueMap().get(npc.getDialogueCounter() * game.MAX_DIALOGUE_OPTIONS + npc.getNPCDialogue().getCurrentKey());
-        System.out.println("dialogueLine = " + dialogueLine);
+        //System.out.println("dialogueLine = " + dialogueLine);
         jlbl.setText(dialogueLine);
         jlbl.setVisible(true);
         nextButton.setEnabled(true);
@@ -45,8 +45,8 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         }
     }
     public void clear() {
-        //jlbl.setText("");
-        jlbl.setVisible(false);
+        jlbl.setText("");
+        //jlbl.setVisible(false);
         nextButton.setEnabled(false);
         nextButton.setVisible(false);
     }
