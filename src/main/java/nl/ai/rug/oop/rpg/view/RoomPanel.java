@@ -54,6 +54,16 @@ public class RoomPanel extends JLayeredPane {
         add(foregroundPanel, (Integer) 1);
     }
 
+    public void closeUpOnItem(String name) {
+        try {
+            roomBackgroundLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/" + name + "-closeup.png"))));
+        } catch (IOException e) {
+            System.out.println("src/main/resources/" + name + "-closeup.png not found.");
+            throw new RuntimeException(e);
+        }
+        foregroundPanel.removeAll();
+    }
+
     public void init() {
         removeAll();
         //roomBackgroundLabel.setBounds(0, 0, ROOM_WIDTH, ROOM_HEIGHT);

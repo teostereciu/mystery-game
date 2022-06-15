@@ -41,7 +41,7 @@ public class Item {
                 roomNumber = 3;
                 coords.put("x", 90);
                 coords.put("y", 400);
-                isCarryAble = 1;
+                isCarryAble = 0;
                 break;
             case(2):
                 itemName = "euro";

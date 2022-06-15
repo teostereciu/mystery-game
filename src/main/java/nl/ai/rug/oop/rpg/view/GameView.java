@@ -1,5 +1,6 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 import javax.swing.*;
 import java.awt.*;
@@ -51,12 +52,18 @@ public class GameView extends JFrame implements PropertyChangeListener {
 
     private void updateRoom() throws IOException {
         roomPanel.set();
+        navigationPanel.changeDestination(0);
         navigationPanel.enableNavigateButton(game.getCurrentRoomNum() != 0);
         locationPanel.update(game.getCurrentRoomNum());
         dialoguePanel.clear();
         //dialoguePanel.update();
         inventoryPanel.update();
         SwingUtilities.updateComponentTreeUI(this);
+    }
+
+    public void closeUp(Item item) {
+        roomPanel.closeUpOnItem(item.getItemName());
+        navigationPanel.changeDestination(game.getCurrentRoomNum());
     }
 
     /**

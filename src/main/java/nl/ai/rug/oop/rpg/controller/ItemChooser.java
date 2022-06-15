@@ -19,6 +19,7 @@ public class ItemChooser implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(modelItem.getIsCarryAble()==0){
             // use item
+            viewFrame.closeUp(modelItem);
             return;
         }
         int result = modelGame.updateInventory(modelItem, 1); //Currently, non-carryables can be picked up. todo: csanad implement a different functionality for them, incl changing the action listener in ForegroundPanel

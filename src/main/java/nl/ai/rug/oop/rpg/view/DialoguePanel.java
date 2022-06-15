@@ -43,6 +43,9 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         if (Objects.equals(dialogueLine, "END")) {
             clear();
         }
+        if (jlbl == null) {
+            clear();
+        }
     }
     public void clear() {
         jlbl.setText("");
