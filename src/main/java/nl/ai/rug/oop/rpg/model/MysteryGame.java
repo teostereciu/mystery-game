@@ -22,7 +22,7 @@ public class MysteryGame {
     private int inventorySize;
     private int pickedUpItems = 0;
     private ArrayList<Item> usedItems = new ArrayList<>();
-    private ArrayList<Item> accessItems = new ArrayList<>();
+    public ArrayList<Item> accessItems = new ArrayList<>();
     private boolean flashlightIsOn = false;
     private boolean isMessy = true;
 

@@ -109,6 +109,10 @@ public class GameView extends JFrame implements PropertyChangeListener {
         dialoguePanel.update();
     }
 
+    public String displayInsertSafeCodeDialog() {
+        return JOptionPane.showInputDialog("I need to use a special code to open the safe.");
+    }
+
     public int displayDialog(int i) {
         switch (i) {
             case 0 -> JOptionPane.showMessageDialog(this, "Cannot drop item here.",

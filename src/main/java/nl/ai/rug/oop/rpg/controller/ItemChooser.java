@@ -35,6 +35,12 @@ public class ItemChooser implements ActionListener {
                 if (Objects.equals(modelItem.getItemName(), "computer")) {
                     viewFrame.closeUp(modelItem);
                 }
+                if (Objects.equals(modelItem.getItemName(), "safe")) {
+                    String answer = viewFrame.displayInsertSafeCodeDialog();
+                    if (Objects.equals(answer, "420")) {
+                        modelGame.accessItems.get(14).setIsPlayable(1);
+                    }
+                }
             //}
         } else { //PICKUP
             outcome = modelGame.updateInventory(modelItem, 1);
