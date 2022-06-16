@@ -213,8 +213,16 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
 
     private void kyle() {
         /* First interaction dialogue (Start of game) */
-        dialogueMap.put(1, "Yo man, I heard the beer got stolen. That is sooo lame! …");
-        dialogueMap.put(2, "END");
+        dialogueMap.put(1, "Kyle: Yo man, I heard the beer got stolen. That is sooo lame! …");
+        dialogueMap.put(2, "Detective: Yes indeed. Do you have any idea where it is?");
+        dialogueMap.put(3, "Kyle: No idea man. When my room is so messy I can't think straight. I wish someone can make all this mess disappear.. ");
+        dialogueMap.put(4, "END");
+
+        /* Second interaction dialogue (After using cleaning supplies) */
+        dialogueMap.put(101, "Kyle: Yooo thanks for cleaning up my mess man!");
+        dialogueMap.put(102, "Detective: You're welcome. Now can you help me find the beer?");
+        dialogueMap.put(103, "Kyle: Ah I'm sorry but I'll be hitting the gym soon, gotta get those gains!");
+        dialogueMap.put(104, "END");
     }
 
     private void alex1() {

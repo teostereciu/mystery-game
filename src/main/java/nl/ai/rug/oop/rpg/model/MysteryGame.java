@@ -171,9 +171,12 @@ public class MysteryGame {
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                notMessy();
-                //get access to safe
-                updateInventory(item, 2);
+                if (increaseNPCProgress(5) == 1) {
+                    notMessy();
+                    updateInventory(item, 2);
+                } else {
+                    return 3;
+                }
                 break;
             case "flashlight":
                 if (checkIfPlayable(item) == 0){
