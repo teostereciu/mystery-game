@@ -1,6 +1,6 @@
 #The state of the game:
-#Thu Jun 16 12:42:18 CEST 2022
-currentRoomNum=0
+#Thu Jun 16 13:17:23 CEST 2022
+currentRoomNum=1
 detectiveKind=0
 dialogueCounter0=1
 dialogueCounter1=1
@@ -9,10 +9,9 @@ dialogueCounter3=0
 dialogueCounter4=0
 dialogueCounter5=0
 flashlightIsOn=false
-inventoryItems0=4
-inventoryItems1=3
-inventoryItems2=2
-inventorySize=3
+inventoryItems0=2
+inventoryItems1=4
+inventorySize=2
 isAvailable0=1
 isAvailable1=1
 isAvailable10=1
@@ -56,14 +55,15 @@ isPlayable7=0
 isPlayable8=0
 isPlayable9=0
 numberOfItemsInRoom0=0
-numberOfItemsInRoom1=2
+numberOfItemsInRoom1=3
 numberOfItemsInRoom2=1
 numberOfItemsInRoom3=4
 numberOfItemsInRoom4=4
 numberOfItemsInRoom5=1
 numberOfItemsInRoom6=1
-roomItems1,0=8
-roomItems1,1=13
+roomItems1,0=3
+roomItems1,1=8
+roomItems1,2=13
 roomItems2,0=10
 roomItems3,0=1
 roomItems3,1=5

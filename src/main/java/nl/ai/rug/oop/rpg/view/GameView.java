@@ -28,15 +28,15 @@ public class GameView extends JFrame implements PropertyChangeListener {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Menu");
         JMenuItem giveUpItem = new JMenuItem("Give up!");
-        //giveUpItem.addActionListener(new GiveUpper());
+
         JMenuItem newGameItem = new JMenuItem("New game");
-        //newGameItem.addActionListener(new NewGame(this));
+
         JMenuItem instructionsItem = new JMenuItem("Instructions");
-        //instructionsItem.addActionListener(new GiveInstructions());
+
         JMenuItem saveGameItem = new JMenuItem("Save game");
-        saveGameItem.addActionListener(new GameSaver(game));
+        saveGameItem.addActionListener(new GameSaver(game, this));
         JMenuItem loadGameItem = new JMenuItem("Load game");
-        loadGameItem.addActionListener(new GameLoader(game));
+        loadGameItem.addActionListener(new GameLoader(game, this));
         menu.add(giveUpItem);
         menu.add(newGameItem);
         menu.add(instructionsItem);
@@ -131,6 +131,16 @@ public class GameView extends JFrame implements PropertyChangeListener {
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
             case 7 -> JOptionPane.showMessageDialog(this, "I do not know how to interact with this yet. I should gather more information first.",
                     "Failed to interact", JOptionPane.WARNING_MESSAGE);
+            case 8 -> {
+                String[] options = {"Cancel", "Save"};
+                return JOptionPane.showOptionDialog(null,"Do you want to save current game? This will overwrite any previous savings.","Save game", JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,null, options, null);
+            }
+            case 9 -> {
+                String[] options = {"Cancel", "Load"};
+                return JOptionPane.showOptionDialog(null,"Do you want to load game? Any unsaved progress will be lost.","Load game", JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,null, options, null);
+            }
             case 10 -> JOptionPane.showMessageDialog(this, "You chose bad cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
                     "Intro", JOptionPane.WARNING_MESSAGE);
             case 11 -> JOptionPane.showMessageDialog(this, "You chose good cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
