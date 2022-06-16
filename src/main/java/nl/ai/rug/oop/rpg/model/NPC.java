@@ -56,7 +56,7 @@ public class NPC {
         NPCNumber = 3;
         NPCname = "melvin";
         roomNumber = 5;
-        coords.put("x", 100);
+        coords.put("x", 300);
         coords.put("y", 100);
     }
     private void Alex() {

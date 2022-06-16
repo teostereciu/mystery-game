@@ -68,8 +68,8 @@ public class Item {
             case(6):
                 itemName = "camera";
                 roomNumber = 5;
-                coords.put("x", 450);
-                coords.put("y", 380);
+                coords.put("x", 550);
+                coords.put("y", 300);
                 break;
             case(7):
                 itemName = "computer";
