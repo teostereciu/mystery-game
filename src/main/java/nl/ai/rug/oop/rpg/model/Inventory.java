@@ -6,9 +6,6 @@ import java.util.*;
  * @Author Daniël
  */
 public class Inventory {
-    public ArrayList<Item> getItemsArray() {
-        return inventoryItems;
-    }
     private ArrayList<Item> inventoryItems = new ArrayList<>();
     private final int totalInventorySlots;
 
@@ -27,6 +24,10 @@ public class Inventory {
         } else {
             return 0;
         }
+    }
+
+    public ArrayList<Item> getItemsArray() {
+        return inventoryItems;
     }
 
     public void removeFromInventory(Item item) {
