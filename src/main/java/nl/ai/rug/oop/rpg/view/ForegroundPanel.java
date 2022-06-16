@@ -74,7 +74,6 @@ public class ForegroundPanel extends JPanel {
         coords.put("x", 10);
         coords.put("y", 180);
         JButton messButton = newButton("items/trash", coords, 0, 0);
-        messButton.addActionListener(new RoomChooser(game, 0, frame)); // lmao todo 4csanad change
     }
 
     public JButton newButton(String name, HashMap<String, Integer> coords, int buttonWidth, int buttonHeight) {
