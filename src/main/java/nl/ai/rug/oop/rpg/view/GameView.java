@@ -1,5 +1,7 @@
 package nl.ai.rug.oop.rpg.view;
 
+import nl.ai.rug.oop.rpg.controller.GameLoader;
+import nl.ai.rug.oop.rpg.controller.GameSaver;
 import nl.ai.rug.oop.rpg.model.Item;
 import nl.ai.rug.oop.rpg.model.MysteryGame;
 import javax.swing.*;
@@ -31,9 +33,15 @@ public class GameView extends JFrame implements PropertyChangeListener {
         //newGameItem.addActionListener(new NewGame(this));
         JMenuItem instructionsItem = new JMenuItem("Instructions");
         //instructionsItem.addActionListener(new GiveInstructions());
+        JMenuItem saveGameItem = new JMenuItem("Save game");
+        saveGameItem.addActionListener(new GameSaver(game));
+        JMenuItem loadGameItem = new JMenuItem("Load game");
+        loadGameItem.addActionListener(new GameLoader(game));
         menu.add(giveUpItem);
         menu.add(newGameItem);
         menu.add(instructionsItem);
+        menu.add(saveGameItem);
+        menu.add(loadGameItem);
         menuBar.add(menu);
         setJMenuBar(menuBar);
     }

@@ -375,19 +375,19 @@ public class MysteryGame {
     /**
      * Function that loads in a game state
      */
-    public void loadGame() {
+    /*public void loadGame() {
         try (Scanner loadState = new Scanner(new FileInputStream("saveState.txt"))) {
             currentRoomNum = loadState.nextInt();
             inventorySize = loadState.nextInt();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     /**
      * Function that saves the game state
      */
-    public void saveGame() {
+    /*public void saveGame() {
         if (!new File("saveState.txt").exists()) {
             new File("saveState").mkdir();
         }
@@ -399,13 +399,76 @@ public class MysteryGame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     /**
      * Used to add listeners.
      * @param listener
      * @author Csanád Végh
      */
+
+    public void saveGame(){
+        ArrayList<Integer> isPlayable = new ArrayList<Integer>();
+        Properties properties = new Properties();
+        properties.setProperty("detectiveKind", String.valueOf(detective.getDetectiveKind()));
+        for(int i = 0; i<inventory.getItemsArray().size(); i++){
+            properties.setProperty("inventoryItems" + i, String.valueOf(inventory.getItemsArray().get(i).getItemNumber()));
+        }
+        for(int i = 0; i<NUMBER_OF_ITEMS; i++){
+            properties.setProperty("isPlayable" + i, String.valueOf(accessItems.get(i).getIsPlayable()));
+            properties.setProperty("isAvailable" + i, String.valueOf(accessItems.get(i).getIsAvailable()));
+        }
+        properties.setProperty("currentRoomNum", String.valueOf(currentRoomNum));
+        properties.setProperty("flashlightIsOn", String.valueOf(flashlightIsOn));
+        properties.setProperty("isMessy", String.valueOf(isMessy));
+        for(int i=0; i<NUMBER_OF_ROOMS; i++){
+            if(i != NUMBER_OF_ROOMS-1) {
+                properties.setProperty("dialogueCounter" + i, String.valueOf(rooms.get(i).getNPC().getDialogueCounter()));
+            }
+            properties.setProperty("isOpen" + i, String.valueOf(rooms.get(i).getIsOpen()));
+            for(int j=0; j<rooms.get(i).getRoomItems().size(); j++){
+                properties.setProperty("roomItems" + i + "," + j, String.valueOf(rooms.get(i).getRoomItems().get(j).getItemNumber()));
+            }
+        }
+        try(FileOutputStream output = new FileOutputStream("saved_properties.txt")){
+            properties.store(output, "The state of the game:");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadGame(){
+        Properties properties = new Properties();
+        try (FileInputStream input = new FileInputStream("saved_properties.txt")){
+            properties.load(input);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        setDetective(Integer.valueOf(properties.getProperty("detectiveKind")));
+        inventory.getItemsArray().clear();
+        for(int i = 0; i<inventory.getItemsArray().size(); i++){
+            inventory.getItemsArray().add(accessItems.get(Integer.valueOf(properties.getProperty("inventoryItems"+i))));
+        }
+        for(int i = 0; i<NUMBER_OF_ITEMS; i++){
+            accessItems.get(i).setIsPlayable(Integer.valueOf(properties.getProperty("isPlayable"+i)));
+            accessItems.get(i).setIsPlayable(Integer.valueOf(properties.getProperty("isAvailable"+i)));
+        }
+        setCurrentRoomNum(Integer.valueOf(properties.getProperty("currentRoomNum")));
+        setFlashlightIsOn(Boolean.valueOf(properties.getProperty("flashlightIsOn")));
+        isMessy = Boolean.valueOf(properties.getProperty("isMessy"));
+        for(int i=0; i<NUMBER_OF_ROOMS; i++){
+            if(i != NUMBER_OF_ROOMS-1){
+                rooms.get(i).getNPC().setDialogueCounter(Integer.valueOf(properties.getProperty("dialogueCounter"+i)));
+            }
+            rooms.get(i).setIsOpen(Boolean.valueOf(properties.getProperty("isOpen"+i)));
+            rooms.get(i).getRoomItems().clear();
+            for(int j=0; j<rooms.get(i).getRoomItems().size(); j++){
+                rooms.get(i).getRoomItems().add(accessItems.get(Integer.valueOf(properties.getProperty("roomItems"+ i + "," + j))));
+            }
+        }
+    }
+
+
     public void addListener(PropertyChangeListener listener) {
         listeners.add(listener);
     }

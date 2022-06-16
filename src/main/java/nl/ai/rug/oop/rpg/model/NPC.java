@@ -107,4 +107,8 @@ public class NPC {
     public HashMap<String, Integer> getCoords() { // teo
         return coords;
     }
+
+    public void setDialogueCounter(int n) {
+        dialogueCounter = n;
+    }
 }

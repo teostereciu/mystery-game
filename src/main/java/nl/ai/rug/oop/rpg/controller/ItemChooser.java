@@ -18,10 +18,10 @@ public class ItemChooser implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        int outcome = modelGame.updateProgress(modelItem); // PROGRESS GAMEPLAY
-
+        int outcome;
         if (modelItem.getIsCarryAble() == 0) { // PICKUP/CLOSEUP
             // use item
+            outcome = modelGame.updateProgress(modelItem); // PROGRESS GAMEPLAY
             //if(modelItem.getIsPlayable()==1) {
             if (outcome == 2) {
                 viewFrame.displayDialog(7);
