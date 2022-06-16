@@ -19,12 +19,13 @@ public class ItemChooser implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(modelItem.getIsCarryAble()==0){
             // use item
-            if(modelItem.getItemName() == "phone"){
-                modelGame.updateInventory(modelItem, 1);
-            }
-            viewFrame.closeUp(modelItem);
-             //todo: allow pickup phone
-            return;
+            if(modelItem.getIsPlayable()==1)
+                if(modelItem.getItemName() == "phone"){
+                    modelGame.updateInventory(modelItem, 1);
+                }
+                viewFrame.closeUp(modelItem);
+                //todo: allow pickup phone
+                return;
         }
         int result = modelGame.updateInventory(modelItem, 1); //Currently, non-carryables can be picked up. todo: csanad implement a different functionality for them, incl changing the action listener in ForegroundPanel
         if (result == 0) {
