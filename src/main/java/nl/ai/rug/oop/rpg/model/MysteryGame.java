@@ -399,7 +399,7 @@ public class MysteryGame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     /**
      * Used to add listeners.
@@ -408,9 +408,9 @@ public class MysteryGame {
      */
 
     public void saveGame(){
-        ArrayList<Integer> isPlayable = new ArrayList<Integer>();
         Properties properties = new Properties();
         properties.setProperty("detectiveKind", String.valueOf(detective.getDetectiveKind()));
+        properties.setProperty("inventorySize", String.valueOf(inventory.getItemsArray().size()));
         for(int i = 0; i<inventory.getItemsArray().size(); i++){
             properties.setProperty("inventoryItems" + i, String.valueOf(inventory.getItemsArray().get(i).getItemNumber()));
         }
@@ -426,6 +426,7 @@ public class MysteryGame {
                 properties.setProperty("dialogueCounter" + i, String.valueOf(rooms.get(i).getNPC().getDialogueCounter()));
             }
             properties.setProperty("isOpen" + i, String.valueOf(rooms.get(i).getIsOpen()));
+            properties.setProperty("numberOfItemsInRoom"+i, String.valueOf(rooms.get(i).getRoomItems().size()));
             for(int j=0; j<rooms.get(i).getRoomItems().size(); j++){
                 properties.setProperty("roomItems" + i + "," + j, String.valueOf(rooms.get(i).getRoomItems().get(j).getItemNumber()));
             }
@@ -444,28 +445,29 @@ public class MysteryGame {
         } catch (IOException e){
             e.printStackTrace();
         }
-        setDetective(Integer.valueOf(properties.getProperty("detectiveKind")));
+        setDetective(Integer.parseInt(properties.getProperty("detectiveKind")));
         inventory.getItemsArray().clear();
-        for(int i = 0; i<inventory.getItemsArray().size(); i++){
-            inventory.getItemsArray().add(accessItems.get(Integer.valueOf(properties.getProperty("inventoryItems"+i))));
+        for(int i = 0; i < Integer.parseInt(properties.getProperty("inventorySize"));i++){
+            inventory.getItemsArray().add(accessItems.get(Integer.parseInt(properties.getProperty("inventoryItems"+i))));
         }
         for(int i = 0; i<NUMBER_OF_ITEMS; i++){
-            accessItems.get(i).setIsPlayable(Integer.valueOf(properties.getProperty("isPlayable"+i)));
-            accessItems.get(i).setIsPlayable(Integer.valueOf(properties.getProperty("isAvailable"+i)));
+            accessItems.get(i).setIsPlayable(Integer.parseInt(properties.getProperty("isPlayable"+i)));
+            accessItems.get(i).setIsPlayable(Integer.parseInt(properties.getProperty("isAvailable"+i)));
         }
-        setCurrentRoomNum(Integer.valueOf(properties.getProperty("currentRoomNum")));
-        setFlashlightIsOn(Boolean.valueOf(properties.getProperty("flashlightIsOn")));
-        isMessy = Boolean.valueOf(properties.getProperty("isMessy"));
+        setCurrentRoomNum(Integer.parseInt(properties.getProperty("currentRoomNum")));
+        setFlashlightIsOn(Boolean.parseBoolean(properties.getProperty("flashlightIsOn")));
+        isMessy = Boolean.parseBoolean(properties.getProperty("isMessy"));
         for(int i=0; i<NUMBER_OF_ROOMS; i++){
             if(i != NUMBER_OF_ROOMS-1){
-                rooms.get(i).getNPC().setDialogueCounter(Integer.valueOf(properties.getProperty("dialogueCounter"+i)));
+                rooms.get(i).getNPC().setDialogueCounter(Integer.parseInt(properties.getProperty("dialogueCounter"+i)));
             }
-            rooms.get(i).setIsOpen(Boolean.valueOf(properties.getProperty("isOpen"+i)));
+            rooms.get(i).setIsOpen(Boolean.parseBoolean(properties.getProperty("isOpen"+i)));
             rooms.get(i).getRoomItems().clear();
-            for(int j=0; j<rooms.get(i).getRoomItems().size(); j++){
-                rooms.get(i).getRoomItems().add(accessItems.get(Integer.valueOf(properties.getProperty("roomItems"+ i + "," + j))));
+            for(int j = 0; j<Integer.parseInt(properties.getProperty("numberOfItemsInRoom"+i));j++){
+                rooms.get(i).getRoomItems().add(accessItems.get(Integer.parseInt(properties.getProperty("roomItems"+ i + "," + j))));
             }
         }
+        notifyListeners();
     }
 
 
