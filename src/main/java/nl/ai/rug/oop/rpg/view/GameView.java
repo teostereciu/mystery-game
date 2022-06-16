@@ -18,7 +18,24 @@ public class GameView extends JFrame implements PropertyChangeListener {
     public final int ROOM_HEIGHT = 500;
     public GameView() {
         init();
+        initMenuBar();
         game.addListener(this);
+    }
+
+    private void initMenuBar() {
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu("Menu");
+        JMenuItem giveUpItem = new JMenuItem("Give up!");
+        //giveUpItem.addActionListener(new GiveUpper());
+        JMenuItem newGameItem = new JMenuItem("New game");
+        //newGameItem.addActionListener(new NewGame(this));
+        JMenuItem instructionsItem = new JMenuItem("Instructions");
+        //instructionsItem.addActionListener(new GiveInstructions());
+        menu.add(giveUpItem);
+        menu.add(newGameItem);
+        menu.add(instructionsItem);
+        menuBar.add(menu);
+        setJMenuBar(menuBar);
     }
 
     private void init() {
@@ -104,6 +121,8 @@ public class GameView extends JFrame implements PropertyChangeListener {
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
             case 6 -> JOptionPane.showMessageDialog(this, "Cannot use this item in this room.",
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
+            case 7 -> JOptionPane.showMessageDialog(this, "I do not know how to interact with this yet. I should gather more information first.",
+                    "Failed to interact", JOptionPane.WARNING_MESSAGE);
             case 10 -> JOptionPane.showMessageDialog(this, "You chose bad cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
                     "Intro", JOptionPane.WARNING_MESSAGE);
             case 11 -> JOptionPane.showMessageDialog(this, "You chose good cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
