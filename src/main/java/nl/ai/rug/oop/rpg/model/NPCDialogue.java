@@ -80,11 +80,12 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(303, "Stacey: Oh, yeah, that… That happens from time to time. But it was really nothing.");
         dialogueMap.put(304, "Detective: What happened?");
         dialogueMap.put(305, "Stacey: Well, it was really silly. So we planned the party together, right? For both of our graduations!");
-        dialogueMap.put(306, "Stacey: But when I invited people, I accidentally wrote that it was a party for MY graduation. I honestly just missed it, I didn’t mean to frame it like this.");
-        dialogueMap.put(307, "Detective: I see… and you don’t think she could’ve stolen the beer out of spite?");
-        dialogueMap.put(308, "Stacey: What? Spite?! No, never… Sammi and I have been so excited for this day forever, she would never.");
-        dialogueMap.put(309, "Detective: Okay. I’ll keep looking then.");
-        dialogueMap.put(310, "END");
+        dialogueMap.put(306, "Stacey: But when I invited people, I accidentally wrote that it was a party for MY graduation.");
+        dialogueMap.put(307, "Stacey: I honestly just missed it, I didn’t mean to frame it like this.");
+        dialogueMap.put(308, "Detective: I see… and you don’t think she could’ve stolen the beer out of spite?");
+        dialogueMap.put(309, "Stacey: What? Spite?! No, never… Sammi and I have been so excited for this day forever, she would never.");
+        dialogueMap.put(310, "Detective: Okay. I’ll keep looking then.");
+        dialogueMap.put(311, "END");
 
         /* Fifth/Final interaction dialogue (After finding crate) */
         dialogueMap.put(401, "Stacey: Hey, that coffee should be ready! did you find the beer yet?");
@@ -137,17 +138,18 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(202, "Detective: Not so fast – this text message that I saw on the front of it doesn’t seem to put you in a good light my friend…");
         dialogueMap.put(203, "Davey: Oh, mi amigo. I can see how that makes me look bad, but I can explain…");
         dialogueMap.put(204, "Detective: I’m on your side, buddy. Tell me the truth."); // X/Y difference
-        dialogueMap.put(205, "Davey: Listen here's the truth. I don't have so much money, I keep, uh,  spending it on, uh… groceries. So I thought maybe I could swap the beer for some… groceries.");
-        dialogueMap.put(206, "Davey: But by the time I looked inside the fridge, the beer was like, gone, dude. Like, not there. someone had already taken it, and by someone, I mean not me.");
-        dialogueMap.put(207, "Detective: Is there any way you can corroborate your account?"); // X/Y difference
-        dialogueMap.put(208 ,"Davey: I can prove it. Melvin keeps a camera outside his door, right? That camera can show that I never left the living room, the whole day.");
-        dialogueMap.put(209, "Detective: Oh yeah, and how do I get through to Melvin? He doesn’t answer his door and doesn’t seem to be talking to anyone here by the sounds of it.");
-        dialogueMap.put(210, "Davey: There's a secret door knock Melvin has to know you're cool, and then you can enter the room. I know the knock.");
-        dialogueMap.put(211, "Detective: Great! What’s the knock?");
-        dialogueMap.put(212, "Davey: Well, like I can tell you it. But first, I need some, uh, money. For, uh, groceries…");
-        dialogueMap.put(213, "Detective: Well, if you really need groceries I’ll try and help you out!"); // X/Y difference
-        dialogueMap.put(214, "Davey: Haaa, cool. Wait, what did I just say? …");
-        dialogueMap.put(215, "END");
+        dialogueMap.put(205, "Davey: Listen here's the truth. I don't have so much money, I keep, uh,  spending it on, uh… groceries.");
+        dialogueMap.put(206, "Davey: So I thought maybe I could swap the beer for some… groceries. ut by the time I looked inside the fridge, the beer was like, gone, dude.");
+        dialogueMap.put(207, "Davey: Like, not there. someone had already taken it, and by someone, I mean not me.");
+        dialogueMap.put(208, "Detective: Is there any way you can corroborate your account?"); // X/Y difference
+        dialogueMap.put(209 ,"Davey: I can prove it. Melvin keeps a camera outside his door, right? That camera can show that I never left the living room, the whole day.");
+        dialogueMap.put(210, "Detective: Oh yeah, and how do I get through to Melvin? He doesn’t answer his door and doesn’t seem to be talking to anyone here by the sounds of it.");
+        dialogueMap.put(211, "Davey: There's a secret door knock Melvin has to know you're cool, and then you can enter the room. I know the knock.");
+        dialogueMap.put(212, "Detective: Great! What’s the knock?");
+        dialogueMap.put(213, "Davey: Well, like I can tell you it. But first, I need some, uh, money. For, uh, groceries…");
+        dialogueMap.put(214, "Detective: Well, if you really need groceries I’ll try and help you out!"); // X/Y difference
+        dialogueMap.put(215, "Davey: Haaa, cool. Wait, what did I just say? …");
+        dialogueMap.put(216, "END");
 
         /* Fourth interaction dialogue (After giving money) */
         dialogueMap.put(301, "Davey: Right on bro, that’s chill. Here’s the secret knock! You’ll see that the video totally like exonerates me bro.");
@@ -188,17 +190,18 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(202, "Detective: Cut the crap, buster. I saw this text of you trying to sell the beer! I’ll have you in cuffs!"); // X/Y difference
         dialogueMap.put(203, "Davey: Wow, hombre… careful for this hostility. It will like, reduce your years, or something. I can explain…");
         dialogueMap.put(204, "Detective: Talk."); // X/Y difference
-        dialogueMap.put(205, "Davey: Listen here's the truth. I don't have so much money, I keep, uh,  spending it on, uh… groceries. So I thought maybe I could swap the beer for some … groceries.");
-        dialogueMap.put(206, "Davey: But by the time I looked inside the fridge, the beer was like, gone, dude. Like, not there. someone had already taken it, and by someone,  I mean not me.");
-        dialogueMap.put(207, "Detective: Bullcrap. Where’s your proof of this fairyful story?"); // X/Y difference
-        dialogueMap.put(208 ,"Davey: I can prove it! Melvin keeps a camera outside his door, right? That camera can show that I never left the living room, the whole day.");
-        dialogueMap.put(209, "Detective: Oh yeah, and how do I get through to Melvin? He doesn’t answer his door and doesn’t seem to be talking to anyone here by the sounds of it.");
-        dialogueMap.put(210, "Davey: There's a secret door knock Melvin has to know you're cool, and then you can enter the room. I know the knock.");
-        dialogueMap.put(211, "Detective: Great! What’s the knock?");
-        dialogueMap.put(212, "Davey: Well, like I can tell you it. But first, I need some, uh, money. For, uh, groceries…");
-        dialogueMap.put(213, "Detective: Listen here, waster! You’re lucky I’m morally flexible that I’ll go through with this, but I better get that video tape at the end of it!"); // X/Y difference
-        dialogueMap.put(214, "Davey: Haaa, cool. Wait, what did I just say? …");
-        dialogueMap.put(215, "END");
+        dialogueMap.put(205, "Davey: Listen here's the truth. I don't have so much money, I keep, uh,  spending it on, uh… groceries.");
+        dialogueMap.put(206, "Davey: So I thought maybe I could swap the beer for some… groceries. ut by the time I looked inside the fridge, the beer was like, gone, dude.");
+        dialogueMap.put(207, "Davey: Like, not there. someone had already taken it, and by someone, I mean not me.");
+        dialogueMap.put(208, "Detective: Bullcrap. Where’s your proof of this fairyful story?"); // X/Y difference
+        dialogueMap.put(209 ,"Davey: I can prove it! Melvin keeps a camera outside his door, right? That camera can show that I never left the living room, the whole day.");
+        dialogueMap.put(210, "Detective: Oh yeah, and how do I get through to Melvin? He doesn’t answer his door and doesn’t seem to be talking to anyone here by the sounds of it.");
+        dialogueMap.put(211, "Davey: There's a secret door knock Melvin has to know you're cool, and then you can enter the room. I know the knock.");
+        dialogueMap.put(212, "Detective: Great! What’s the knock?");
+        dialogueMap.put(213, "Davey: Well, like I can tell you it. But first, I need some, uh, money. For, uh, groceries…");
+        dialogueMap.put(214, "Detective: Listen here, waster! You’re lucky I’m morally flexible that I’ll go through with this, but I better get that video tape at the end of it!"); // X/Y difference
+        dialogueMap.put(215, "Davey: Haaa, cool. Wait, what did I just say? …");
+        dialogueMap.put(216, "END");
 
         /* Fourth interaction dialogue (After giving money) */
         dialogueMap.put(301, "Davey: Right on bro, that’s chill. Here’s the secret knock! You’ll see that the video totally like exonerates me bro.");
@@ -237,7 +240,7 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(101, "Alex: Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
         dialogueMap.put(102, "Detective: I don’t mean to interrupt, but how do you explain taking the crate out of the fridge? I’ve got video evidence."); // X/Y difference
         dialogueMap.put(103, "Alex: Wait! Oh God, It’s not what it seems, I swear.");
-        dialogueMap.put(104, "Detective: Then help me out here. Because Samantha says that you have an exam tomorrow, and I would get it if you wanted to protect your sleep patterns."); // X/Y difference
+        dialogueMap.put(104, "Detective: Then help me out here. Because Sam says that you have an exam tomorrow, and I would get it if you wanted to protect your sleep patterns."); // X/Y difference
         dialogueMap.put(105, "Alex: Oh Samantha, that b*tch! I’m guessing that she failed to tell you about that fight she had with Stacey earlier, huh?");
         dialogueMap.put(106, "Alex: It’s true that I am upset that there is a planned party for tonight, as if I didn’t exist or that studying wasn’t important!");
         dialogueMap.put(107, "Alex: That darn crate was taking up the whole fridge, so I decided I would just temporarily move it to the storage room. ");
@@ -262,16 +265,17 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(101, "Alex: Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
         dialogueMap.put(102, "Detective:  Listen here Missy! we've got hard evidence of you taking the crate of beer out of the fridge! Where are you hiding it!"); // X/Y difference
         dialogueMap.put(103, "Alex: Wait! Oh God, It’s not what it seems, I swear.");
-        dialogueMap.put(104, "Detective: Oh yeah? Because Samantha seems to think you’d have a good motive to not have that party, considering your lil test tomorrow and all. You better get to explaining."); // X/Y difference
-        dialogueMap.put(105, "Alex: Oh Samantha, that b*tch! I’m guessing that she failed to tell you about that fight she had with Stacey earlier, huh?");
-        dialogueMap.put(106, "Alex: It’s true that I am upset that there is a planned party for tonight, as if I didn’t exist or that studying wasn’t important!");
-        dialogueMap.put(107, "Alex: That darn crate was taking up the whole fridge, so I decided I would just temporarily move it to the storage room. ");
-        dialogueMap.put(108, "Alex: But then I asked Kyle for the key, and he said he lost it. So I just left it there in front of the door. ");
-        dialogueMap.put(109, "Detective: So how do you explain that the beer is no longer there?");
-        dialogueMap.put(110, "Alex: I don’t know! It wasn’t me though! I’ve been studying all day!");
-        dialogueMap.put(111, "Alex: Kyle might have put the key for the storage room in his safe!");
-        dialogueMap.put(112, "Alex: Go talk to Melvin for the code to the safe, but otherwise, I still have an exam tomorrow!!");
-        dialogueMap.put(113, "END");
+        dialogueMap.put(104, "Detective: Oh yeah? Because Samantha seems to think you’d have a good motive to not have that party, considering your lil test tomorrow and all."); // X/Y difference
+        dialogueMap.put(105, "Detective:  You better get to explaining.");
+        dialogueMap.put(106, "Alex: Oh Samantha, that b*tch! I’m guessing that she failed to tell you about that fight she had with Stacey earlier, huh?");
+        dialogueMap.put(107, "Alex: It’s true that I am upset that there is a planned party for tonight, as if I didn’t exist or that studying wasn’t important!");
+        dialogueMap.put(108, "Alex: That darn crate was taking up the whole fridge, so I decided I would just temporarily move it to the storage room. ");
+        dialogueMap.put(109, "Alex: But then I asked Kyle for the key, and he said he lost it. So I just left it there in front of the door. ");
+        dialogueMap.put(110, "Detective: So how do you explain that the beer is no longer there?");
+        dialogueMap.put(111, "Alex: I don’t know! It wasn’t me though! I’ve been studying all day!");
+        dialogueMap.put(112, "Alex: Kyle might have put the key for the storage room in his safe!");
+        dialogueMap.put(113, "Alex: Go talk to Melvin for the code to the safe, but otherwise, I still have an exam tomorrow!!");
+        dialogueMap.put(114, "END");
 
         /* Third interaction dialogue (After accessing safe) */
         dialogueMap.put(201, "Alex: Oh god, oh god, what if I don’t get a 10?!");
@@ -299,8 +303,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(203, "Detective: Listen man, can you help me out? I need that code to solve the crime.");// X/Y difference
         dialogueMap.put(204, "Melvin: Let’s say I have that code. What can you do for me?");
         dialogueMap.put(205, "Detective: What do you need, good sir.");// X/Y difference
-        dialogueMap.put(206, "Melvin: I need a new computer mouse. Mines broken. I have very important stuff to do, and this trackpad isn’t great for my dexterity. Get me that mouse, and the code is yours.");
-        dialogueMap.put(207, "END");
+        dialogueMap.put(206, "Melvin: I need a new computer mouse. Mines broken. I have very important stuff to do, and this trackpad isn’t great for my dexterity.");
+        dialogueMap.put(207, "Melvin: Get me that mouse, and the code is yours.");
+        dialogueMap.put(208, "END");
 
         /* Fourth interaction dialogue (After getting computer mouse) */
         dialogueMap.put(301, "Detective: Here’s that computer mouse for you.");// X/Y difference
