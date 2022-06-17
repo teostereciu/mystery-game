@@ -16,6 +16,7 @@ public class NPC {
     private final int dialogueType;
     private NPCDialogue dialogue;
     private int dialogueCounter;
+    private final HashMap<String, Integer> coords = new HashMap<>();
 
     /**
      * A constructor for the NPC object.
@@ -151,15 +152,17 @@ public class NPC {
 
 
     /**
-     * @Author Teo
+     * @return the coords of the NPC
      */
-    private final HashMap<String, Integer> coords = new HashMap<>();
-
     public HashMap<String, Integer> getCoords() { // teo
         return coords;
     }
 
-    public void setDialogueCounter(int n) {
-        dialogueCounter = n;
+    /**
+     * Updates the dialogueCounter of the NPC
+     * @param counter is the new value to set the counter to
+     */
+    public void setDialogueCounter(int counter) {
+        dialogueCounter = counter;
     }
 }

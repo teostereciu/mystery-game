@@ -89,7 +89,7 @@ public class Item {
                 coords.put("y", 280);
                 break;
             case(9):
-                itemName = "locked-drawer"; // note changed from desk. todo change in dialogue
+                itemName = "locked-drawer";
                 roomNumber = 4;
                 isCarryAble = 0;
                 coords.put("x", 350);
@@ -105,14 +105,14 @@ public class Item {
                 itemName = "scissors";
                 roomNumber = 4;
                 coords.put("x", 450);
-                coords.put("y", 300); //todo change
+                coords.put("y", 300);
                 isAvailable = 0;
                 break;
             case(12):
                 itemName = "mouse";
                 roomNumber = 4;
                 coords.put("x", 250);
-                coords.put("y", 400); //todo change
+                coords.put("y", 400);
                 isAvailable = 0;
                 break;
             case(13):
@@ -133,7 +133,7 @@ public class Item {
                 itemName = "key";
                 roomNumber = 3;
                 coords.put("x", 100);
-                coords.put("y", 350); //todo change
+                coords.put("y", 350);
                 isAvailable = 0;
                 break;
             case(16):
@@ -141,7 +141,7 @@ public class Item {
                 roomNumber = 6;
                 isCarryAble = 0;
                 coords.put("x", 100);
-                coords.put("y", 350); //todo change
+                coords.put("y", 350);
                 break;
             default:
         }

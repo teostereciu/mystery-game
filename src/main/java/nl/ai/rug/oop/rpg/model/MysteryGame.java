@@ -5,7 +5,9 @@ import java.io.*;
 import java.util.*;
 
 /**
- * @Author Daniël
+ * The MysteryGame Object is the instance of the game being played.
+ * All other objects are stored inside this object.
+ * @Author Dancoko
  */
 public class MysteryGame {
     Collection<PropertyChangeListener> listeners = new ArrayList<>();
@@ -33,7 +35,11 @@ public class MysteryGame {
 
     private boolean isMessy = true;
 
-    /* everything with regard to initializing game */   
+    /* everything with regard to initializing game */
+
+    /**
+     * The constructor for the MysteryGame
+     */
     public MysteryGame() {
         this.init();
     }
@@ -55,6 +61,9 @@ public class MysteryGame {
         }
     }
 
+    /**
+     * Initialises the NPCs
+     */
     private void setNPCs() {
         for (int i = 0; i < NUMBER_OF_NPCS; i++) {
             NPC npc = new NPC(i, detective.getDetectiveKind());
@@ -64,7 +73,7 @@ public class MysteryGame {
 
     /* everything with regard to Detective */
 
-    /*/**
+    /**
      * sets the detective at the beginning of the game
      * @param isGood is which detective is chosen
      */
@@ -82,6 +91,11 @@ public class MysteryGame {
 
     /* everything with regard to Rooms */
 
+    /**
+     * Gives the object Room coupled to a certain roomNumber
+     * @param roomNumber the number of the room
+     * @return the Room coupled to that roomNumber
+     */
     public Room getRoom(int roomNumber) { // note from teo: needed this
         return rooms.get(roomNumber);
     }
@@ -94,6 +108,10 @@ public class MysteryGame {
         currentRoomNum = number;
         notifyListeners();
     }
+
+    /**
+     * @return the number of the current room
+     */
     public int getCurrentRoomNum() {
         return currentRoomNum;
     }
@@ -108,6 +126,14 @@ public class MysteryGame {
 
     /* everything with regard to items */
 
+    /**
+     * Whenever an Item is used, this function checks whether it can be played
+     * in the current state and if yes, update the progress of the game
+     * @param item the item played
+     * @return a value to the view: 1 = succes,
+     *                  2 = item != playable;
+     *                  3 = item is used in the wrong room
+     */
     public int updateProgress(Item item) {
         switch(item.getItemName()){
             case "hat":
@@ -213,7 +239,7 @@ public class MysteryGame {
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                if (currentRoomNum == 4) {
+                if (increaseNPCProgress(4) == 1) {
                     accessItems.get(9).setIsPlayable(1);
                     updateInventory(item, 2);
                 } else {
@@ -280,9 +306,6 @@ public class MysteryGame {
                     return 2;
                 }
                 if (codeHasBeenCracked && !safeHasBeenAccessed) {
-                    //System.out.println("I am inside the safe"); //todo: remove
-                    //accessItems.get(15).setIsAvailable(1); //todo csanad pls add a different actionlistener for items that you can't pick up. add this line for eg for safe. it shouldn't be here
-                    System.out.println(accessItems.get(15).getItemName() + " " + accessItems.get(15).getIsAvailable());
                     accessItems.get(15).setIsPlayable(1);
                     increaseNPCProgressOutsideRoom(5);
                     increaseNPCProgressOutsideRoom(4);
@@ -311,6 +334,12 @@ public class MysteryGame {
         notifyListeners();
         return 1;
     }
+
+    /**
+     * Checks whether a given item is playable
+     * @param item is the given item
+     * @return whether item is playable (1) or not (0)
+     */
     public int checkIfPlayable(Item item) {
         if (item.getIsPlayable() == 1) {
             return 1;
@@ -319,15 +348,27 @@ public class MysteryGame {
     }
 
     /* Everything with regard to Inventory*/
-    public int updateInventory(Item item, int removeSlashAddSlashUltimatelyRemove) {
+
+    /**
+     * This function either removes an item from the inventory back to the room,
+     * adds an item from the room to the inventory or
+     * completely removes the item when it is successfully played
+     * @param item is the Item to be removed, added or completely removed
+     * @param state tells what is going to happen with the item
+     *              0 = remove / return to room
+     *              1 = add to inventory
+     *              else = remove from game
+     * @return whether succesful in action (1) or not (0)
+     */
+    public int updateInventory(Item item, int state) {
         int result = 1;
-        if (removeSlashAddSlashUltimatelyRemove == 1) {
+        if (state == 1) {
             if(inventory.isFull()){
                 return 0;
             }
             result = inventory.addToInventory(item);
             rooms.get(currentRoomNum).removeRoomItem(item);
-        } else if (removeSlashAddSlashUltimatelyRemove == 0){
+        } else if (state == 0){
             rooms.get(currentRoomNum).addRoomItem(item);
             inventory.removeFromInventory(item);
         } else {
@@ -338,25 +379,54 @@ public class MysteryGame {
         return result;
     }
 
+    /**
+     * @return the inventory of the player
+     */
     public Inventory getInventory() {
         return inventory;
     }
 
+    /**
+     * Changes Melvins room (room 5) from dark to light and vice versa
+     * @param state is the state the flashlight/Melvins room should be in
+     *              0 = dark
+     *              1 = lit up
+     */
     public void setFlashlightIsOn(boolean state) {
         flashlightIsOn = state;
         notifyListeners();
     }
+
+    /**
+     * @return whether the flashlight is on (true) or off (false)
+     */
     public boolean getFlashlightIsOn() { return flashlightIsOn; }
 
+    /**
+     * When the safe is cracked, this function will set setCodeHasBeenCracked to true
+     * @param state is the state the variable will be put in.
+     *              (will only be true when the safe is cracked)
+     */
     public void setCodeHasBeenCracked(boolean state) {
         codeHasBeenCracked = state;
     }
 
+    /**
+     * @return true if cleaning-supplies has not been used and false if has been used
+     */
     public boolean getIsMessy() { return isMessy; }
+
+    /**
+     * Function called when cleaning supplies are used.
+     * Removes the mess from Davey/Kyles room
+     */
     public void notMessy() { isMessy = false; }
 
     /* everything with regard to NPCs */
 
+    /**
+     * Updates the dialogue of the NPC in the given room
+     */
     public void updateDialogue() {
         rooms.get(currentRoomNum).getNPC().getNPCDialogue().increaseLine();
         if (rooms.get(currentRoomNum).getNPC().getNPCDialogue().getDialogue(rooms.get(currentRoomNum).getNPC().getDialogueCounter() * MAX_DIALOGUE_OPTIONS + rooms.get(currentRoomNum).getNPC().getNPCDialogue().getCurrentKey()) == null) {
@@ -365,6 +435,12 @@ public class MysteryGame {
         notifyListeners();
     }
 
+    /**
+     * Increases the dialogue counter of a given NPC
+     * Player has to be in the same room as the NPC
+     * @param NPCnumber is the number of the NPC
+     * @return 1 if successfully increased or 0 if unsuccessful
+     */
     private int increaseNPCProgress(int NPCnumber) {
         if (rooms.get(currentRoomNum).getNPC().getNPCNumber() == NPCnumber) {
             rooms.get(currentRoomNum).getNPC().updateDialogueCounter();
@@ -374,6 +450,11 @@ public class MysteryGame {
         return 0;
     }
 
+    /**
+     * Increases the dialogue counter of a given NPC
+     * Player does not have to be in the same room as the NPC
+     * @param roomNumber is the roomNumber of the NPC
+     */
     private void increaseNPCProgressOutsideRoom(int roomNumber) {
         rooms.get(roomNumber).getNPC().updateDialogueCounter();
         rooms.get(roomNumber).getNPC().getNPCDialogue().setCurrentKey(0);

@@ -298,7 +298,6 @@ public class NPCDialogue {
      * Initialises the good cop dialogue for Alex
      */
     private void alex1() {
-        //todo give alex dialogue update for breaking drawer
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Alex: Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
         dialogueMap.put(2, "(It appears she has a computer. If I find some digital footage I might be able to see it here...)"); //
