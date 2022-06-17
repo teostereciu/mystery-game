@@ -23,31 +23,40 @@ public class ItemChooser implements ActionListener {
             // use item
             outcome = modelGame.updateProgress(modelItem); // PROGRESS GAMEPLAY
             //if(modelItem.getIsPlayable()==1) {
-            if (outcome == 2) {
-                viewFrame.displayDialog(7);
+            if (outcome == 2 && !Objects.equals(modelItem.getItemName(), "safe")) {
+                viewFrame.displayDetectiveWarnings(7);
                 return;
             }
 
-                if (Objects.equals(modelItem.getItemName(), "phone")) {
-                    modelGame.updateInventory(modelItem, 1);
-                    viewFrame.closeUp(modelItem);
+            if (Objects.equals(modelItem.getItemName(), "phone")) {
+                modelGame.updateInventory(modelItem, 1);
+                viewFrame.closeUp(modelItem);
+            }
+            if (Objects.equals(modelItem.getItemName(), "computer")) {
+                viewFrame.closeUp(modelItem);
+            }
+            if (Objects.equals(modelItem.getItemName(), "safe")) {
+                String answer = viewFrame.displayInsertSafeCodeDialog();
+                if (Objects.equals(answer, "420")) {
+                    modelGame.setCodeHasBeenCracked(true);
+                    modelGame.updateProgress(modelItem); //not using this function gave problems
+                    //modelGame.accessItems.get(15).setIsAvailable(1);
+                    viewFrame.displaySafeDialog(true);
+                } else {
+                    viewFrame.displaySafeDialog(false);
                 }
-                if (Objects.equals(modelItem.getItemName(), "computer")) {
-                    viewFrame.closeUp(modelItem);
+            }
+            if (Objects.equals(modelItem.getItemName(), "crate")) {
+                if (modelItem.getIsPlayable() == 1) {
+                    viewFrame.displayEnding();
+                    // game ends here
                 }
-                if (Objects.equals(modelItem.getItemName(), "safe")) {
-                    String answer = viewFrame.displayInsertSafeCodeDialog();
-                    if (Objects.equals(answer, "420")) {
-                        modelGame.setCodeHasBeenCracked(true);
-                        modelGame.updateProgress(modelItem); //not using this function gave problems
-                        //modelGame.accessItems.get(15).setIsAvailable(1);
-                    }
-                }
+            }
             //}
         } else { //PICKUP
             outcome = modelGame.updateInventory(modelItem, 1);
             if (outcome == 0) {
-                viewFrame.displayDialog(2); // note we can stick to only using the property change by having an error variable in the model (set to 2 by this event for eg)
+                viewFrame.displayDetectiveWarnings(2);
             }
         }
     }

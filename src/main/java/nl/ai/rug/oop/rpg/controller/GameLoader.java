@@ -15,7 +15,7 @@ public class GameLoader implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        int outcome = viewFrame.displayDialog(9);
+        int outcome = viewFrame.displayGameOptions(1);
         if (outcome == 1) {
             modelGame.loadGame();
         }

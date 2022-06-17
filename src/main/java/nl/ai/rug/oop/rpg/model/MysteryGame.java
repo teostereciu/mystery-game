@@ -281,7 +281,7 @@ public class MysteryGame {
                 }
                 if (codeHasBeenCracked && !safeHasBeenAccessed) {
                     System.out.println("I am inside the safe");
-                    accessItems.get(15).setIsAvailable(1);
+                    accessItems.get(15).setIsAvailable(1); //todo csanad pls add a different actionlistener for items that you can't pick up. add this line for eg for safe. it shouldn't be here
                     accessItems.get(15).setIsPlayable(1);
                     increaseNPCProgressOutsideRoom(5);
                     increaseNPCProgressOutsideRoom(4);

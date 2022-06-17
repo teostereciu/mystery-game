@@ -27,11 +27,11 @@ public class GameView extends JFrame implements PropertyChangeListener {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Menu");
         JMenuItem giveUpItem = new JMenuItem("Give up!");
-        giveUpItem.addActionListener(new GiveUpper());
+        giveUpItem.addActionListener(new GiveUpper(this));
         JMenuItem newGameItem = new JMenuItem("New game");
         newGameItem.addActionListener(new NewGame(this));
         JMenuItem instructionsItem = new JMenuItem("Instructions");
-        instructionsItem.addActionListener(new GiveInstructions());
+        instructionsItem.addActionListener(new GiveInstructions(this));
         JMenuItem saveGameItem = new JMenuItem("Save game");
         saveGameItem.addActionListener(new GameSaver(game, this));
         JMenuItem loadGameItem = new JMenuItem("Load game");
@@ -80,7 +80,6 @@ public class GameView extends JFrame implements PropertyChangeListener {
         navigationPanel.enableNavigateButton(game.getCurrentRoomNum() != 0);
         locationPanel.update(game.getCurrentRoomNum());
         dialoguePanel.clear();
-        //dialoguePanel.update();
         inventoryPanel.update();
         SwingUtilities.updateComponentTreeUI(this);
     }
@@ -113,8 +112,46 @@ public class GameView extends JFrame implements PropertyChangeListener {
         return JOptionPane.showInputDialog("I need to use a special code to open the safe.");
     }
 
-    public int displayDialog(int i) {
-        switch (i) {
+    public void displaySafeDialog(boolean isCorrect) {
+        if (isCorrect) {
+            JOptionPane.showMessageDialog(this, "The code worked! The safe is now open. I should investigate what is inside.",
+                    "Opened safe", JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "The code did not work! The safe remains closed.",
+                    "Failed to open safe", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    public int displayGameOptions(int type) {
+        switch(type) {
+            case 0 -> {
+            String[] options = {"Cancel", "Save"};
+                return JOptionPane.showOptionDialog(null,"Do you want to save current game? This will overwrite any previous savings.","Save game", JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,null, options, null);
+            }
+            case 1 -> {
+                String[] options = {"Cancel", "Load"};
+                return JOptionPane.showOptionDialog(null,"Do you want to load game? Any unsaved progress will be lost.","Load game", JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,null, options, null);
+            }
+            case 2 -> {
+                String[] options = {"Cancel", "Give up"};
+                return JOptionPane.showOptionDialog(null,"Do you want to give up? Any unsaved progress will be lost.","Give up", JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,null, options, null);
+            }
+            case 3 -> JOptionPane.showMessageDialog(this, "Instructions");
+        }
+        return 0;
+    }
+
+    public void displayEnding() {
+        removeAll();
+        roomPanel.updateToEnding();
+        add(roomPanel);
+    }
+
+    public int displayDetectiveWarnings(int type) {
+        switch (type) {
             case 0 -> JOptionPane.showMessageDialog(this, "Cannot drop item here.",
                         "Failed to put back item", JOptionPane.WARNING_MESSAGE);
             case 1 -> JOptionPane.showMessageDialog(this, "Cannot use item here.", //todo remove?
@@ -134,16 +171,6 @@ public class GameView extends JFrame implements PropertyChangeListener {
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
             case 7 -> JOptionPane.showMessageDialog(this, "I do not know how to interact with this yet. I should gather more information first.",
                     "Failed to interact", JOptionPane.WARNING_MESSAGE);
-            case 8 -> {
-                String[] options = {"Cancel", "Save"};
-                return JOptionPane.showOptionDialog(null,"Do you want to save current game? This will overwrite any previous savings.","Save game", JOptionPane.YES_NO_CANCEL_OPTION,
-                        JOptionPane.QUESTION_MESSAGE,null, options, null);
-            }
-            case 9 -> {
-                String[] options = {"Cancel", "Load"};
-                return JOptionPane.showOptionDialog(null,"Do you want to load game? Any unsaved progress will be lost.","Load game", JOptionPane.YES_NO_CANCEL_OPTION,
-                        JOptionPane.QUESTION_MESSAGE,null, options, null);
-            }
             case 10 -> JOptionPane.showMessageDialog(this, "You chose bad cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
                     "Intro", JOptionPane.WARNING_MESSAGE);
             case 11 -> JOptionPane.showMessageDialog(this, "You chose good cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",

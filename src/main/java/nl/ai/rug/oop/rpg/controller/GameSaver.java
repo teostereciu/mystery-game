@@ -15,7 +15,7 @@ public class GameSaver implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        int outcome = viewFrame.displayDialog(8);
+        int outcome = viewFrame.displayGameOptions(0);
         if (outcome == 1) {
             modelGame.saveGame();
         }

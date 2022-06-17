@@ -18,19 +18,19 @@ public class SelectInventoryItem implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        int response = viewFrame.displayDialog(3);
+        int response = viewFrame.displayDetectiveWarnings(3);
         if (response == 0) {
             if (modelItem.getRoomNumber() == modelGame.getCurrentRoomNum()) {
                 modelGame.updateInventory(modelItem, 0);
             } else {
-                viewFrame.displayDialog(0);
+                viewFrame.displayDetectiveWarnings(0);
             }
         } else if (response == 1) {
             int outcome = modelGame.updateProgress(modelItem);
             if(outcome == 2){
-                viewFrame.displayDialog(5);
+                viewFrame.displayDetectiveWarnings(5);
             } else if(outcome == 3){
-                viewFrame.displayDialog(6);
+                viewFrame.displayDetectiveWarnings(6);
             } else {
                 //modelGame.updateDialogue();
                 //viewFrame.updateDialoguePanel(); //todo: remove

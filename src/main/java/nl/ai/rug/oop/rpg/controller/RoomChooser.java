@@ -28,7 +28,7 @@ public class RoomChooser implements ActionListener {
                 //viewFrame.updateDialoguePanel();
             //}
         } else {
-            viewFrame.displayDialog(4);
+            viewFrame.displayDetectiveWarnings(4);
         }
     }
 }
