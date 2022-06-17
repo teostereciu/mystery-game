@@ -399,6 +399,7 @@ public class MysteryGame {
         properties.setProperty("currentRoomNum", String.valueOf(currentRoomNum));
         properties.setProperty("flashlightIsOn", String.valueOf(flashlightIsOn));
         properties.setProperty("isMessy", String.valueOf(isMessy));
+        //properties.setProperty()
         for(int i=0; i<NUMBER_OF_ROOMS; i++){
             if(i != NUMBER_OF_ROOMS-1) {
                 properties.setProperty("dialogueCounter" + i, String.valueOf(rooms.get(i).getNPC().getDialogueCounter()));
