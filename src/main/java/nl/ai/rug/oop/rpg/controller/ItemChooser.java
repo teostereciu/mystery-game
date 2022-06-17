@@ -40,8 +40,9 @@ public class ItemChooser implements ActionListener {
                 if (Objects.equals(answer, "420")) {
                     modelGame.setCodeHasBeenCracked(true);
                     modelGame.updateProgress(modelItem); //not using this function gave problems
-                    //modelGame.accessItems.get(15).setIsAvailable(1);
                     viewFrame.displaySafeDialog(true);
+                    modelGame.accessItems.get(15).setIsAvailable(1);
+                    viewFrame.updateRoom();
                 } else {
                     viewFrame.displaySafeDialog(false);
                 }

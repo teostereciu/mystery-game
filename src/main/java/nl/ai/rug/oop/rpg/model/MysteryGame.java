@@ -280,8 +280,9 @@ public class MysteryGame {
                     return 2;
                 }
                 if (codeHasBeenCracked && !safeHasBeenAccessed) {
-                    System.out.println("I am inside the safe");
-                    accessItems.get(15).setIsAvailable(1); //todo csanad pls add a different actionlistener for items that you can't pick up. add this line for eg for safe. it shouldn't be here
+                    //System.out.println("I am inside the safe"); //todo: remove
+                    //accessItems.get(15).setIsAvailable(1); //todo csanad pls add a different actionlistener for items that you can't pick up. add this line for eg for safe. it shouldn't be here
+                    System.out.println(accessItems.get(15).getItemName() + " " + accessItems.get(15).getIsAvailable());
                     accessItems.get(15).setIsPlayable(1);
                     increaseNPCProgressOutsideRoom(5);
                     increaseNPCProgressOutsideRoom(4);
@@ -307,6 +308,7 @@ public class MysteryGame {
                 }
                 break;
         }
+        notifyListeners();
         return 1;
     }
     public int checkIfPlayable(Item item) {

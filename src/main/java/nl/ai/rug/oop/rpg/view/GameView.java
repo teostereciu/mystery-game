@@ -74,7 +74,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
         setLocationRelativeTo(null);
     }
 
-    private void updateRoom() throws IOException {
+    public void updateRoom() {
         roomPanel.set();
         navigationPanel.changeDestination(0);
         navigationPanel.enableNavigateButton(game.getCurrentRoomNum() != 0);
@@ -97,10 +97,10 @@ public class GameView extends JFrame implements PropertyChangeListener {
      */
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        try {
+        if (game.getRoom(0).getNPC().getNPCDialogue().getCurrentKey() != 412) {
             updateRoom();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } else {
+            displayEnding();
         }
     }
 

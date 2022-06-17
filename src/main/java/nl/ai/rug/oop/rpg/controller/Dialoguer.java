@@ -21,6 +21,11 @@ public class Dialoguer implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         modelGame.updateDialogue();
-        viewFrame.updateDialoguePanel();
+        if (modelGame.getRoom(0).getNPC().getNPCDialogue().getCurrentKey() != 412) {
+
+            viewFrame.updateDialoguePanel();
+        } else {
+            viewFrame.displayEnding();
+        }
     }
 }

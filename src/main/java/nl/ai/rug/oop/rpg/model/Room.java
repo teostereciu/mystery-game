@@ -28,7 +28,6 @@ public class Room {
 
     public void addRoomItem(Item item) {
         roomItems.add(item);
-        System.out.println("Added " + item.getItemName());
     }
     public void removeRoomItem(Item item) { roomItems.remove(item); }
 
