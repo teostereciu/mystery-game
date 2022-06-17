@@ -7,11 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * A controller class for the giving up on a Crazy Eights game.
+ * A controller class for the giving up on the game.
+ * @author veghcsanad
  */
 public class GiveUpper implements ActionListener {
     /**
-     * Allows the program to exis (after confirmation) when the "Give up" button is clicked.
+     * Allows the program to exit (after confirmation) when the "Give up" button is clicked.
      * @param e the event to be processed
      */
     private GameView viewFrame;
