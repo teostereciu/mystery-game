@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * @Author Daniël
+ * Class for the Item object
+ * The usage of items progresses NPC dialogue and the game overall
+ * @Author Dancoko
  */
 public class Item {
     private String itemName;
@@ -19,7 +21,8 @@ public class Item {
     private int isAvailable;
 
     /**
-     * Constructs a new instance of the item object with each item having certain pre-programmed values
+     * Constructs a new instance of the item object
+     * with each item having certain pre-programmed values
      * @param itemNumber is the number of the item
      */
     public Item(int itemNumber){

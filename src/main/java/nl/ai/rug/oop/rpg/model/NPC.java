@@ -4,7 +4,10 @@ import java.awt.*;
 import java.util.HashMap;
 
 /**
- * @Author Daniël
+ * Class for the NPC object.
+ * NPCs interact with the player through dialogue and
+ * give hints/missions about what the player should be doing.
+ * @Author Dancoko
  */
 public class NPC {
     private int NPCNumber;
@@ -14,6 +17,13 @@ public class NPC {
     private NPCDialogue dialogue;
     private int dialogueCounter;
 
+    /**
+     * A constructor for the NPC object.
+     * Each NPC has pre-programmed values and functions
+     * @param number is the number of the NPC
+     * @param dialogueType is the version of detective which influences dialogue:
+     *                     good cop (0) or bad cop (1)
+     */
     public NPC(int number, int dialogueType){
         this.dialogueType = dialogueType;
         this.dialogue = new NPCDialogue(number, dialogueType);
@@ -30,6 +40,10 @@ public class NPC {
             }
         }
     }
+
+    /**
+     * Initialises the Stacey NPC
+     */
     private void Stacey() {
         NPCNumber = 0;
         NPCname = "stacey";
@@ -37,6 +51,10 @@ public class NPC {
         coords.put("x", 450);
         coords.put("y", 100);
     }
+
+    /**
+     * Initialises the Samantha NPC
+     */
     private void Samantha() {
         NPCNumber = 1;
         NPCname = "sam";
@@ -44,6 +62,10 @@ public class NPC {
         coords.put("x", 240);
         coords.put("y", 100);
     }
+
+    /**
+     * Initialises the Davey NPC
+     */
     private void Davey() {
         NPCNumber = 2;
         NPCname = "davey";
@@ -51,6 +73,10 @@ public class NPC {
         coords.put("x", 70);
         coords.put("y", 100);
     }
+
+    /**
+     * Initialises the Melvin NPC
+     */
     private void Melvin() {
         NPCNumber = 3;
         NPCname = "melvin";
@@ -58,6 +84,10 @@ public class NPC {
         coords.put("x", 300);
         coords.put("y", 100);
     }
+
+    /**
+     * Initialises the Alex NPC
+     */
     private void Alex() {
         this.NPCNumber = 4;
         this.NPCname = "alex";
@@ -65,6 +95,10 @@ public class NPC {
         coords.put("x", 100);
         coords.put("y", 100);
     }
+
+    /**
+     * Initialises the Kyle NPC
+     */
     private void Kyle() {
         this.NPCNumber = 5;
         this.NPCname = "kyle";
@@ -73,26 +107,44 @@ public class NPC {
         coords.put("y", 100);
     }
 
+    /**
+     * @return the roomNumber coupled to the NPC
+     */
     public int getRoomNumber() {
         return roomNumber;
     }
 
+    /**
+     * @return the name of the NPC
+     */
     public String getName() {
         return NPCname;
     }
 
+    /**
+     * @return the number of the NPC
+     */
     public int getNPCNumber() {
         return NPCNumber;
     }
 
+    /**
+     * @return how far in dialogue the NPC has progressed
+     */
     public int getDialogueCounter() {
         return dialogueCounter;
     }
 
+    /**
+     * @return the NPCDialogue object coupled to the NPC
+     */
     public NPCDialogue getNPCDialogue() {
         return dialogue;
     }
 
+    /**
+     * Increases the progression of dialogue for the NPC
+     */
     public void updateDialogueCounter() {
         dialogueCounter++;
     }

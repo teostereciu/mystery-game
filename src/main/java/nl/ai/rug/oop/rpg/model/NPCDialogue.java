@@ -3,7 +3,11 @@ package nl.ai.rug.oop.rpg.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too long. also add info about flatmates to sam()
+/**
+ * Class for the NPCDialogue object which represents the dialogue given by and with NPCs
+ * @author Dancoko
+ */
+public class NPCDialogue {
 
     private HashMap<Integer, String> dialogueMap = new HashMap<>();
     private int currentKey = 0;
@@ -294,11 +298,10 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
      * Initialises the good cop dialogue for Alex
      */
     private void alex1() {
-        //todo give alex some interaction with regard to the video
-        //todo give alex dialogue for breaking drawer
+        //todo give alex dialogue update for breaking drawer
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Alex: Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
-        dialogueMap.put(2, "(I better have some more concrete evidence before I talk to her…)"); //
+        dialogueMap.put(2, "(It appears she has a computer. If I find some digital footage I might be able to see it here...)"); //
         dialogueMap.put(3, "END");
 
         /* Second interaction dialogue (after watching video on computer */
@@ -316,9 +319,13 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(112, "Alex: Go talk to Melvin for the code to the safe, but otherwise, I still have an exam tomorrow!!");
         dialogueMap.put(113, "END");
 
-        /* Third interaction dialogue (After accessing safe) */
-        dialogueMap.put(201, "Alex: Oh god, oh god, what if I don’t get a 10?!");
+        /* Third interaction dialogue (after breaking drawer */
+        dialogueMap.put(201, "Alex: Wow you broke my drawer! I don't like you anymore.");
         dialogueMap.put(202, "END");
+
+        /* Fourth interaction dialogue (After accessing safe) */
+        dialogueMap.put(301, "Alex: Oh god, oh god, what if I don’t get a 10?!");
+        dialogueMap.put(302, "END");
     }
 
     /**
@@ -345,9 +352,13 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(113, "Alex: Go talk to Melvin for the code to the safe, but otherwise, I still have an exam tomorrow!!");
         dialogueMap.put(114, "END");
 
-        /* Third interaction dialogue (After accessing safe) */
-        dialogueMap.put(201, "Alex: Oh god, oh god, what if I don’t get a 10?!");
+        /* Third interaction dialogue (after breaking desk */
+        dialogueMap.put(201, "Alex: Wow you broke my desk! I don't like you anymore.");
         dialogueMap.put(202, "END");
+
+        /* Fourth interaction dialogue (After accessing safe) */
+        dialogueMap.put(301, "Alex: Oh god, oh god, what if I don’t get a 10?!");
+        dialogueMap.put(302, "END");
     }
 
     /**
@@ -376,7 +387,8 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(205, "Detective: What do you need, good sir.");// X/Y difference
         dialogueMap.put(206, "Melvin: I need a new computer mouse. Mines broken. I have very important stuff to do, and this trackpad isn’t great for my dexterity.");
         dialogueMap.put(207, "Melvin: Get me that mouse, and the code is yours.");
-        dialogueMap.put(208, "END");
+        dialogueMap.put(208, "Melvin: Samantha might have one in her drawer, but you'll have to force it open.");
+        dialogueMap.put(209, "END");
 
         /* Fourth interaction dialogue (After getting computer mouse) */
         dialogueMap.put(301, "Detective: Here’s that computer mouse for you.");// X/Y difference
@@ -396,7 +408,7 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(1, "Melvin: Can I help you?");
         dialogueMap.put(2, "Detective: Hi, I’m a detective. I’m here to find out who stole the crate of beer.");
         dialogueMap.put(3, "Melvin: I usually don’t talk with Cops, let alone help them.");
-        dialogueMap.put(4, "Detective: I’m just here for a video tape that Davey says will prove him not guilty. Do you have it somewhere?"); //TODO this information comes to early in the story
+        dialogueMap.put(4, "Detective: I’m just here for a video tape that Davey says will prove him not guilty. Do you have it somewhere?");
         dialogueMap.put(5, "Melvin: It’s somewhere around here. Find it yourself.");
         dialogueMap.put(6, "Detective: It’s pitch black! Can you turn on the lights?");
         dialogueMap.put(7, "Melvin: I like the dark. You’ll have to use a flashlight. Davey usually has one.");
@@ -412,7 +424,10 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(203, "Detective: I need that code ASAP, hand it over you nerd!");// X/Y difference
         dialogueMap.put(204, "Melvin: Let’s say I have that code. What can you do for me?");
         dialogueMap.put(205, "Detective: I’m past helping you snobs out. I’ll find another way, and you won’t like it!");//X/Y difference
-        dialogueMap.put(206, "END");
+        dialogueMap.put(206, "Detective: (If I cut the internet he won't be able to game anymore, then he will help me!");
+        dialogueMap.put(207, "Detective: (I'll need to find scissors and a screwdriver to screw with the panel in the kitchen.");
+        dialogueMap.put(208, "Detective: (The study nerd probably has scissors in her drawer, I'll just have to break it open.");
+        dialogueMap.put(209, "END");
 
         /* Fourth interaction dialogue (After getting Scissors + screwdriver + interacting with electrical panel) */
         dialogueMap.put(301, "Detective: Listen buddy, I just cut all the wires for your damn computer project you got going on here. It’ll get a lot worse before it gets better.");// X/Y difference
@@ -444,6 +459,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         }
     }
 
+    /**
+     * @return the current key of the dialogue
+     */
     public Integer getCurrentKey() {
         return currentKey;
     }

@@ -1,7 +1,9 @@
 package nl.ai.rug.oop.rpg.model;
 
 /**
- * @Author Daniël
+ * Class for the Detective Object, which influences how the game is played
+ * Through different missions and dialogue
+ * @Author Dancoko
  */
 public class Detective {
     private int detectiveKind;
@@ -34,11 +36,6 @@ public class Detective {
     private void BadCop() {
         this.detectiveKind = 1;
     }
-
-    /**
-     * @return the name of the detective
-     */
-    public String getDetectiveName() {return detectiveName; }
 
     /**
      * @return the number of the detective
