@@ -18,6 +18,10 @@ public class Item {
     private int isPlayable;
     private int isAvailable;
 
+    /**
+     * Constructs a new instance of the item object with each item having certain pre-programmed values
+     * @param itemNumber is the number of the item
+     */
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
         isCarryAble = 1;
@@ -140,37 +144,70 @@ public class Item {
         }
     }
 
+    /**
+     * @return the number of an item
+     */
     public int getItemNumber() { return itemNumber; }
 
+    /**
+     * @return the name of an item
+     */
     public String getItemName() {
         return itemName;
     }
 
+    /**
+     * @return the set roomNumber of an item
+     */
     public int getRoomNumber() {
         return roomNumber;
     }
 
+    /**
+     * @return whether the player should be able to pick up item (1) or not (0)
+     */
     public int getIsCarryAble() {
         return isCarryAble;
     }
 
+    /**
+     * @return whether the player should be able to see the item (1) or not (0)
+     */
     public int getIsAvailable() {
         return isAvailable;
     }
 
+    /**
+     * Change the availability status of the item
+     * @param isAvailable is 1 if should become available and 0 if unavailable
+     */
     public void setIsAvailable(int isAvailable) {
         this.isAvailable = isAvailable;
     }
 
+    /**
+     * @return whether the player should be able to play the item (1) or not (0)
+     */
     public int getIsPlayable() {
         return isPlayable;
     }
 
+    /**
+     * Change the playability status of the item
+     * @param isPlayable is 1 if should become playable and 0 if unplayable
+     */
     public void setIsPlayable(int isPlayable) {
         this.isPlayable = isPlayable;
     }
 
+    /**
+     * Contains the coords the item should be placed on in the view
+     */
     private final HashMap<String, Integer> coords = new HashMap<>();
+
+    /**
+     * @return the coords linked to the item
+     */
     public HashMap<String, Integer> getCoords() {
         return coords;
     }

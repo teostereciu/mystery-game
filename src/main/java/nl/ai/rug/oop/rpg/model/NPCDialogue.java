@@ -8,15 +8,29 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
     private HashMap<Integer, String> dialogueMap = new HashMap<>();
     private int currentKey = 0;
 
+    /**
+     * Sets the key to a passed value
+     * @param key is the key for entering the hashmap
+     */
     public void setCurrentKey(int key) {
         currentKey = key;
     }
+
+    /**
+     * Increases the line of the dialogue and resets it if it passes the threshold
+     */
     public void increaseLine() {
         currentKey++;
         if (currentKey%100 == 0) {
             currentKey = 0;
         }
     }
+
+    /**
+     * Initializes the dialogue
+     * @param NPCnumber is the number of a corresponding npc
+     * @param dialoguetype is 0 if the player is playing as the good cop, otherwise 1
+     */
     public NPCDialogue(int NPCnumber, int dialoguetype) {
         switch (NPCnumber) {
             case(0):
@@ -52,6 +66,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         }
     }
 
+    /**
+     * Initialises the dialogue for Stacey
+     */
     private void stacey(){
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Stacey: Thanks so much for helping me. I really need to find this beer, or else the party will be a disaster!");
@@ -102,14 +119,48 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(412, "END");
     }
 
+    /**
+     * Initialises the dialogue for Samantha
+     */
     private void sam() {
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Samantha: Hey! You’re the cop, right? To find the beer?");
         dialogueMap.put(2, "Detective: Yeah, that’s me.");
         dialogueMap.put(3, "Samantha: Oh, well I really hope you find it, our party will be ruined otherwise. And it’s both our graduations, Stacey and me.");
-        dialogueMap.put(4, "END");
+        dialogueMap.put(4, "Detective: Can you tell me something about this dorm?");
+        dialogueMap.put(5, "Samantha: Well it's a pretty standard student place. Pretty broken down, pretty dirty,  but that's normal here in Groningen.");
+        dialogueMap.put(6, "Samantha: There's four bedrooms. I share one with Samantha, and next to us Kyle and Davey also share a room. ");
+        dialogueMap.put(7, "Samantha: That means that Melvin and Alex have their own rooms, which is probably for the better!");
+        dialogueMap.put(8, "Samantha: Besides that, we have a kitchen, clearly, and we have a living room, which are the shared common areas.");
+        dialogueMap.put(9, "Detective: Anything else?");
+        dialogueMap.put(10, "Samantha: Oh, right! We also have a storage room, however, that's always locked and can only be opened with a key.");
+        dialogueMap.put(11, "Samantha: Kyle has the key, because his dad is the owner of the house.");
+        dialogueMap.put(12, "Samantha: We're not really allowed to put much in there, according to Kyle's dad, and whenever we do need something we need the key from Kyle.");
+        dialogueMap.put(13, "Detective: Tell me about Alex.");
+        dialogueMap.put(14, "Samantha: Alex, she’s, yeah, she’s a nice girl. She kind of takes on a bit of a mom role in the house.");
+        dialogueMap.put(15, "Samantha: She’s also dating Kyle, which I think is an interesting match...");
+        dialogueMap.put(16, "Samantha: Besides that, she's often studying. I think she has an exam tomorrow - she might be difficult to reach.");
+        dialogueMap.put(17, "Detective: How is Kyle?");
+        dialogueMap.put(18, "Samantha: Oh boy, Kyle… He’s a handful! The student experience all bundled up in one big frat boy.");
+        dialogueMap.put(19, "Samantha: I'm not sure if he actually still studies something or if he's just here to party and go to the gym...");
+        dialogueMap.put(20, "Detective: What can you tell about Melvin?");
+        dialogueMap.put(21, "Samantha: Yeah, Melvin is quiet. He doesn’t interact with the rest of much… or really at all. ");
+        dialogueMap.put(22, "Detective: What kind of person is Davey?");
+        dialogueMap.put(23, "Samantha: Yeah Davey is our resident stoner. I don’t think I’ve ever seen anyone smoke so much in my life.");
+        dialogueMap.put(24, "Samantha: I also know that he’s pretty much broke because he spends all his money on weed.");
+        dialogueMap.put(25, "Detective: How is your relationship with Stacey?");
+        dialogueMap.put(26, "Samantha: Oh well Stacey, she's my best friend! We study the same program and when we first met, we connected immediately.");
+        dialogueMap.put(27, "Samantha: We also share a room together. She moved into the house because I got her a spot.");
+        dialogueMap.put(28, "Samantha: However she can sometimes also be a bit controlling...");
+        dialogueMap.put(29, "Samantha: We have our fights sometimes, but what do you expect if you life in the same room?");
+        dialogueMap.put(30, "Detective: Thank you, I know enough for now.");
+        dialogueMap.put(31, "Samantha: If you need anything just ask me!");
+        dialogueMap.put(32, "END");
     }
 
+    /**
+     * Initialises the good cop dialogue for Davey
+     */
     private void davey1(){
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Detective: Hey, are you Davey?");
@@ -162,6 +213,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(402, "END");
     }
 
+    /**
+     * Initialises the bad cop dialogue for Davey
+     */
     private void davey2() {
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Detective: Hey, are you Davey?");
@@ -214,6 +268,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(402, "END");
     }
 
+    /**
+     * Initialises the dialogue for Kyle
+     */
     private void kyle() {
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Kyle: Yo man, I heard the beer got stolen. That is sooo lame! …");
@@ -228,6 +285,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(104, "END");
     }
 
+    /**
+     * Initialises the good cop dialogue for Alex
+     */
     private void alex1() {
         //todo give alex some interaction with regard to the video
         //todo give alex dialogue for breaking drawer
@@ -256,6 +316,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(202, "END");
     }
 
+    /**
+     * Initialises the bad cop dialogue for Alex
+     */
     private void alex2() {
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Alex: Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
@@ -282,6 +345,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(202, "END");
     }
 
+    /**
+     * Initialises the good cop dialogue for Melvin
+     */
     private void melvin1() {
         /* First interaction dialogue (Start of game/ black room) */
         dialogueMap.put(1, "Melvin: Can I help you?");
@@ -317,6 +383,9 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(402, "END");
     }
 
+    /**
+     * Initialises the bad cop dialogue for Melvin
+     */
     private void melvin2() {
         /* First interaction dialogue (Start of game/ black room) */
         dialogueMap.put(1, "Melvin: Can I help you?");
@@ -350,10 +419,18 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(402, "END");
     }
 
+    /*
+     * @return the dialogue map
+     */
     public HashMap<Integer, String> getDialogueMap() {
         return dialogueMap;
     }
 
+    /**
+     * Gives a String in the dialogue map
+     * @param n is the value for the key
+     * @return the String corresponding to that key, or null if there is no String corresponding to the key
+     */
     public String getDialogue(int n){
         if (dialogueMap.get(n) != null) {
             return dialogueMap.get(n);
