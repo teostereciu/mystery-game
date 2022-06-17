@@ -3,7 +3,7 @@ package nl.ai.rug.oop.rpg;
 import nl.ai.rug.oop.rpg.view.GameView;
 
 /**
- * The main class for Myster Game.
+ * The main class for Mystery Game.
  * @author teostereciu
  */
 public class Main {
