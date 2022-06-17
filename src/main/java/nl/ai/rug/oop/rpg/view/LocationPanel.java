@@ -3,9 +3,16 @@ package nl.ai.rug.oop.rpg.view;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * A JPanel for the showing the location.
+ * @author teostereciu
+ */
 public class LocationPanel extends JPanel {
     private final JLabel roomLabel = new JLabel();
 
+    /**
+     * Constructor for the location panel.
+     */
     public LocationPanel() {
         setOpaque(true);
         setBackground(Color.black);
@@ -14,6 +21,10 @@ public class LocationPanel extends JPanel {
         add(roomLabel);
     }
 
+    /**
+     * Updates the shown location.
+     * @param roomIdx
+     */
     public void update(int roomIdx) {
         String text;
         switch (roomIdx) {

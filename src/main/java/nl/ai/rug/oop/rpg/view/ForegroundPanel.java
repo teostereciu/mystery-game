@@ -14,11 +14,20 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * A JPanel for the foreground. Contains items, NPCs, and decor.
+ * @author teostereciu
+ */
 public class ForegroundPanel extends JPanel {
 
     private MysteryGame game;
     private GameView frame;
 
+    /**
+     * Constructor for the foreground panel.
+     * @param game
+     * @param frame
+     */
     public ForegroundPanel(MysteryGame game, GameView frame) {
         this.game = game;
         this.frame = frame;
@@ -27,6 +36,11 @@ public class ForegroundPanel extends JPanel {
         setOpaque(false);
     }
 
+    /**
+     * Sets the foreground using information from the game state.
+     * @param game
+     * @param frame
+     */
     public void set(MysteryGame game, GameView frame) {
         removeAll();
         this.game = game;
@@ -58,6 +72,9 @@ public class ForegroundPanel extends JPanel {
         }
     }
 
+    /**
+     * Adds door buttons to the foreground.
+     */
     public void addDoors() {
         JButton doorButton = null;
         for(int i = 1; i < game.NUMBER_OF_ROOMS; i ++) {
@@ -69,6 +86,9 @@ public class ForegroundPanel extends JPanel {
         }
     }
 
+    /**
+     * Adds a mess pile to the foreground.
+     */
     public void makeMess() {
         HashMap<String, Integer> coords = new HashMap<>();
         coords.put("x", 10);
@@ -76,6 +96,29 @@ public class ForegroundPanel extends JPanel {
         JButton messButton = newButton("items/trash", coords, 0, 0);
     }
 
+    /**
+     * Adds darkness to a room.
+     */
+    public void makeDark() {
+        JLabel darkLabel = null;
+        try {
+            darkLabel = new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/darkness.png"))));
+            darkLabel.setBounds(0, 0, frame.ROOM_WIDTH, frame.ROOM_HEIGHT);
+        } catch (IOException e) {
+            System.out.println("src/main/resources/rooms/darkness.png not found.");
+            throw new RuntimeException(e);
+        }
+        add(darkLabel);
+    }
+
+    /**
+     * Creates a new JButton and adds it to the foreground.
+     * @param name
+     * @param coords
+     * @param buttonWidth
+     * @param buttonHeight
+     * @return the newly created button
+     */
     public JButton newButton(String name, HashMap<String, Integer> coords, int buttonWidth, int buttonHeight) {
         JButton button = new JButton();
 
@@ -97,17 +140,5 @@ public class ForegroundPanel extends JPanel {
         button.setBorderPainted(false);
         add(button);
         return button;
-    }
-
-    public void makeDark() {
-        JLabel darkLabel = null;
-        try {
-            darkLabel = new JLabel(new ImageIcon(ImageIO.read(new File("src/main/resources/rooms/darkness.png"))));
-            darkLabel.setBounds(0, 0, frame.ROOM_WIDTH, frame.ROOM_HEIGHT);
-        } catch (IOException e) {
-            System.out.println("src/main/resources/rooms/darkness.png not found.");
-            throw new RuntimeException(e);
-        }
-        add(darkLabel);
     }
 }

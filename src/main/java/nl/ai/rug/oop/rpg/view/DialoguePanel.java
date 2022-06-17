@@ -7,11 +7,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
+/**
+ * A JPanel class for the dialogue.
+ * @author teostereciu
+ */
 public class DialoguePanel extends JPanel { // note: as a possible future feature this could show the npc talking
     private JLabel jlbl = new JLabel("");
     private GameView frame;
     private MysteryGame game;
     private JButton nextButton;
+
+    /**
+     * Constructor for the dialogue panel class.
+     * @param game
+     * @param frame
+     */
     public DialoguePanel(MysteryGame game, GameView frame) {
         this.game = game;
         this.frame = frame;
@@ -19,23 +29,24 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         setBackground(Color.black);
         setLayout(new BorderLayout(0, 0));
         setBorder(BorderFactory.createLineBorder(Color.black, 5));
-        //setSize(700, 100);
         jlbl.setForeground(Color.white);
         jlbl.setPreferredSize(new Dimension(600, 60));
         add(jlbl, BorderLayout.CENTER);
         nextButton = new JButton(">");
         nextButton.setPreferredSize(new Dimension(40,40));
-        //nextButton.setForeground(Color.white);
         nextButton.addActionListener(new Dialoguer(game, frame));
         add(nextButton, BorderLayout.EAST);
         clear();
     }
+
+    /**
+     * Updates the dialogue panel.
+     */
     public void update() {
         clear();
         jlbl.setForeground(Color.white);
         NPC npc = game.getRoom(game.getCurrentRoomNum()).getNPC();
         String dialogueLine = npc.getNPCDialogue().getDialogueMap().get(npc.getDialogueCounter() * game.MAX_DIALOGUE_OPTIONS + npc.getNPCDialogue().getCurrentKey());
-        //System.out.println("dialogueLine = " + dialogueLine);
         jlbl.setText(dialogueLine);
         jlbl.setVisible(true);
         nextButton.setEnabled(true);
@@ -50,9 +61,12 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
             clear();
         }
     }
+
+    /**
+     * Used to clear the dialogue panel when there is no ongoing dialogue.
+     */
     public void clear() {
         jlbl.setText("");
-        //jlbl.setVisible(false);
         nextButton.setEnabled(false);
         nextButton.setVisible(false);
     }

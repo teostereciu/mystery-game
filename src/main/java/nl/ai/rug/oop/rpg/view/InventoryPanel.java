@@ -10,35 +10,48 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * A JPanel for the inventory. Shows the items the player is carrying.
+ */
 public class InventoryPanel extends JPanel {
     private ArrayList<JButton> inventoryButtonsList = new ArrayList<>();
     private final MysteryGame game;
     private final GameView frame;
 
+    /**
+     * Constructor for the inventory panel.
+     * @param game
+     * @param frame
+     */
     public InventoryPanel(MysteryGame game, GameView frame) {
         this.game = game;
         this.frame = frame;
-        setPreferredSize(new Dimension(100, 500));
+        setPreferredSize(new Dimension(120, 500));
         GridLayout gridLayout = new GridLayout(game.TOTAL_INVENTORY_SLOTS + 1, 1);
         setLayout(gridLayout);
-        //setOpaque(false);
         setBackground(Color.black);
-        //add(new JButton("Hint"));
-        JButton btn = newEmptyButton();
-        btn.setText("Inventory"); // todo: 4csanad idk - could hide/reveal the item list. or some instructions
+        JButton button = newEmptyButton();
+        button.setText("Inventory");
         for (int i = 1; i <= game.TOTAL_INVENTORY_SLOTS; i ++) {
             inventoryButtonsList.add(newEmptyButton());
         }
     }
+
+    /**
+     * Creates, adds, and returns a new JButton for inventory.
+     * @return the button
+     */
     private JButton newEmptyButton() {
         JButton jButton = new JButton();
-        //jButton.setOpaque(true);
-        //jButton.setBorderPainted(true);
-        jButton.setBackground(Color.black); //todo check from windows how these look
+        jButton.setForeground(Color.white);
+        jButton.setBackground(Color.black);
         add(jButton);
         return jButton;
     }
 
+    /**
+     * Updates the inventory.
+     */
     public void update() {
         int i;
         for (i = 0; i < game.getInventory().getItemsArray().size(); i ++) {
