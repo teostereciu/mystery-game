@@ -14,7 +14,6 @@ public class NPC {
     private NPCDialogue dialogue;
     private int dialogueCounter;
 
-    //TODO make failsafe to ensure player cannot skip steps
     public NPC(int number, int dialogueType){
         this.dialogueType = dialogueType;
         this.dialogue = new NPCDialogue(number, dialogueType);
