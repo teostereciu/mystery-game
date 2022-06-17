@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19d942cc-780f-4253-b58a-bdf558252a64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ending.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/ItemChooser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/ItemChooser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/controller/ItemUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/MysteryGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/MysteryGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/GameView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/Dialoguer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/Dialoguer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/ItemChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/ItemChooser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/MysteryGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/DialoguePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/DialoguePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/RoomPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/RoomPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved_properties.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saved_properties.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/RoomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/RoomPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +23,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AiWxl5Zbb6njbMCB77WJ8dTaVU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
@@ -68,5 +69,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

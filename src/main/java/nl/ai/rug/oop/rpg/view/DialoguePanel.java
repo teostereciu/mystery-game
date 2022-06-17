@@ -41,6 +41,9 @@ public class DialoguePanel extends JPanel { // note: as a possible future featur
         nextButton.setEnabled(true);
         nextButton.setVisible(true);
         if (Objects.equals(dialogueLine, "END")) {
+            if (game.getRoom(0).getNPC().getNPCDialogue().getCurrentKey() == 12) {
+                frame.displayEnding();
+            }
             clear();
         }
         if (jlbl == null) {

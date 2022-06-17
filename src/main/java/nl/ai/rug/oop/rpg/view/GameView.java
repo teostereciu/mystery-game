@@ -145,7 +145,7 @@ public class GameView extends JFrame implements PropertyChangeListener {
     }
 
     public void displayEnding() {
-        removeAll();
+        //removeAll();
         roomPanel.updateToEnding();
         add(roomPanel);
     }

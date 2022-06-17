@@ -85,12 +85,13 @@ public class RoomPanel extends JLayeredPane {
 
     public void updateToEnding() {
         removeAll();
+
         try {
             roomBackgroundLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/main/resources/ending.png"))));
         } catch (IOException e) {
             System.out.println("src/main/resources/ending.png not found.");
             throw new RuntimeException(e);
         }
-        add(roomBackgroundLabel);
+        add(roomBackgroundLabel, (Integer)0);
     }
 }
