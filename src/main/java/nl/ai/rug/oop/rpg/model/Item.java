@@ -18,9 +18,6 @@ public class Item {
     private int isPlayable;
     private int isAvailable;
 
-    //todo change names of items to the file names
-    //TODO give the items functions
-    //TODO couple the item functions to NPCs
     public Item(int itemNumber){
         this.itemNumber = itemNumber;
         isCarryAble = 1;

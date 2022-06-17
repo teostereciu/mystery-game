@@ -24,6 +24,12 @@ public class MysteryGame {
     private ArrayList<Item> usedItems = new ArrayList<>();
     public ArrayList<Item> accessItems = new ArrayList<>();
     private boolean flashlightIsOn = false;
+    private boolean flashlightHasBeenUsed = false;
+    private boolean computerHasBeenUsed = false;
+    private boolean electricalPanelHasBeenUsed = false;
+    private boolean safeHasBeenAccessed = false;
+    private boolean codeHasBeenCracked = false;
+
     private boolean isMessy = true;
 
     /* everything with regard to initializing game */
@@ -52,7 +58,6 @@ public class MysteryGame {
     private void setNPCs() {
         for (int i = 0; i < NUMBER_OF_NPCS; i++) {
             NPC npc = new NPC(i, detective.getDetectiveKind());
-            //TODO  NPC npc = new NPC(i, detective.getDetectiveKind());
             this.rooms.get(npc.getRoomNumber()).setNPC(npc);
         }
     }
@@ -163,10 +168,10 @@ public class MysteryGame {
                     //accessItems.get(4).setIsPlayable(1);
                     getRoom(4).setIsOpen(true);
                     updateInventory(item, 2);
-                    break;
                 } else {
                     return 3;
                 }
+                break;
             case "cleaning-supplies":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -182,14 +187,21 @@ public class MysteryGame {
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                //todo if flashlight is activated multiple times, this is a problem
-                if (increaseNPCProgress(3) == 1) {
-                    increaseNPCProgressOutsideRoom(3);
-                    //light up melvin's room
-                    setFlashlightIsOn(!getFlashlightIsOn());
-                    accessItems.get(6).setIsPlayable(1);
+                if (!flashlightHasBeenUsed) {
+                    if (increaseNPCProgress(3) == 1) {
+                        increaseNPCProgressOutsideRoom(3);
+                        setFlashlightIsOn(!getFlashlightIsOn());
+                        accessItems.get(6).setIsPlayable(1);
+                        flashlightHasBeenUsed = true;
+                    } else {
+                        return 3;
+                    }
                 } else {
-                    return 3;
+                    if (currentRoomNum == 5) {
+                        setFlashlightIsOn(!getFlashlightIsOn());
+                    } else {
+                        return 3;
+                    }
                 }
                 break;
             case "camera":
@@ -204,9 +216,13 @@ public class MysteryGame {
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                increaseNPCProgressOutsideRoom(0);
-                increaseNPCProgressOutsideRoom(5);
-                increaseNPCProgressOutsideRoom(4);
+                if (!computerHasBeenUsed) {
+                    increaseNPCProgressOutsideRoom(0);
+                    increaseNPCProgressOutsideRoom(5);
+                    increaseNPCProgressOutsideRoom(4);
+                    computerHasBeenUsed = true;
+                }
+                break;
             case "hammer":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -230,6 +246,7 @@ public class MysteryGame {
                     accessItems.get(11).setIsAvailable(1);
                     accessItems.get(11).setIsPlayable(1);
                 }
+                break;
             case "screwdriver":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -240,6 +257,7 @@ public class MysteryGame {
                 } else {
                     return 3;
                 }
+                break;
             case "scissors":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -249,6 +267,7 @@ public class MysteryGame {
                 } else {
                     return 3;
                 }
+                break;
             case "mouse":
                 if (checkIfPlayable(item) == 0){
                     return 2;
@@ -259,30 +278,45 @@ public class MysteryGame {
                 } else {
                     return 3;
                 }
+                break;
             case "electrical-panel":
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                increaseNPCProgressOutsideRoom(5);
-                accessItems.get(14).setIsPlayable(1);
+                if (!electricalPanelHasBeenUsed) {
+                    increaseNPCProgressOutsideRoom(5);
+                    accessItems.get(14).setIsPlayable(1);
+                    electricalPanelHasBeenUsed = true;
+                }
+                break;
             case "safe":
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
-                accessItems.get(15).setIsAvailable(1);
-                increaseNPCProgressOutsideRoom(5);
-                increaseNPCProgressOutsideRoom(4);
+                if (codeHasBeenCracked && !safeHasBeenAccessed) {
+                    System.out.println("I am inside the safe");
+                    accessItems.get(15).setIsAvailable(1);
+                    accessItems.get(15).setIsPlayable(1);
+                    increaseNPCProgressOutsideRoom(5);
+                    increaseNPCProgressOutsideRoom(4);
+                    safeHasBeenAccessed = true;
+                }
+                break;
             case "key":
                 if (checkIfPlayable(item) == 0){
                     return 2;
                 }
                 if (currentRoomNum == 0) {
                     rooms.get(6).setIsOpen(true);
+                    accessItems.get(16).setIsPlayable(1);
+                    updateInventory(item, 2);
                 } else {
                     return 3;
                 }
+                break;
             case "crate":
                 increaseNPCProgressOutsideRoom(0);
+                break;
         }
         return 1;
     }
@@ -292,13 +326,6 @@ public class MysteryGame {
         }
         return 0;
     }
-    /*
-    public int checkIfPlayable(Item item) {
-        if (item.getItemNumber() <= usedItems.size()) {
-            return 1;
-        }
-        return 0;
-    }*/
 
     /* Everything with regard to Inventory*/
     public int updateInventory(Item item, int removeSlashAddSlashUltimatelyRemove) {
@@ -324,14 +351,15 @@ public class MysteryGame {
         return inventory;
     }
 
-    public int getInventorySize() {
-        return inventorySize;
-    }
-    public void setFlashlightIsOn(boolean n) {
-        flashlightIsOn = n;
+    public void setFlashlightIsOn(boolean state) {
+        flashlightIsOn = state;
         notifyListeners();
     }
     public boolean getFlashlightIsOn() { return flashlightIsOn; }
+
+    public void setCodeHasBeenCracked(boolean state) {
+        codeHasBeenCracked = state;
+    }
 
     public boolean getIsMessy() { return isMessy; }
     public void notMessy() { isMessy = false; }

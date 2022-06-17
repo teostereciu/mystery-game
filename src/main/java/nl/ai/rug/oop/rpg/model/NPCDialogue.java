@@ -226,6 +226,8 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
     }
 
     private void alex1() {
+        //todo give alex some interaction with regard to the video
+        //todo give alex dialogue for breaking drawer
         /* First interaction dialogue (Start of game) */
         dialogueMap.put(1, "Alex: Thanks for the coffee! Sorry! Can’t talk right now, too much studying to do!!!");
         dialogueMap.put(2, "(I better have some more concrete evidence before I talk to her…)"); //
