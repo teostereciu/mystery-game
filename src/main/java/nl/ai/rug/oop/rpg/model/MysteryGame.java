@@ -399,7 +399,12 @@ public class MysteryGame {
         properties.setProperty("currentRoomNum", String.valueOf(currentRoomNum));
         properties.setProperty("flashlightIsOn", String.valueOf(flashlightIsOn));
         properties.setProperty("isMessy", String.valueOf(isMessy));
-        //properties.setProperty()
+        properties.setProperty("flashlightHasBeenUsed", String.valueOf(flashlightHasBeenUsed));
+        properties.setProperty("computerHasBeenUsed", String.valueOf(computerHasBeenUsed));
+        properties.setProperty("electricalPanelHasBeenUsed", String.valueOf(electricalPanelHasBeenUsed));
+        properties.setProperty("safeHasBeenAccessed", String.valueOf(safeHasBeenAccessed));
+        properties.setProperty("codeHasBeenCracked", String.valueOf(codeHasBeenCracked));
+        properties.setProperty("beerCrateHasBeenFound", String.valueOf(beerCrateHasBeenFound));
         for(int i=0; i<NUMBER_OF_ROOMS; i++){
             if(i != NUMBER_OF_ROOMS-1) {
                 properties.setProperty("dialogueCounter" + i, String.valueOf(rooms.get(i).getNPC().getDialogueCounter()));
@@ -436,6 +441,12 @@ public class MysteryGame {
         setCurrentRoomNum(Integer.parseInt(properties.getProperty("currentRoomNum")));
         setFlashlightIsOn(Boolean.parseBoolean(properties.getProperty("flashlightIsOn")));
         isMessy = Boolean.parseBoolean(properties.getProperty("isMessy"));
+        flashlightHasBeenUsed = Boolean.parseBoolean(properties.getProperty("flashlightHasBeenUsed"));
+        computerHasBeenUsed = Boolean.parseBoolean(properties.getProperty("computerHasBeenUsed"));
+        electricalPanelHasBeenUsed = Boolean.parseBoolean(properties.getProperty("electricalPanelHasBeenUsed"));
+        safeHasBeenAccessed = Boolean.parseBoolean(properties.getProperty("safeHasBeenAccessed"));
+        codeHasBeenCracked = Boolean.parseBoolean(properties.getProperty("codeHasBeenCracked"));
+        beerCrateHasBeenFound = Boolean.parseBoolean(properties.getProperty("beerCrateHasBeenFound"));
         for(int i=0; i<NUMBER_OF_ROOMS; i++){
             if(i != NUMBER_OF_ROOMS-1){
                 rooms.get(i).getNPC().setDialogueCounter(Integer.parseInt(properties.getProperty("dialogueCounter"+i)));
