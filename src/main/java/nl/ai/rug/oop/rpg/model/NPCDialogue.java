@@ -141,8 +141,8 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(15, "Samantha: She’s also dating Kyle, which I think is an interesting match...");
         dialogueMap.put(16, "Samantha: Besides that, she's often studying. I think she has an exam tomorrow - she might be difficult to reach.");
         dialogueMap.put(17, "Detective: How is Kyle?");
-        dialogueMap.put(18, "Samantha: Oh boy, Kyle… He’s a handful! The student experience all bundled up in one big frat boy.");
-        dialogueMap.put(19, "Samantha: I'm not sure if he actually still studies something or if he's just here to party and go to the gym...");
+        dialogueMap.put(18, "Samantha: Kyle… He’s my SO! The student experience all bundled up in one big frat boy, and look at those muscles!");
+        dialogueMap.put(19, "Samantha: He is so strong, he always helps me with everything!");
         dialogueMap.put(20, "Detective: What can you tell about Melvin?");
         dialogueMap.put(21, "Samantha: Yeah, Melvin is quiet. He doesn’t interact with the rest of much… or really at all. ");
         dialogueMap.put(22, "Detective: What kind of person is Davey?");
@@ -153,9 +153,14 @@ public class NPCDialogue { // todo: add <html> <br/> </html> where lines are too
         dialogueMap.put(27, "Samantha: We also share a room together. She moved into the house because I got her a spot.");
         dialogueMap.put(28, "Samantha: However she can sometimes also be a bit controlling...");
         dialogueMap.put(29, "Samantha: We have our fights sometimes, but what do you expect if you life in the same room?");
-        dialogueMap.put(30, "Detective: Thank you, I know enough for now.");
-        dialogueMap.put(31, "Samantha: If you need anything just ask me!");
-        dialogueMap.put(32, "END");
+        dialogueMap.put(30, "Detective: What do you have on your hand?");
+        dialogueMap.put(31, "Samantha: What? Oh yeah the bandage...");
+        dialogueMap.put(32, "Samantha: I was cooking for my darling Kyle and myself and I accidently cut myself with a knife.");
+        dialogueMap.put(33, "Samantha: It was really stupid.. And now I have to wear this bandage constantly.");
+        dialogueMap.put(34, "Samantha: It doesn't even fit me well! Look, it is already tearing of a bit!!");
+        dialogueMap.put(35, "Detective: Thank you, I know enough for now.");
+        dialogueMap.put(36, "Samantha: If you need anything just ask me!");
+        dialogueMap.put(37, "END");
     }
 
     /**
