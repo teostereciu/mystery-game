@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19d942cc-780f-4253-b58a-bdf558252a64" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/DetectiveChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/DetectiveChooser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/Dialoguer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/Dialoguer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/GameLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/GameLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/GameSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/GameSaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/GiveInstructions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/GiveUpper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/GiveUpper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/ItemChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/ItemChooser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

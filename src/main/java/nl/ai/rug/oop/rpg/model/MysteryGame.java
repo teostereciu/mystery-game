@@ -379,14 +379,10 @@ public class MysteryGame {
         rooms.get(roomNumber).getNPC().getNPCDialogue().setCurrentKey(0);
     }
 
-    /* everything with regard to gameState */
-
     /**
-     * Used to add listeners.
-     * @param listener
-     * @author Csanád Végh
+     * Method for saving the current state of the game.
+     * @author veghcsanad
      */
-
     public void saveGame(){
         Properties properties = new Properties();
         properties.setProperty("detectiveKind", String.valueOf(detective.getDetectiveKind()));
@@ -424,6 +420,10 @@ public class MysteryGame {
         }
     }
 
+    /**
+     * Method for loading a saved game.
+     * @author veghcsanad
+     */
     public void loadGame(){
         Properties properties = new Properties();
         try (FileInputStream input = new FileInputStream("saved_properties.txt")){
@@ -462,14 +462,18 @@ public class MysteryGame {
         notifyListeners();
     }
 
-
+    /**
+     * Method for adding listeners. Implemented from lecture code.
+     * @param listener
+     * @author veghcsanad
+     */
     public void addListener(PropertyChangeListener listener) {
         listeners.add(listener);
     }
 
     /**
-     * Notifies listeners.
-     * @author Csanád Végh
+     * Notifies listeners. Implemented from lecture code.
+     * @author veghcsanad
      */
     private void notifyListeners() {
         PropertyChangeEvent payload = new PropertyChangeEvent(this, "game", null, null);
@@ -477,8 +481,4 @@ public class MysteryGame {
             listener.propertyChange(payload);
         }
     }
-
-
-
 }
-

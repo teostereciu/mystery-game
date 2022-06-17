@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controller class for starting a new game.
+ * @author veghcsanad
+ */
 public class NewGame implements ActionListener {
     GameView gameView;
 
