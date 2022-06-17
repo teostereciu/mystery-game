@@ -29,11 +29,11 @@ public class MysteryGame {
     private boolean electricalPanelHasBeenUsed = false;
     private boolean safeHasBeenAccessed = false;
     private boolean codeHasBeenCracked = false;
+    private boolean beerCrateHasBeenFound = false;
 
     private boolean isMessy = true;
 
-    /* everything with regard to initializing game */
-
+    /* everything with regard to initializing game */   
     public MysteryGame() {
         this.init();
     }
@@ -66,7 +66,7 @@ public class MysteryGame {
 
     /*/**
      * sets the detective at the beginning of the game
-     * @param detectiveName is which detective is chosen
+     * @param isGood is which detective is chosen
      */
 
     public void setDetective(int isGood) {
@@ -80,21 +80,7 @@ public class MysteryGame {
         setNPCs();
     }
 
-    /**
-     * @return the name of the detective
-     */
-    public String getDetective() {
-        return detective.getDetectiveName();
-    }
-
     /* everything with regard to Rooms */
-
-    /**
-     * @return the total number of rooms
-     */
-    public int getNumberOfRooms(){
-        return NUMBER_OF_ROOMS;
-    }
 
     public Room getRoom(int roomNumber) { // note from teo: needed this
         return rooms.get(roomNumber);
@@ -315,7 +301,10 @@ public class MysteryGame {
                 }
                 break;
             case "crate":
-                increaseNPCProgressOutsideRoom(0);
+                if(!beerCrateHasBeenFound) {
+                    increaseNPCProgressOutsideRoom(0);
+                    beerCrateHasBeenFound = true;
+                }
                 break;
         }
         return 1;
@@ -367,17 +356,11 @@ public class MysteryGame {
     /* everything with regard to NPCs */
 
     public void updateDialogue() {
-        //lineCounter = (rooms.get(currentRoom).getNPC().getDialogueCounter()) * MAX_DIALOGUE_OPTIONS + 1; //TODO remove
         rooms.get(currentRoomNum).getNPC().getNPCDialogue().increaseLine();
         if (rooms.get(currentRoomNum).getNPC().getNPCDialogue().getDialogue(rooms.get(currentRoomNum).getNPC().getDialogueCounter() * MAX_DIALOGUE_OPTIONS + rooms.get(currentRoomNum).getNPC().getNPCDialogue().getCurrentKey()) == null) {
             rooms.get(currentRoomNum).getNPC().getNPCDialogue().setCurrentKey(0);
         }
-        //if (rooms.get(currentRoomNum).getNPC().getNPCDialogue().getCurrentKey()) {
-        //    notifyListeners();
-        //    return 1;
-        //}
         notifyListeners();
-        //return 0;
     }
 
     private int increaseNPCProgress(int NPCnumber) {
@@ -394,40 +377,7 @@ public class MysteryGame {
         rooms.get(roomNumber).getNPC().getNPCDialogue().setCurrentKey(0);
     }
 
-    public void increaseItemProgress(Item item) {
-
-    }
-
     /* everything with regard to gameState */
-
-    /**
-     * Function that loads in a game state
-     */
-    /*public void loadGame() {
-        try (Scanner loadState = new Scanner(new FileInputStream("saveState.txt"))) {
-            currentRoomNum = loadState.nextInt();
-            inventorySize = loadState.nextInt();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    /**
-     * Function that saves the game state
-     */
-    /*public void saveGame() {
-        if (!new File("saveState.txt").exists()) {
-            new File("saveState").mkdir();
-        }
-        try (PrintWriter saveState = new PrintWriter(new FileOutputStream("saveState.txt"))){
-            saveState.println(currentRoomNum);
-            saveState.println(inventorySize);
-            //first needs to be # items in inventory followed by the items
-            //also need to save developments from NPCs
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Used to add listeners.
