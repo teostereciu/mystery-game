@@ -171,9 +171,11 @@ public class GameView extends JFrame implements PropertyChangeListener {
                     "Failed to use item", JOptionPane.WARNING_MESSAGE);
             case 7 -> JOptionPane.showMessageDialog(this, "I do not know how to interact with this yet. I should gather more information first.",
                     "Failed to interact", JOptionPane.WARNING_MESSAGE);
-            case 10 -> JOptionPane.showMessageDialog(this, "You chose bad cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
+            case 8 -> JOptionPane.showMessageDialog(this, "I found the stolen beer crate and a bandage is ripped onto it! I need to tell Stacey what happened.",
+                    "Failed to interact", JOptionPane.WARNING_MESSAGE);
+            case 10 -> JOptionPane.showMessageDialog(this, "<html>You chose bad cop! You are a private investigator. <p>Stacey hired you to find out who stole the beer that she got for her graduation party.</p><p>Here she is, in the Hallway.</p></html>",
                     "Intro", JOptionPane.WARNING_MESSAGE);
-            case 11 -> JOptionPane.showMessageDialog(this, "You chose good cop! You are a private investigator. Stacey hired you to find out who stole the beer that she got for her graduation party.",
+            case 11 -> JOptionPane.showMessageDialog(this, "<html>You chose good cop! You are a private investigator. <p>Stacey hired you to find out who stole the beer that she got for her graduation party.</p><p>Here she is, in the Hallway.</p></html>",
                         "Intro", JOptionPane.WARNING_MESSAGE);
         }
         return -1;

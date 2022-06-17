@@ -48,8 +48,9 @@ public class ItemChooser implements ActionListener {
             }
             if (Objects.equals(modelItem.getItemName(), "crate")) {
                 if (modelItem.getIsPlayable() == 1) {
-                    viewFrame.displayEnding();
-                    // game ends here
+                    viewFrame.displayDetectiveWarnings(8);
+                    //viewFrame.displayEnding(); idk when to do this. should be after stacey last dialogue
+
                 }
             }
             //}
