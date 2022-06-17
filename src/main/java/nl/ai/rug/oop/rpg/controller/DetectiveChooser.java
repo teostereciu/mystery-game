@@ -6,18 +6,29 @@ import nl.ai.rug.oop.rpg.view.GameView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controller class for choosing the detective.
+ * @author veghcsanad
+ */
+
 public class DetectiveChooser implements ActionListener {
     MysteryGame modelGame;
     GameView viewFrame;
     int isGood;
+
+    /**
+     * Constructor of the DetectiveChooser class.
+     * @param game
+     * @param frame
+     * @param isGood
+     */
     public DetectiveChooser(MysteryGame game, GameView frame, int isGood) {
         viewFrame = frame;
         modelGame = game;
         this.isGood = isGood;
     }
     /**
-     * Invoked when an action occurs.
-     *
+     * Called when a detective is chosen in the beginning.
      * @param e the event to be processed
      */
     @Override

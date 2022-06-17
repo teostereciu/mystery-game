@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19d942cc-780f-4253-b58a-bdf558252a64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ending.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/DialoguePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/DialoguePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/RoomPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_Project_023/nl/ai/rug/oop/rpg/view/RoomPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_properties.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saved_properties.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/DialoguePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/RoomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/view/RoomPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/DetectiveChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/ai/rug/oop/rpg/controller/DetectiveChooser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
