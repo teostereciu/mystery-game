@@ -1,4 +1,9 @@
-# Role Playing Game
+# Mystery Game
+This is a whodunit point-and-click game built using the MVC pattern and key OOP concepts. The game supports dialogue with NPCs, a limited-capacity inventory for clues, cut scenes, and game logging. The player may choose the "good cop" or "bad cop" path, which will affect gameplay.
+
+All game assets were made with [Pixilart](https://www.pixilart.com/draw).
+
+# Role Playing Game Instructions:
 
 For the final project of Object Oriented Programming, your team should create an RPG game. While there are some requirements to the outcome, which are listed below, you are mostly free in how you give shape to this project. For example, you may choose to have your RPG reflect an epic quest in a fantasy setting, an anxious protagonist buying groceries from a list, or fireside conversations among friends camping in the wild.
 
