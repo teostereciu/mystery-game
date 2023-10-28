@@ -3,9 +3,10 @@ This is a whodunit point-and-click game built using the MVC pattern and key OOP 
 
 All game assets were made with [Pixilart](https://www.pixilart.com/draw).
 
-<img width="807" alt="start" src="https://github.com/teostereciu/mystery-game/assets/104054380/66a54771-44cf-466f-ac5f-66e43435e17e">
-<img width="997" alt="kyle2" src="https://github.com/teostereciu/mystery-game/assets/104054380/b34810ba-cec3-475b-a5d9-3bd3b6e199ea">
-<img width="997" alt="melvin0" src="https://github.com/teostereciu/mystery-game/assets/104054380/083c4eb6-f54b-4e47-843f-c63fee80e165">
+<img width="497" alt="start" src="https://github.com/teostereciu/mystery-game/assets/104054380/66a54771-44cf-466f-ac5f-66e43435e17e">
+<img width="497" alt="kyle0" src="https://github.com/teostereciu/mystery-game/assets/104054380/474f46f3-8e68-4bac-b209-9ea2796328d0">
+<img width="497" alt="kyle2" src="https://github.com/teostereciu/mystery-game/assets/104054380/b34810ba-cec3-475b-a5d9-3bd3b6e199ea">
+<img width="497" alt="melvin0" src="https://github.com/teostereciu/mystery-game/assets/104054380/083c4eb6-f54b-4e47-843f-c63fee80e165">
 
 
 # Assignment Instructions:
