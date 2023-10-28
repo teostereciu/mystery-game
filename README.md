@@ -3,6 +3,11 @@ This is a whodunit point-and-click game built using the MVC pattern and key OOP 
 
 All game assets were made with [Pixilart](https://www.pixilart.com/draw).
 
+<img width="807" alt="start" src="https://github.com/teostereciu/mystery-game/assets/104054380/66a54771-44cf-466f-ac5f-66e43435e17e">
+<img width="997" alt="kyle2" src="https://github.com/teostereciu/mystery-game/assets/104054380/b34810ba-cec3-475b-a5d9-3bd3b6e199ea">
+<img width="997" alt="melvin0" src="https://github.com/teostereciu/mystery-game/assets/104054380/083c4eb6-f54b-4e47-843f-c63fee80e165">
+
+
 # Assignment Instructions:
 
 For the final project of Object Oriented Programming, your team should create an RPG game. While there are some requirements to the outcome, which are listed below, you are mostly free in how you give shape to this project. For example, you may choose to have your RPG reflect an epic quest in a fantasy setting, an anxious protagonist buying groceries from a list, or fireside conversations among friends camping in the wild.
